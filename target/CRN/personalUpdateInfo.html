@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- 声明文档的编码集 -->
+		<meta charset="utf-8">
+		<!--声明文档兼容模式，表示使用IE浏览器的最新模式-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!--设置视口的宽度(值为设备的理想宽度)，页面初始缩放值<理想宽度/可见宽度>-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		
+		<title>千寻网</title>
+		
+		<link href="./css/bootstrap.min.css" rel="stylesheet" />
+		
+		<link rel="shortcut icon" href="img/favicon.ico"/>
+	</head>
+	<style>
+		/* 整体 */
+		body{
+			background-color: rgb(246,246,248);
+		}
+		
+		
+		/* 搜索热门职位 */
+		#searchhotposition{
+			margin-left: 20px;
+			color: gray;
+		}
+		td{
+			text-align: center;
+		}
+	</style>
+	<body>
+		<!-- 导航栏 -->
+		<div class="container">
+			<div class="row" style="margin: 5px;border: none;">
+				<nav class="navbar navbar-inverse">
+				  <div class="container-fluid">
+				    <!-- Brand and toggle get grouped for better mobile display -->
+				    <div class="navbar-header"style="margin: 5px;border: none;" >
+				      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				        <span class="sr-only">Toggle navigation</span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				      </button>
+					  <!-- logo图片 -->
+					  <img src="./img/Logo.png" style="width: 30px;height: 30px;"/>
+					  <!-- 网站名称 -->
+					  <span id="title"style="color: #00b38a; font-size: 25px;  margin-top: 15px;">千寻网</span>
+				    </div>
+				
+				    <!-- Collect the nav links, forms, and other content for toggling -->
+				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				      
+					  <ul class="nav navbar-nav">
+						  <!-- location地点选择 -->
+						  <li class="dropdown">
+						    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">地点 <span class="caret"></span></a>
+						    <ul class="dropdown-menu">
+						      <li><a href="#">上海</a></li>
+						      <li><a href="#">无锡</a></li>
+						      <li><a href="#">北京</a></li>
+						      <!-- <li role="separator" class="divider"></li> -->
+						      <li><a href="#">杭州</a></li>
+						      <li><a href="#">苏州</a></li>
+						    </ul>
+						   </li>
+						 <!-- 跳转至首页 -->
+				        <li ><a href="personalHome.html">首页 <span class="sr-only">(current)</span></a></li>
+						<!-- 跳转至查看所有职位 -->
+				        <li ><a href="personalPosition.html">职位</a></li>
+						<!-- 求职详细 -->
+						<li><a href="personalJobDetails.html">求职详细</a></li>
+				      </ul>
+					  
+				      <ul class="nav navbar-nav navbar-right">
+						<!-- 查看我的简历 -->
+				        <li><a href="#">我的简历</a></li>
+						<!-- 用户名 -->
+				        <li class="dropdown">
+				          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">用户名 <span class="caret"></span></a>
+				          <ul class="dropdown-menu">
+				            <li ><a href="#">修改个人信息</a></li>
+				            <li role="separator" class="divider"></li>
+				            <li><a href="#">退出账号</a></li>
+				          </ul>
+				        </li>
+						<li><a href="#">进入企业版</a></li>
+				      </ul>
+				    </div><!-- /.navbar-collapse -->
+				  </div><!-- /.container-fluid -->
+				</nav>
+			</div>
+		</div>
+		
+		<!-- 修改个人信息 -->
+		<div class="container">
+			<div class="row"></div>
+		</div>
+		
+		
+	</body>
+	<!-- 先引入jQuery核心js文件 -->
+	<script src="./js/jquery-3.1.1.js"></script>
+	<!-- 引入BootStrap核心js文件 -->
+	<script src="./js/bootstrap.min.js"></script>
+	
+	<script type="text/javascript" src="./js/jquery.horizontalmenu.js"></script> 
+	
+	
+	<script>
+		$(function () {
+		  $('.ah-tab-wrapper').horizontalmenu({
+		    itemClick : function(item) {
+		      $('.ah-tab-content-wrapper .ah-tab-content').removeAttr('data-ah-tab-active');
+		      $('.ah-tab-content-wrapper .ah-tab-content:eq(' + $(item).index() + ')').attr('data-ah-tab-active', 'true');
+		      return false; //if this finction return true then will be executed http request
+		    }
+		  });
+		});
+	</script>
+	
+</html>
