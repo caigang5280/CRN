@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- 声明文档的编码集 -->
+		<meta charset="utf-8">
+		<!--声明文档兼容模式，表示使用IE浏览器的最新模式-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!--设置视口的宽度(值为设备的理想宽度)，页面初始缩放值<理想宽度/可见宽度>-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		
+		<title>千寻网</title>
+		
+		<link href="./css/bootstrap.min.css" rel="stylesheet" />
+		
+		<link href="css/jquery.horizontalmenu.css" rel="stylesheet">
+		
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		
+		<link rel="shortcut icon" href="img/favicon.ico"/>
+		
+		<style>
+			/* 整体 */
+			body{
+				background-color: rgb(246,246,248);
+			}
+			/* 查看更多按钮 */
+			#selectmore{
+				color: green;
+				border: 1px solid green;
+			}
+			/* 热门企业logo */
+			#hotimg{
+				height: 100px;
+				width: 100px;
+			}
+			/* 热门企业按钮 */
+			#hotbtn{
+				width: 110px;
+				height:25px;
+				background-color: white;
+				border: 1px solid;
+				
+			}
+			
+			/* 搜索热门职位 */
+			#searchhotposition{
+				margin-left: 20px;
+				color: #00b38a;
+			}
+			
+			#recommendposition{
+				font-size: 20px;
+				
+			}
+			#recommendbottom{
+				color: gray;
+			}
+			#recommendimg{
+				height: 40px;
+			}
+			#recommendsalary{
+				color: red;
+			}
+			#recomendmiddle{
+				color: gray;
+			}
+		</style>
+		
+		
+	</head>
+	<style>
+	</style>
+	<body>
+		<!-- 导航栏 -->
+		<div class="container">
+			<div class="row" style="margin: 5px;border: none;">
+				<nav class="navbar navbar-inverse">
+				  <div class="container-fluid">
+				    <!-- Brand and toggle get grouped for better mobile display -->
+				    <div class="navbar-header"style="margin: 5px;border: none;" >
+				      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				        <span class="sr-only">Toggle navigation</span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				      </button>
+					  <!-- logo图片 -->
+					  <img src="./img/Logo.png" style="width: 30px;height: 30px;"/>
+					  <!-- 网站名称 -->
+					  <span id="title"style="color: #00b38a; font-size: 25px;  margin-top: 15px;">千寻网</span>
+				    </div>
+				
+				    <!-- Collect the nav links, forms, and other content for toggling -->
+				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				      
+					  <ul class="nav navbar-nav">
+						  <!-- location地点选择 -->
+						  <li class="dropdown">
+						    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">地点 <span class="caret"></span></a>
+						    <ul class="dropdown-menu">
+						      <li><a href="#">上海</a></li>
+						      <li><a href="#">无锡</a></li>
+						      <li><a href="#">北京</a></li>
+						      <!-- <li role="separator" class="divider"></li> -->
+						      <li><a href="#">杭州</a></li>
+						      <li><a href="#">苏州</a></li>
+						    </ul>
+						   </li>
+						 <!-- 跳转至首页 -->
+				        <li><a href="companyHome.html">首页 <span class="sr-only">(current)</span></a></li>
+						<!-- 跳转至人才搜索与邀请 -->
+				        <li class="active"><a href="companySearchInvitation.html">人才搜索与邀请</a></li>
+						<!-- 查看简历 -->
+						<li><a href="companyViewResume.html">查看简历</a></li>
+				      </ul>
+					  
+				      <ul class="nav navbar-nav navbar-right">
+						<!-- 发布招聘信息 -->
+						<li><a href="companyReleaseInfo.html">发布招聘信息</a></li>
+						<!-- 企业用户名 -->
+				        <li class="dropdown">
+				          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">公司-用户名 <span class="caret"></span></a>
+				          <ul class="dropdown-menu">
+				            <li><a href="#">修改公司信息</a></li>
+				            <li role="separator" class="divider"></li>
+				            <li><a href="#">退出账号</a></li>
+				          </ul>
+				        </li>
+				      </ul>
+				    </div><!-- /.navbar-collapse -->
+				  </div><!-- /.container-fluid -->
+				</nav>
+			</div>
+		</div>
+		
+		<!-- 搜索栏 -->
+		<div class="container">
+			<div class="row" style="text-align: center;" >
+				<div class="col-lg-1" style="text-align: center;">
+				  <div class="input-group" style="text-align: center;">
+				  </div><!-- /input-group -->
+				</div><!-- /.col-lg-6 -->
+			  <div class="col-lg-10" style="text-align: center;">
+			    <div class="input-group" style="text-align: center;">
+			      <input type="text" class="form-control" placeholder="Search for...">
+			      <span class="input-group-btn">
+			        <button class="btn btn-default" type="button">Go!</button>
+			      </span>
+			    </div><!-- /input-group -->
+			  </div><!-- /.col-lg-6 -->
+			</div><!-- /.row -->
+		</div>
+		<br />
+		
+		
+		
+		
+		<div class="container">
+					<div class="row">
+						<!-- 表格左 边留白 -->
+						<div class="col-lg-1"></div>
+						<!-- 表格正文 -->
+						<div class="col-lg-10 col-xs-12">
+		
+							<table class="table table-hover">
+								<br />
+								
+								  <tr>
+									<td class="info">序号</td>
+									<td class="info">姓名</td>
+									<td class="info">年龄</td>
+									<td class="info">申请职位</td>
+									<td class="info">期望薪资</td>
+									<td class="info"></td>
+									<td class="info"></td>
+									<td class="info">查看详情</td>
+									
+								  </tr>
+								  
+								  
+								  <tr>
+								  	<td class="active">1</td>
+								  	<td class="active">张三</td>
+								  	<td class="active">26</td>
+								  	<td class="active">JavaWeb</td>
+								  	<td class="active">18-20k</td>
+									<td class="active"></td>
+									<td class="active"></td>
+								  	<td class="active"><button href="#" style="background-color: #00b38a;color: white;">查看详情</button></td>
+								  </tr>
+								  
+								  
+								<tr>
+									<td class="active">2</td>
+									<td class="active">张三</td>
+									<td class="active">26</td>
+									<td class="active">JavaWeb</td>
+									<td class="active">18-20k</td>
+																	<td class="active"></td>
+																	<td class="active"></td>
+									<td class="active"><button href="#" style="background-color: #00b38a;color: white;">查看详情</button></td>
+								</tr>  
+								  
+								  
+								  
+							</table>
+						
+						</div> <!-- col-lg-10 col-xs-10 -->
+						<!-- 表格右边留白 -->
+						<div class="col-lg-1"></div>
+						
+					</div><!-- 职位工作表container -->
+				</div>
+		
+		
+		
+		<!-- 热门职位 -->
+		
+		<div class="container">
+			<div class="row" style="text-align: center;">
+				<span>热门职位:</span>
+				<a id="searchhotposition" href="#">Java</a>
+				<a id="searchhotposition" href="#">产品经理</a>
+				<a id="searchhotposition" href="#">Web前端</a>
+				<a id="searchhotposition" href="#">项目经理/主管</a>
+				<a id="searchhotposition" href="#">C++</a>
+				<a id="searchhotposition" href="#">测试工程师</a>
+				<a id="searchhotposition" href="#">数据分析师</a>
+				<a id="searchhotposition" href="#">运维工程师</a>
+			</div>
+		</div>
+		
+		<!-- 选择栏  以后再延伸 -->
+<!-- 		<div class="container">
+			<div></div>
+		</div> -->
+		
+		<br/>
+		<!--轮播-->
+		<div class="container" >
+			<div class="row" style="margin-left: 5px;margin-right: 5px;">
+				<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+				  <!-- Indicators 控制器 -->
+				  <ol class="carousel-indicators">
+				    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+				    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+				    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+				    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+				    <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+				    <li data-target="#carousel-example-generic" data-slide-to="5"></li>
+				    <li data-target="#carousel-example-generic" data-slide-to="6"></li>
+				  </ol>
+				
+				  <!-- Wrapper for slides 轮播的图片-->
+				  <div class="carousel-inner" role="listbox">
+				    <div class="item active">
+				      <img src="img/1.jpg" alt="...">
+				    </div>
+				    <div class="item">
+				      <img src="img/2.jpg" alt="...">
+				    </div>
+				    <div class="item">
+				      <img src="img/3.jpg" alt="...">
+				    </div>
+					<div class="item">
+					  <img src="img/4.jpg" alt="...">
+					</div>
+					<div class="item">
+					  <img src="img/5.jpg" alt="...">
+					</div>
+					<div class="item">
+					  <img src="img/6.jpg" alt="...">
+					</div>
+					<div class="item">
+					  <img src="img/7.jpg" alt="...">
+					</div>
+				  </div>
+				
+				  <!-- Controls 控制左右翻转的按钮 -->
+				  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+				    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				    <span class="sr-only">Previous</span>
+				  </a>
+				  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+				    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				    <span class="sr-only">Next</span>
+				  </a>
+				</div>
+			</div>
+		</div>
+		
+		
+		<br />
+		<br />
+	
+		
+		
+		    
+	
+		<!--友情链接-->
+		<div class="container" style="margin-top: 15px;">
+			<div class="row" style="text-align: center;">
+				<p>
+					<a href="#" style="margin-left: 20px;">关于我们</a>
+					<a href="#"style="margin-left: 20px;">联系我们</a>
+					<a href="#"style="margin-left: 20px;">招贤纳士</a>
+					<a href="#"style="margin-left: 20px;">法律声明</a>
+					<a href="#"style="margin-left: 20px;">友情链接</a>
+					<a href="#"style="margin-left: 20px;">服务声明</a>
+					<a href="#"style="margin-left: 20px;">广告声明</a>
+				</p>
+			</div>
+			<div class="row" style="text-align: center;">
+				<p>
+					Copyright © 20021-2021 千寻招聘网 版权所有
+				</p>
+			</div>
+		</div>
+		
+	</body>
+	<!-- 先引入jQuery核心js文件 -->
+	<script src="./js/jquery-3.1.1.js"></script>
+	<!-- 引入BootStrap核心js文件 -->
+	<script src="./js/bootstrap.min.js"></script>
+	
+	<script type="text/javascript" src="./js/jquery.horizontalmenu.js"></script> 
+	
+	
+	<script>
+		$(function () {
+		  $('.ah-tab-wrapper').horizontalmenu({
+		    itemClick : function(item) {
+		      $('.ah-tab-content-wrapper .ah-tab-content').removeAttr('data-ah-tab-active');
+		      $('.ah-tab-content-wrapper .ah-tab-content:eq(' + $(item).index() + ')').attr('data-ah-tab-active', 'true');
+		      return false; //if this finction return true then will be executed http request
+		    }
+		  });
+		});
+	</script>
+</html>
