@@ -34,13 +34,13 @@
         }
 
         /* 热门企业logo */
-        #hotimg {
+        .hotImg {
             height: 100px;
             width: 100px;
         }
 
         /* 热门企业按钮 */
-        #hotbtn {
+        .hotBtn {
             width: 110px;
             height: 25px;
             background-color: white;
@@ -54,24 +54,24 @@
             color: #00b38a;
         }
 
-        #recommendposition {
+        .recommendPosition {
             font-size: 20px;
 
         }
 
-        #recommendbottom {
+        .recommendBottom {
             color: gray;
         }
 
-        #recommendimg {
+        .recommendImg {
             height: 40px;
         }
 
-        #recommendsalary {
+        .recommendSalary {
             color: red;
         }
 
-        #recomendmiddle {
+        .recomendMiddle {
             color: gray;
         }
 
@@ -179,7 +179,8 @@
                             </ul>
                         </li>
                         <!-- 跳转至首页 -->
-                        <li class="active"><a href="${pageContext.request.contextPath}/personalHome.jsp">首页 <span class="sr-only">(current)</span></a>
+                        <li class="active"><a href="${pageContext.request.contextPath}/personalHome.jsp">首页 <span
+                                class="sr-only">(current)</span></a>
                         </li>
                         <!-- 跳转至查看所有职位 -->
                         <li><a href="${pageContext.request.contextPath}/personalPosition.jsp">职位</a></li>
@@ -193,7 +194,8 @@
                         <!-- 用户名 -->
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                               aria-haspopup="true" aria-expanded="false" >${personalUser.username}<span class="caret"></span></a>
+                               aria-haspopup="true" aria-expanded="false">${personalUser.username}<span
+                                    class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="${pageContext.request.contextPath}/personalInfo.jsp">修改个人信息</a></li>
                                 <li role="separator" class="divider"></li>
@@ -341,12 +343,12 @@
                             <div class="col-md-4" style="background-color: white;">
                                 <br/>
                                 <div>
-											<span id="recommendposition">小米全球新零售&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">30-60K·14薪</span>
+											<span class="recommendPosition">小米全球新零售&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">30-60K·14薪</span>
 											</span>
                                 </div>
                                 <div>
-											<span id="recomendmiddle">北京&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科
+											<span class="recomendMiddle">北京&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科
 											</span>
                                 </div>
                                 <br/>
@@ -354,8 +356,9 @@
                                     <span>-------------------------------------------------------------------------</span>
                                 </div>
                                 <div>&nbsp;&nbsp;&nbsp;
-                                    <img src="${pageContext.request.contextPath}/img/xiaomiLogo.jpg" id="recommendimg"/>
-                                    <span id="recommendbottom">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;小米&nbsp;|&nbsp;互联网</span>
+                                    <img src="${pageContext.request.contextPath}/img/xiaomiLogo.jpg"
+                                         class="recommendImg"/>
+                                    <span class="recommendBottom">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;小米&nbsp;|&nbsp;互联网</span>
                                 </div>
                                 <br/>
                             </div>
@@ -364,12 +367,12 @@
                             <div class="col-md-4" style="background-color: white;">
                                 <br/>
                                 <div>
-											<span id="recommendposition">JAVA计数专家(秒反馈)&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">25-50K·16薪</span>
+											<span class="recommendPosition">JAVA计数专家(秒反馈)&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">25-50K·16薪</span>
 											</span>
                                 </div>
                                 <div>
-                                    <span id="recomendmiddle">杭州&nbsp;|&nbsp;3-5年&nbsp;|&nbsp;本科</span>
+                                    <span class="recomendMiddle">杭州&nbsp;|&nbsp;3-5年&nbsp;|&nbsp;本科</span>
                                 </div>
                                 <br/>
                                 <div>
@@ -377,8 +380,8 @@
                                 </div>
                                 <div>&nbsp;&nbsp;&nbsp;
                                     <img src="${pageContext.request.contextPath}/img/mayijinfuLogo.jpg"
-                                         id="recommendimg"/>
-                                    <span id="recommendbottom">蚂蚁金服&nbsp;|&nbsp;互联网金融</span>
+                                         class="recommendImg"/>
+                                    <span class="recommendBottom">蚂蚁金服&nbsp;|&nbsp;互联网金融</span>
                                 </div>
                                 <br/>
                             </div>
@@ -387,12 +390,12 @@
                             <div class="col-md-4" style="background-color: white;">
                                 <br/>
                                 <div>
-											<span id="recommendposition">配置管理工程师&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">15-30K·16薪</span>
+											<span class="recommendPosition">配置管理工程师&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">15-30K·16薪</span>
 											</span>
                                 </div>
                                 <div>
-                                    <span id="recomendmiddle">西安&nbsp;|&nbsp;3-5年&nbsp;|&nbsp;本科</span>
+                                    <span class="recomendMiddle">西安&nbsp;|&nbsp;3-5年&nbsp;|&nbsp;本科</span>
                                 </div>
                                 <br/>
                                 <div>
@@ -400,8 +403,8 @@
                                 </div>
                                 <div>&nbsp;&nbsp;&nbsp;
                                     <img src="${pageContext.request.contextPath}/img/zhongguoyidongLogo.jpg"
-                                         id="recommendimg"/>
-                                    <span id="recommendbottom">中国移动研究所&nbsp;|&nbsp;数据服务</span>
+                                         class="recommendImg"/>
+                                    <span class="recommendBottom">中国移动研究所&nbsp;|&nbsp;数据服务</span>
                                 </div>
                                 <br/>
                             </div>
@@ -413,12 +416,12 @@
                             <div class="col-md-4" style="background-color: white;">
                                 <br/>
                                 <div>
-											<span id="recommendposition">大数据开发工程师&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">15-30K·14薪</span>
+											<span class="recommendPosition">大数据开发工程师&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">15-30K·14薪</span>
 											</span>
                                 </div>
                                 <div>
-											<span id="recomendmiddle">深圳&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科
+											<span class="recomendMiddle">深圳&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科
 											</span>
                                 </div>
                                 <br/>
@@ -426,8 +429,9 @@
                                     <span>-------------------------------------------------------------------------</span>
                                 </div>
                                 <div>&nbsp;&nbsp;&nbsp;
-                                    <img src="${pageContext.request.contextPath}/img/ankerLogo.jpg" id="recommendimg"/>
-                                    <span id="recommendbottom">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Anker&nbsp;|&nbsp;电子商务</span>
+                                    <img src="${pageContext.request.contextPath}/img/ankerLogo.jpg"
+                                         class="recommendImg"/>
+                                    <span class="recommendBottom">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Anker&nbsp;|&nbsp;电子商务</span>
                                 </div>
                                 <br/>
                             </div>
@@ -436,20 +440,21 @@
                             <div class="col-md-4" style="background-color: white;">
                                 <br/>
                                 <div>
-											<span id="recommendposition">算法工程师&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">35-65K·16薪</span>
+											<span class="recommendPosition">算法工程师&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">35-65K·16薪</span>
 											</span>
                                 </div>
                                 <div>
-                                    <span id="recomendmiddle">北京&nbsp;|&nbsp;经验不限&nbsp;|&nbsp;本科</span>
+                                    <span class="recomendMiddle">北京&nbsp;|&nbsp;经验不限&nbsp;|&nbsp;本科</span>
                                 </div>
                                 <br/>
                                 <div>
                                     <span>-------------------------------------------------------------------------</span>
                                 </div>
                                 <div>&nbsp;&nbsp;&nbsp;
-                                    <img src="${pageContext.request.contextPath}/img/didiLogo.png" id="recommendimg"/>
-                                    <span id="recommendbottom">滴滴&nbsp;|&nbsp;移动互联网</span>
+                                    <img src="${pageContext.request.contextPath}/img/didiLogo.png"
+                                         class="recommendImg"/>
+                                    <span class="recommendBottom">滴滴&nbsp;|&nbsp;移动互联网</span>
                                 </div>
                                 <br/>
                             </div>
@@ -458,12 +463,12 @@
                             <div class="col-md-4" style="background-color: white;">
                                 <br/>
                                 <div>
-											<span id="recommendposition">腾讯数据安全产品开发&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">30-60K·18薪</span>
+											<span class="recommendPosition">腾讯数据安全产品开发&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">30-60K·18薪</span>
 											</span>
                                 </div>
                                 <div>
-                                    <span id="recomendmiddle">深圳&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科</span>
+                                    <span class="recomendMiddle">深圳&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科</span>
                                 </div>
                                 <br/>
                                 <div>
@@ -471,8 +476,8 @@
                                 </div>
                                 <div>&nbsp;&nbsp;&nbsp;
                                     <img src="${pageContext.request.contextPath}/img/tengxunLogo.jpg"
-                                         id="recommendimg"/>
-                                    <span id="recommendbottom">腾讯&nbsp;|&nbsp;互联网</span>
+                                         class="recommendImg"/>
+                                    <span class="recommendBottom">腾讯&nbsp;|&nbsp;互联网</span>
                                 </div>
                                 <br/>
                             </div>
@@ -488,12 +493,12 @@
                             <div class="col-md-4" style="background-color: white;">
                                 <br/>
                                 <div>
-											<span id="recommendposition">小米全球新零售&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">30-60K·14薪</span>
+											<span class="recommendPosition">小米全球新零售&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">30-60K·14薪</span>
 											</span>
                                 </div>
                                 <div>
-											<span id="recomendmiddle">北京&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科
+											<span class="recomendMiddle">北京&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科
 											</span>
                                 </div>
                                 <br/>
@@ -501,8 +506,9 @@
                                     <span>-------------------------------------------------------------------------</span>
                                 </div>
                                 <div>&nbsp;&nbsp;&nbsp;
-                                    <img src="${pageContext.request.contextPath}/img/xiaomiLogo.jpg" id="recommendimg"/>
-                                    <span id="recommendbottom">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;小米&nbsp;|&nbsp;互联网</span>
+                                    <img src="${pageContext.request.contextPath}/img/xiaomiLogo.jpg"
+                                         class="recommendImg"/>
+                                    <span class="recommendBottom">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;小米&nbsp;|&nbsp;互联网</span>
                                 </div>
                                 <br/>
                             </div>
@@ -511,12 +517,12 @@
                             <div class="col-md-4" style="background-color: white;">
                                 <br/>
                                 <div>
-											<span id="recommendposition">JAVA计数专家(秒反馈)&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">25-50K·16薪</span>
+											<span class="recommendPosition">JAVA计数专家(秒反馈)&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">25-50K·16薪</span>
 											</span>
                                 </div>
                                 <div>
-                                    <span id="recomendmiddle">杭州&nbsp;|&nbsp;3-5年&nbsp;|&nbsp;本科</span>
+                                    <span class="recomendMiddle">杭州&nbsp;|&nbsp;3-5年&nbsp;|&nbsp;本科</span>
                                 </div>
                                 <br/>
                                 <div>
@@ -524,8 +530,8 @@
                                 </div>
                                 <div>&nbsp;&nbsp;&nbsp;
                                     <img src="${pageContext.request.contextPath}/img/mayijinfuLogo.jpg"
-                                         id="recommendimg"/>
-                                    <span id="recommendbottom">蚂蚁金服&nbsp;|&nbsp;互联网金融</span>
+                                         class="recommendImg"/>
+                                    <span class="recommendBottom">蚂蚁金服&nbsp;|&nbsp;互联网金融</span>
                                 </div>
                                 <br/>
                             </div>
@@ -534,12 +540,12 @@
                             <div class="col-md-4" style="background-color: white;">
                                 <br/>
                                 <div>
-											<span id="recommendposition">配置管理工程师&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">15-30K·16薪</span>
+											<span class="recommendPosition">配置管理工程师&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">15-30K·16薪</span>
 											</span>
                                 </div>
                                 <div>
-                                    <span id="recomendmiddle">西安&nbsp;|&nbsp;3-5年&nbsp;|&nbsp;本科</span>
+                                    <span class="recomendMiddle">西安&nbsp;|&nbsp;3-5年&nbsp;|&nbsp;本科</span>
                                 </div>
                                 <br/>
                                 <div>
@@ -547,8 +553,8 @@
                                 </div>
                                 <div>&nbsp;&nbsp;&nbsp;
                                     <img src="${pageContext.request.contextPath}/img/zhongguoyidongLogo.jpg"
-                                         id="recommendimg"/>
-                                    <span id="recommendbottom">中国移动研究所&nbsp;|&nbsp;数据服务</span>
+                                         class="recommendImg"/>
+                                    <span class="recommendBottom">中国移动研究所&nbsp;|&nbsp;数据服务</span>
                                 </div>
                                 <br/>
                             </div>
@@ -560,12 +566,12 @@
                             <div class="col-md-4" style="background-color: white;">
                                 <br/>
                                 <div>
-											<span id="recommendposition">大数据开发工程师&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">15-30K·14薪</span>
+											<span class="recommendPosition">大数据开发工程师&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">15-30K·14薪</span>
 											</span>
                                 </div>
                                 <div>
-											<span id="recomendmiddle">深圳&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科
+											<span class="recomendMiddle">深圳&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科
 											</span>
                                 </div>
                                 <br/>
@@ -573,8 +579,9 @@
                                     <span>-------------------------------------------------------------------------</span>
                                 </div>
                                 <div>&nbsp;&nbsp;&nbsp;
-                                    <img src="${pageContext.request.contextPath}/img/ankerLogo.jpg" id="recommendimg"/>
-                                    <span id="recommendbottom">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Anker&nbsp;|&nbsp;电子商务</span>
+                                    <img src="${pageContext.request.contextPath}/img/ankerLogo.jpg"
+                                         class="recommendImg"/>
+                                    <span class="recommendBottom">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Anker&nbsp;|&nbsp;电子商务</span>
                                 </div>
                                 <br/>
                             </div>
@@ -583,20 +590,21 @@
                             <div class="col-md-4" style="background-color: white;">
                                 <br/>
                                 <div>
-											<span id="recommendposition">算法工程师&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">35-65K·16薪</span>
+											<span class="recommendPosition">算法工程师&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">35-65K·16薪</span>
 											</span>
                                 </div>
                                 <div>
-                                    <span id="recomendmiddle">北京&nbsp;|&nbsp;经验不限&nbsp;|&nbsp;本科</span>
+                                    <span class="recomendMiddle">北京&nbsp;|&nbsp;经验不限&nbsp;|&nbsp;本科</span>
                                 </div>
                                 <br/>
                                 <div>
                                     <span>-------------------------------------------------------------------------</span>
                                 </div>
                                 <div>&nbsp;&nbsp;&nbsp;
-                                    <img src="${pageContext.request.contextPath}/img/didiLogo.png" id="recommendimg"/>
-                                    <span id="recommendbottom">滴滴&nbsp;|&nbsp;移动互联网</span>
+                                    <img src="${pageContext.request.contextPath}/img/didiLogo.png"
+                                         class="recommendImg"/>
+                                    <span class="recommendBottom">滴滴&nbsp;|&nbsp;移动互联网</span>
                                 </div>
                                 <br/>
                             </div>
@@ -605,12 +613,12 @@
                             <div class="col-md-4" style="background-color: white;">
                                 <br/>
                                 <div>
-											<span id="recommendposition">腾讯数据安全产品开发&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">30-60K·18薪</span>
+											<span class="recommendPosition">腾讯数据安全产品开发&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">30-60K·18薪</span>
 											</span>
                                 </div>
                                 <div>
-                                    <span id="recomendmiddle">深圳&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科</span>
+                                    <span class="recomendMiddle">深圳&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科</span>
                                 </div>
                                 <br/>
                                 <div>
@@ -618,12 +626,13 @@
                                 </div>
                                 <div>&nbsp;&nbsp;&nbsp;
                                     <img src="${pageContext.request.contextPath}/img/tengxunLogo.jpg"
-                                         id="recommendimg"/>
-                                    <span id="recommendbottom">腾讯&nbsp;|&nbsp;互联网</span>
+                                         class="recommendImg"/>
+                                    <span class="recommendBottom">腾讯&nbsp;|&nbsp;互联网</span>
                                 </div>
                                 <br/>
                             </div>
                         </div>
+
                     </div>
 
                     <!-- 我要入职 -->
@@ -634,12 +643,12 @@
                             <div class="col-md-4" style="background-color: white;">
                                 <br/>
                                 <div>
-											<span id="recommendposition">小米全球新零售&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">30-60K·14薪</span>
+											<span class="recommendPosition">小米全球新零售&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">30-60K·14薪</span>
 											</span>
                                 </div>
                                 <div>
-											<span id="recomendmiddle">北京&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科
+											<span class="recomendMiddle">北京&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科
 											</span>
                                 </div>
                                 <br/>
@@ -647,8 +656,9 @@
                                     <span>-------------------------------------------------------------------------</span>
                                 </div>
                                 <div>&nbsp;&nbsp;&nbsp;
-                                    <img src="${pageContext.request.contextPath}/img/xiaomiLogo.jpg" id="recommendimg"/>
-                                    <span id="recommendbottom">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;小米&nbsp;|&nbsp;互联网</span>
+                                    <img src="${pageContext.request.contextPath}/img/xiaomiLogo.jpg"
+                                         class="recommendImg"/>
+                                    <span class="recommendBottom">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;小米&nbsp;|&nbsp;互联网</span>
                                 </div>
                                 <br/>
                             </div>
@@ -657,12 +667,12 @@
                             <div class="col-md-4" style="background-color: white;">
                                 <br/>
                                 <div>
-											<span id="recommendposition">JAVA计数专家(秒反馈)&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">25-50K·16薪</span>
+											<span class="recommendPosition">JAVA计数专家(秒反馈)&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">25-50K·16薪</span>
 											</span>
                                 </div>
                                 <div>
-                                    <span id="recomendmiddle">杭州&nbsp;|&nbsp;3-5年&nbsp;|&nbsp;本科</span>
+                                    <span class="recomendMiddle">杭州&nbsp;|&nbsp;3-5年&nbsp;|&nbsp;本科</span>
                                 </div>
                                 <br/>
                                 <div>
@@ -670,8 +680,8 @@
                                 </div>
                                 <div>&nbsp;&nbsp;&nbsp;
                                     <img src="${pageContext.request.contextPath}/img/mayijinfuLogo.jpg"
-                                         id="recommendimg"/>
-                                    <span id="recommendbottom">蚂蚁金服&nbsp;|&nbsp;互联网金融</span>
+                                         class="recommendImg"/>
+                                    <span class="recommendBottom">蚂蚁金服&nbsp;|&nbsp;互联网金融</span>
                                 </div>
                                 <br/>
                             </div>
@@ -680,12 +690,12 @@
                             <div class="col-md-4" style="background-color: white;">
                                 <br/>
                                 <div>
-											<span id="recommendposition">配置管理工程师&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">15-30K·16薪</span>
+											<span class="recommendPosition">配置管理工程师&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">15-30K·16薪</span>
 											</span>
                                 </div>
                                 <div>
-                                    <span id="recomendmiddle">西安&nbsp;|&nbsp;3-5年&nbsp;|&nbsp;本科</span>
+                                    <span class="recomendMiddle">西安&nbsp;|&nbsp;3-5年&nbsp;|&nbsp;本科</span>
                                 </div>
                                 <br/>
                                 <div>
@@ -693,8 +703,8 @@
                                 </div>
                                 <div>&nbsp;&nbsp;&nbsp;
                                     <img src="${pageContext.request.contextPath}/img/zhongguoyidongLogo.jpg"
-                                         id="recommendimg"/>
-                                    <span id="recommendbottom">中国移动研究所&nbsp;|&nbsp;数据服务</span>
+                                         class="recommendImg"/>
+                                    <span class="recommendBottom">中国移动研究所&nbsp;|&nbsp;数据服务</span>
                                 </div>
                                 <br/>
                             </div>
@@ -706,12 +716,12 @@
                             <div class="col-md-4" style="background-color: white;">
                                 <br/>
                                 <div>
-											<span id="recommendposition">大数据开发工程师&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">15-30K·14薪</span>
+											<span class="recommendPosition">大数据开发工程师&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">15-30K·14薪</span>
 											</span>
                                 </div>
                                 <div>
-											<span id="recomendmiddle">深圳&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科
+											<span class="recomendMiddle">深圳&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科
 											</span>
                                 </div>
                                 <br/>
@@ -719,8 +729,9 @@
                                     <span>-------------------------------------------------------------------------</span>
                                 </div>
                                 <div>&nbsp;&nbsp;&nbsp;
-                                    <img src="${pageContext.request.contextPath}/img/ankerLogo.jpg" id="recommendimg"/>
-                                    <span id="recommendbottom">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Anker&nbsp;|&nbsp;电子商务</span>
+                                    <img src="${pageContext.request.contextPath}/img/ankerLogo.jpg"
+                                         class="recommendImg"/>
+                                    <span class="recommendBottom">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Anker&nbsp;|&nbsp;电子商务</span>
                                 </div>
                                 <br/>
                             </div>
@@ -729,20 +740,21 @@
                             <div class="col-md-4" style="background-color: white;">
                                 <br/>
                                 <div>
-											<span id="recommendposition">算法工程师&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">35-65K·16薪</span>
+											<span class="recommendPosition">算法工程师&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">35-65K·16薪</span>
 											</span>
                                 </div>
                                 <div>
-                                    <span id="recomendmiddle">北京&nbsp;|&nbsp;经验不限&nbsp;|&nbsp;本科</span>
+                                    <span class="recomendMiddle">北京&nbsp;|&nbsp;经验不限&nbsp;|&nbsp;本科</span>
                                 </div>
                                 <br/>
                                 <div>
                                     <span>-------------------------------------------------------------------------</span>
                                 </div>
                                 <div>&nbsp;&nbsp;&nbsp;
-                                    <img src="${pageContext.request.contextPath}/img/didiLogo.png" id="recommendimg"/>
-                                    <span id="recommendbottom">滴滴&nbsp;|&nbsp;移动互联网</span>
+                                    <img src="${pageContext.request.contextPath}/img/didiLogo.png"
+                                         class="recommendImg"/>
+                                    <span class="recommendBottom">滴滴&nbsp;|&nbsp;移动互联网</span>
                                 </div>
                                 <br/>
                             </div>
@@ -751,12 +763,12 @@
                             <div class="col-md-4" style="background-color: white;">
                                 <br/>
                                 <div>
-											<span id="recommendposition">腾讯数据安全产品开发&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">30-60K·18薪</span>
+											<span class="recommendPosition">腾讯数据安全产品开发&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">30-60K·18薪</span>
 											</span>
                                 </div>
                                 <div>
-                                    <span id="recomendmiddle">深圳&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科</span>
+                                    <span class="recomendMiddle">深圳&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科</span>
                                 </div>
                                 <br/>
                                 <div>
@@ -764,8 +776,8 @@
                                 </div>
                                 <div>&nbsp;&nbsp;&nbsp;
                                     <img src="${pageContext.request.contextPath}/img/tengxunLogo.jpg"
-                                         id="recommendimg"/>
-                                    <span id="recommendbottom">腾讯&nbsp;|&nbsp;互联网</span>
+                                         class="recommendImg"/>
+                                    <span class="recommendBottom">腾讯&nbsp;|&nbsp;互联网</span>
                                 </div>
                                 <br/>
                             </div>
@@ -816,12 +828,12 @@
                 <div class="col-md-4" style="background-color: white;">
                     <br/>
                     <div>
-											<span id="recommendposition">小米全球新零售&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">30-60K·14薪</span>
+											<span class="recommendPosition">小米全球新零售&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">30-60K·14薪</span>
 											</span>
                     </div>
                     <div>
-											<span id="recomendmiddle">北京&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科
+											<span class="recomendMiddle">北京&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科
 											</span>
                     </div>
                     <br/>
@@ -829,8 +841,8 @@
                         <span>-------------------------------------------------------------------------</span>
                     </div>
                     <div>&nbsp;&nbsp;&nbsp;
-                        <img src="${pageContext.request.contextPath}/img/xiaomiLogo.jpg" id="recommendimg"/>
-                        <span id="recommendbottom">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;小米&nbsp;|&nbsp;互联网</span>
+                        <img src="${pageContext.request.contextPath}/img/xiaomiLogo.jpg" class="recommendImg"/>
+                        <span class="recommendBottom">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;小米&nbsp;|&nbsp;互联网</span>
                     </div>
                     <br/>
                 </div>
@@ -839,20 +851,21 @@
                 <div class="col-md-4" style="background-color: white;">
                     <br/>
                     <div>
-											<span id="recommendposition">JAVA计数专家(秒反馈)&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">25-50K·16薪</span>
+											<span class="recommendPosition">JAVA计数专家(秒反馈)&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">25-50K·16薪</span>
 											</span>
                     </div>
                     <div>
-                        <span id="recomendmiddle">杭州&nbsp;|&nbsp;3-5年&nbsp;|&nbsp;本科</span>
+                        <span class="recomendMiddle">杭州&nbsp;|&nbsp;3-5年&nbsp;|&nbsp;本科</span>
                     </div>
                     <br/>
                     <div>
                         <span>-------------------------------------------------------------------------</span>
                     </div>
                     <div>&nbsp;&nbsp;&nbsp;
-                        <img src="${pageContext.request.contextPath}/img/mayijinfuLogo.jpg" id="recommendimg"/>
-                        <span id="recommendbottom">蚂蚁金服&nbsp;|&nbsp;互联网金融</span>
+                        <img src="${pageContext.request.contextPath}/img/mayijinfuLogo.jpg"
+                             class="recommendImg"/>
+                        <span class="recommendBottom">蚂蚁金服&nbsp;|&nbsp;互联网金融</span>
                     </div>
                     <br/>
                 </div>
@@ -861,20 +874,21 @@
                 <div class="col-md-4" style="background-color: white;">
                     <br/>
                     <div>
-											<span id="recommendposition">配置管理工程师&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">15-30K·16薪</span>
+											<span class="recommendPosition">配置管理工程师&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">15-30K·16薪</span>
 											</span>
                     </div>
                     <div>
-                        <span id="recomendmiddle">西安&nbsp;|&nbsp;3-5年&nbsp;|&nbsp;本科</span>
+                        <span class="recomendMiddle">西安&nbsp;|&nbsp;3-5年&nbsp;|&nbsp;本科</span>
                     </div>
                     <br/>
                     <div>
                         <span>-------------------------------------------------------------------------</span>
                     </div>
                     <div>&nbsp;&nbsp;&nbsp;
-                        <img src="${pageContext.request.contextPath}/img/zhongguoyidongLogo.jpg" id="recommendimg"/>
-                        <span id="recommendbottom">中国移动研究所&nbsp;|&nbsp;数据服务</span>
+                        <img src="${pageContext.request.contextPath}/img/zhongguoyidongLogo.jpg"
+                             class="recommendImg"/>
+                        <span class="recommendBottom">中国移动研究所&nbsp;|&nbsp;数据服务</span>
                     </div>
                     <br/>
                 </div>
@@ -886,12 +900,12 @@
                 <div class="col-md-4" style="background-color: white;">
                     <br/>
                     <div>
-											<span id="recommendposition">大数据开发工程师&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">15-30K·14薪</span>
+											<span class="recommendPosition">大数据开发工程师&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">15-30K·14薪</span>
 											</span>
                     </div>
                     <div>
-											<span id="recomendmiddle">深圳&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科
+											<span class="recomendMiddle">深圳&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科
 											</span>
                     </div>
                     <br/>
@@ -899,8 +913,8 @@
                         <span>-------------------------------------------------------------------------</span>
                     </div>
                     <div>&nbsp;&nbsp;&nbsp;
-                        <img src="${pageContext.request.contextPath}/img/ankerLogo.jpg" id="recommendimg"/>
-                        <span id="recommendbottom">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Anker&nbsp;|&nbsp;电子商务</span>
+                        <img src="${pageContext.request.contextPath}/img/ankerLogo.jpg" class="recommendImg"/>
+                        <span class="recommendBottom">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Anker&nbsp;|&nbsp;电子商务</span>
                     </div>
                     <br/>
                 </div>
@@ -909,20 +923,20 @@
                 <div class="col-md-4" style="background-color: white;">
                     <br/>
                     <div>
-											<span id="recommendposition">算法工程师&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">35-65K·16薪</span>
+											<span class="recommendPosition">算法工程师&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">35-65K·16薪</span>
 											</span>
                     </div>
                     <div>
-                        <span id="recomendmiddle">北京&nbsp;|&nbsp;经验不限&nbsp;|&nbsp;本科</span>
+                        <span class="recomendMiddle">北京&nbsp;|&nbsp;经验不限&nbsp;|&nbsp;本科</span>
                     </div>
                     <br/>
                     <div>
                         <span>-------------------------------------------------------------------------</span>
                     </div>
                     <div>&nbsp;&nbsp;&nbsp;
-                        <img src="${pageContext.request.contextPath}/img/didiLogo.png" id="recommendimg"/>
-                        <span id="recommendbottom">滴滴&nbsp;|&nbsp;移动互联网</span>
+                        <img src="${pageContext.request.contextPath}/img/didiLogo.png" class="recommendImg"/>
+                        <span class="recommendBottom">滴滴&nbsp;|&nbsp;移动互联网</span>
                     </div>
                     <br/>
                 </div>
@@ -931,20 +945,21 @@
                 <div class="col-md-4" style="background-color: white;">
                     <br/>
                     <div>
-											<span id="recommendposition">腾讯数据安全产品开发&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">30-60K·18薪</span>
+											<span class="recommendPosition">腾讯数据安全产品开发&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">30-60K·18薪</span>
 											</span>
                     </div>
                     <div>
-                        <span id="recomendmiddle">深圳&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科</span>
+                        <span class="recomendMiddle">深圳&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科</span>
                     </div>
                     <br/>
                     <div>
                         <span>-------------------------------------------------------------------------</span>
                     </div>
                     <div>&nbsp;&nbsp;&nbsp;
-                        <img src="${pageContext.request.contextPath}/img/tengxunLogo.jpg" id="recommendimg"/>
-                        <span id="recommendbottom">腾讯&nbsp;|&nbsp;互联网</span>
+                        <img src="${pageContext.request.contextPath}/img/tengxunLogo.jpg"
+                             class="recommendImg"/>
+                        <span class="recommendBottom">腾讯&nbsp;|&nbsp;互联网</span>
                     </div>
                     <br/>
                 </div>
@@ -958,12 +973,12 @@
                 <div class="col-md-4" style="background-color: white;">
                     <br/>
                     <div>
-											<span id="recommendposition">小米全球新零售&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">30-60K·14薪</span>
+											<span class="recommendPosition">小米全球新零售&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">30-60K·14薪</span>
 											</span>
                     </div>
                     <div>
-											<span id="recomendmiddle">北京&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科
+											<span class="recomendMiddle">北京&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科
 											</span>
                     </div>
                     <br/>
@@ -971,8 +986,8 @@
                         <span>-------------------------------------------------------------------------</span>
                     </div>
                     <div>&nbsp;&nbsp;&nbsp;
-                        <img src="${pageContext.request.contextPath}/img/xiaomiLogo.jpg" id="recommendimg"/>
-                        <span id="recommendbottom">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;小米&nbsp;|&nbsp;互联网</span>
+                        <img src="${pageContext.request.contextPath}/img/xiaomiLogo.jpg" class="recommendImg"/>
+                        <span class="recommendBottom">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;小米&nbsp;|&nbsp;互联网</span>
                     </div>
                     <br/>
                 </div>
@@ -981,20 +996,21 @@
                 <div class="col-md-4" style="background-color: white;">
                     <br/>
                     <div>
-											<span id="recommendposition">JAVA计数专家(秒反馈)&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">25-50K·16薪</span>
+											<span class="recommendPosition">JAVA计数专家(秒反馈)&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">25-50K·16薪</span>
 											</span>
                     </div>
                     <div>
-                        <span id="recomendmiddle">杭州&nbsp;|&nbsp;3-5年&nbsp;|&nbsp;本科</span>
+                        <span class="recomendMiddle">杭州&nbsp;|&nbsp;3-5年&nbsp;|&nbsp;本科</span>
                     </div>
                     <br/>
                     <div>
                         <span>-------------------------------------------------------------------------</span>
                     </div>
                     <div>&nbsp;&nbsp;&nbsp;
-                        <img src="${pageContext.request.contextPath}/img/mayijinfuLogo.jpg" id="recommendimg"/>
-                        <span id="recommendbottom">蚂蚁金服&nbsp;|&nbsp;互联网金融</span>
+                        <img src="${pageContext.request.contextPath}/img/mayijinfuLogo.jpg"
+                             class="recommendImg"/>
+                        <span class="recommendBottom">蚂蚁金服&nbsp;|&nbsp;互联网金融</span>
                     </div>
                     <br/>
                 </div>
@@ -1003,20 +1019,21 @@
                 <div class="col-md-4" style="background-color: white;">
                     <br/>
                     <div>
-											<span id="recommendposition">配置管理工程师&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">15-30K·16薪</span>
+											<span class="recommendPosition">配置管理工程师&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">15-30K·16薪</span>
 											</span>
                     </div>
                     <div>
-                        <span id="recomendmiddle">西安&nbsp;|&nbsp;3-5年&nbsp;|&nbsp;本科</span>
+                        <span class="recomendMiddle">西安&nbsp;|&nbsp;3-5年&nbsp;|&nbsp;本科</span>
                     </div>
                     <br/>
                     <div>
                         <span>-------------------------------------------------------------------------</span>
                     </div>
                     <div>&nbsp;&nbsp;&nbsp;
-                        <img src="${pageContext.request.contextPath}/img/zhongguoyidongLogo.jpg" id="recommendimg"/>
-                        <span id="recommendbottom">中国移动研究所&nbsp;|&nbsp;数据服务</span>
+                        <img src="${pageContext.request.contextPath}/img/zhongguoyidongLogo.jpg"
+                             class="recommendImg"/>
+                        <span class="recommendBottom">中国移动研究所&nbsp;|&nbsp;数据服务</span>
                     </div>
                     <br/>
                 </div>
@@ -1028,12 +1045,12 @@
                 <div class="col-md-4" style="background-color: white;">
                     <br/>
                     <div>
-											<span id="recommendposition">大数据开发工程师&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">15-30K·14薪</span>
+											<span class="recommendPosition">大数据开发工程师&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">15-30K·14薪</span>
 											</span>
                     </div>
                     <div>
-											<span id="recomendmiddle">深圳&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科
+											<span class="recomendMiddle">深圳&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科
 											</span>
                     </div>
                     <br/>
@@ -1041,8 +1058,8 @@
                         <span>-------------------------------------------------------------------------</span>
                     </div>
                     <div>&nbsp;&nbsp;&nbsp;
-                        <img src="${pageContext.request.contextPath}/img/ankerLogo.jpg" id="recommendimg"/>
-                        <span id="recommendbottom">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Anker&nbsp;|&nbsp;电子商务</span>
+                        <img src="${pageContext.request.contextPath}/img/ankerLogo.jpg" class="recommendImg"/>
+                        <span class="recommendBottom">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Anker&nbsp;|&nbsp;电子商务</span>
                     </div>
                     <br/>
                 </div>
@@ -1051,20 +1068,20 @@
                 <div class="col-md-4" style="background-color: white;">
                     <br/>
                     <div>
-											<span id="recommendposition">算法工程师&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">35-65K·16薪</span>
+											<span class="recommendPosition">算法工程师&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">35-65K·16薪</span>
 											</span>
                     </div>
                     <div>
-                        <span id="recomendmiddle">北京&nbsp;|&nbsp;经验不限&nbsp;|&nbsp;本科</span>
+                        <span class="recomendMiddle">北京&nbsp;|&nbsp;经验不限&nbsp;|&nbsp;本科</span>
                     </div>
                     <br/>
                     <div>
                         <span>-------------------------------------------------------------------------</span>
                     </div>
                     <div>&nbsp;&nbsp;&nbsp;
-                        <img src="${pageContext.request.contextPath}/img/didiLogo.png" id="recommendimg"/>
-                        <span id="recommendbottom">滴滴&nbsp;|&nbsp;移动互联网</span>
+                        <img src="${pageContext.request.contextPath}/img/didiLogo.png" class="recommendImg"/>
+                        <span class="recommendBottom">滴滴&nbsp;|&nbsp;移动互联网</span>
                     </div>
                     <br/>
                 </div>
@@ -1073,20 +1090,21 @@
                 <div class="col-md-4" style="background-color: white;">
                     <br/>
                     <div>
-											<span id="recommendposition">腾讯数据安全产品开发&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">30-60K·18薪</span>
+											<span class="recommendPosition">腾讯数据安全产品开发&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">30-60K·18薪</span>
 											</span>
                     </div>
                     <div>
-                        <span id="recomendmiddle">深圳&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科</span>
+                        <span class="recomendMiddle">深圳&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科</span>
                     </div>
                     <br/>
                     <div>
                         <span>-------------------------------------------------------------------------</span>
                     </div>
                     <div>&nbsp;&nbsp;&nbsp;
-                        <img src="${pageContext.request.contextPath}/img/tengxunLogo.jpg" id="recommendimg"/>
-                        <span id="recommendbottom">腾讯&nbsp;|&nbsp;互联网</span>
+                        <img src="${pageContext.request.contextPath}/img/tengxunLogo.jpg"
+                             class="recommendImg"/>
+                        <span class="recommendBottom">腾讯&nbsp;|&nbsp;互联网</span>
                     </div>
                     <br/>
                 </div>
@@ -1101,12 +1119,12 @@
                 <div class="col-md-4" style="background-color: white;">
                     <br/>
                     <div>
-											<span id="recommendposition">小米全球新零售&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">30-60K·14薪</span>
+											<span class="recommendPosition">小米全球新零售&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">30-60K·14薪</span>
 											</span>
                     </div>
                     <div>
-											<span id="recomendmiddle">北京&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科
+											<span class="recomendMiddle">北京&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科
 											</span>
                     </div>
                     <br/>
@@ -1114,8 +1132,8 @@
                         <span>-------------------------------------------------------------------------</span>
                     </div>
                     <div>&nbsp;&nbsp;&nbsp;
-                        <img src="${pageContext.request.contextPath}/img/xiaomiLogo.jpg" id="recommendimg"/>
-                        <span id="recommendbottom">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;小米&nbsp;|&nbsp;互联网</span>
+                        <img src="${pageContext.request.contextPath}/img/xiaomiLogo.jpg" class="recommendImg"/>
+                        <span class="recommendBottom">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;小米&nbsp;|&nbsp;互联网</span>
                     </div>
                     <br/>
                 </div>
@@ -1124,20 +1142,21 @@
                 <div class="col-md-4" style="background-color: white;">
                     <br/>
                     <div>
-											<span id="recommendposition">JAVA计数专家(秒反馈)&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">25-50K·16薪</span>
+											<span class="recommendPosition">JAVA计数专家(秒反馈)&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">25-50K·16薪</span>
 											</span>
                     </div>
                     <div>
-                        <span id="recomendmiddle">杭州&nbsp;|&nbsp;3-5年&nbsp;|&nbsp;本科</span>
+                        <span class="recomendMiddle">杭州&nbsp;|&nbsp;3-5年&nbsp;|&nbsp;本科</span>
                     </div>
                     <br/>
                     <div>
                         <span>-------------------------------------------------------------------------</span>
                     </div>
                     <div>&nbsp;&nbsp;&nbsp;
-                        <img src="${pageContext.request.contextPath}/img/mayijinfuLogo.jpg" id="recommendimg"/>
-                        <span id="recommendbottom">蚂蚁金服&nbsp;|&nbsp;互联网金融</span>
+                        <img src="${pageContext.request.contextPath}/img/mayijinfuLogo.jpg"
+                             class="recommendImg"/>
+                        <span class="recommendBottom">蚂蚁金服&nbsp;|&nbsp;互联网金融</span>
                     </div>
                     <br/>
                 </div>
@@ -1146,20 +1165,21 @@
                 <div class="col-md-4" style="background-color: white;">
                     <br/>
                     <div>
-											<span id="recommendposition">配置管理工程师&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">15-30K·16薪</span>
+											<span class="recommendPosition">配置管理工程师&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">15-30K·16薪</span>
 											</span>
                     </div>
                     <div>
-                        <span id="recomendmiddle">西安&nbsp;|&nbsp;3-5年&nbsp;|&nbsp;本科</span>
+                        <span class="recomendMiddle">西安&nbsp;|&nbsp;3-5年&nbsp;|&nbsp;本科</span>
                     </div>
                     <br/>
                     <div>
                         <span>-------------------------------------------------------------------------</span>
                     </div>
                     <div>&nbsp;&nbsp;&nbsp;
-                        <img src="${pageContext.request.contextPath}/img/zhongguoyidongLogo.jpg" id="recommendimg"/>
-                        <span id="recommendbottom">中国移动研究所&nbsp;|&nbsp;数据服务</span>
+                        <img src="${pageContext.request.contextPath}/img/zhongguoyidongLogo.jpg"
+                             class="recommendImg"/>
+                        <span class="recommendBottom">中国移动研究所&nbsp;|&nbsp;数据服务</span>
                     </div>
                     <br/>
                 </div>
@@ -1171,12 +1191,12 @@
                 <div class="col-md-4" style="background-color: white;">
                     <br/>
                     <div>
-											<span id="recommendposition">大数据开发工程师&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">15-30K·14薪</span>
+											<span class="recommendPosition">大数据开发工程师&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">15-30K·14薪</span>
 											</span>
                     </div>
                     <div>
-											<span id="recomendmiddle">深圳&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科
+											<span class="recomendMiddle">深圳&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科
 											</span>
                     </div>
                     <br/>
@@ -1184,8 +1204,8 @@
                         <span>-------------------------------------------------------------------------</span>
                     </div>
                     <div>&nbsp;&nbsp;&nbsp;
-                        <img src="${pageContext.request.contextPath}/img/ankerLogo.jpg" id="recommendimg"/>
-                        <span id="recommendbottom">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Anker&nbsp;|&nbsp;电子商务</span>
+                        <img src="${pageContext.request.contextPath}/img/ankerLogo.jpg" class="recommendImg"/>
+                        <span class="recommendBottom">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Anker&nbsp;|&nbsp;电子商务</span>
                     </div>
                     <br/>
                 </div>
@@ -1194,20 +1214,20 @@
                 <div class="col-md-4" style="background-color: white;">
                     <br/>
                     <div>
-											<span id="recommendposition">算法工程师&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">35-65K·16薪</span>
+											<span class="recommendPosition">算法工程师&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">35-65K·16薪</span>
 											</span>
                     </div>
                     <div>
-                        <span id="recomendmiddle">北京&nbsp;|&nbsp;经验不限&nbsp;|&nbsp;本科</span>
+                        <span class="recomendMiddle">北京&nbsp;|&nbsp;经验不限&nbsp;|&nbsp;本科</span>
                     </div>
                     <br/>
                     <div>
                         <span>-------------------------------------------------------------------------</span>
                     </div>
                     <div>&nbsp;&nbsp;&nbsp;
-                        <img src="${pageContext.request.contextPath}/img/didiLogo.png" id="recommendimg"/>
-                        <span id="recommendbottom">滴滴&nbsp;|&nbsp;移动互联网</span>
+                        <img src="${pageContext.request.contextPath}/img/didiLogo.png" class="recommendImg"/>
+                        <span class="recommendBottom">滴滴&nbsp;|&nbsp;移动互联网</span>
                     </div>
                     <br/>
                 </div>
@@ -1216,20 +1236,21 @@
                 <div class="col-md-4" style="background-color: white;">
                     <br/>
                     <div>
-											<span id="recommendposition">腾讯数据安全产品开发&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">30-60K·18薪</span>
+											<span class="recommendPosition">腾讯数据安全产品开发&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">30-60K·18薪</span>
 											</span>
                     </div>
                     <div>
-                        <span id="recomendmiddle">深圳&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科</span>
+                        <span class="recomendMiddle">深圳&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科</span>
                     </div>
                     <br/>
                     <div>
                         <span>-------------------------------------------------------------------------</span>
                     </div>
                     <div>&nbsp;&nbsp;&nbsp;
-                        <img src="${pageContext.request.contextPath}/img/tengxunLogo.jpg" id="recommendimg"/>
-                        <span id="recommendbottom">腾讯&nbsp;|&nbsp;互联网</span>
+                        <img src="${pageContext.request.contextPath}/img/tengxunLogo.jpg"
+                             class="recommendImg"/>
+                        <span class="recommendBottom">腾讯&nbsp;|&nbsp;互联网</span>
                     </div>
                     <br/>
                 </div>
@@ -1244,12 +1265,12 @@
                 <div class="col-md-4" style="background-color: white;">
                     <br/>
                     <div>
-											<span id="recommendposition">小米全球新零售&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">30-60K·14薪</span>
+											<span class="recommendPosition">小米全球新零售&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">30-60K·14薪</span>
 											</span>
                     </div>
                     <div>
-											<span id="recomendmiddle">北京&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科
+											<span class="recomendMiddle">北京&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科
 											</span>
                     </div>
                     <br/>
@@ -1257,8 +1278,8 @@
                         <span>-------------------------------------------------------------------------</span>
                     </div>
                     <div>&nbsp;&nbsp;&nbsp;
-                        <img src="${pageContext.request.contextPath}/img/xiaomiLogo.jpg" id="recommendimg"/>
-                        <span id="recommendbottom">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;小米&nbsp;|&nbsp;互联网</span>
+                        <img src="${pageContext.request.contextPath}/img/xiaomiLogo.jpg" class="recommendImg"/>
+                        <span class="recommendBottom">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;小米&nbsp;|&nbsp;互联网</span>
                     </div>
                     <br/>
                 </div>
@@ -1267,20 +1288,21 @@
                 <div class="col-md-4" style="background-color: white;">
                     <br/>
                     <div>
-											<span id="recommendposition">JAVA计数专家(秒反馈)&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">25-50K·16薪</span>
+											<span class="recommendPosition">JAVA计数专家(秒反馈)&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">25-50K·16薪</span>
 											</span>
                     </div>
                     <div>
-                        <span id="recomendmiddle">杭州&nbsp;|&nbsp;3-5年&nbsp;|&nbsp;本科</span>
+                        <span class="recomendMiddle">杭州&nbsp;|&nbsp;3-5年&nbsp;|&nbsp;本科</span>
                     </div>
                     <br/>
                     <div>
                         <span>-------------------------------------------------------------------------</span>
                     </div>
                     <div>&nbsp;&nbsp;&nbsp;
-                        <img src="${pageContext.request.contextPath}/img/mayijinfuLogo.jpg" id="recommendimg"/>
-                        <span id="recommendbottom">蚂蚁金服&nbsp;|&nbsp;互联网金融</span>
+                        <img src="${pageContext.request.contextPath}/img/mayijinfuLogo.jpg"
+                             class="recommendImg"/>
+                        <span class="recommendBottom">蚂蚁金服&nbsp;|&nbsp;互联网金融</span>
                     </div>
                     <br/>
                 </div>
@@ -1289,20 +1311,21 @@
                 <div class="col-md-4" style="background-color: white;">
                     <br/>
                     <div>
-											<span id="recommendposition">配置管理工程师&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">15-30K·16薪</span>
+											<span class="recommendPosition">配置管理工程师&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">15-30K·16薪</span>
 											</span>
                     </div>
                     <div>
-                        <span id="recomendmiddle">西安&nbsp;|&nbsp;3-5年&nbsp;|&nbsp;本科</span>
+                        <span class="recomendMiddle">西安&nbsp;|&nbsp;3-5年&nbsp;|&nbsp;本科</span>
                     </div>
                     <br/>
                     <div>
                         <span>-------------------------------------------------------------------------</span>
                     </div>
                     <div>&nbsp;&nbsp;&nbsp;
-                        <img src="${pageContext.request.contextPath}/img/zhongguoyidongLogo.jpg" id="recommendimg"/>
-                        <span id="recommendbottom">中国移动研究所&nbsp;|&nbsp;数据服务</span>
+                        <img src="${pageContext.request.contextPath}/img/zhongguoyidongLogo.jpg"
+                             class="recommendImg"/>
+                        <span class="recommendBottom">中国移动研究所&nbsp;|&nbsp;数据服务</span>
                     </div>
                     <br/>
                 </div>
@@ -1314,12 +1337,12 @@
                 <div class="col-md-4" style="background-color: white;">
                     <br/>
                     <div>
-											<span id="recommendposition">大数据开发工程师&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">15-30K·14薪</span>
+											<span class="recommendPosition">大数据开发工程师&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">15-30K·14薪</span>
 											</span>
                     </div>
                     <div>
-											<span id="recomendmiddle">深圳&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科
+											<span class="recomendMiddle">深圳&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科
 											</span>
                     </div>
                     <br/>
@@ -1327,8 +1350,8 @@
                         <span>-------------------------------------------------------------------------</span>
                     </div>
                     <div>&nbsp;&nbsp;&nbsp;
-                        <img src="${pageContext.request.contextPath}/img/ankerLogo.jpg" id="recommendimg"/>
-                        <span id="recommendbottom">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Anker&nbsp;|&nbsp;电子商务</span>
+                        <img src="${pageContext.request.contextPath}/img/ankerLogo.jpg" class="recommendImg"/>
+                        <span class="recommendBottom">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Anker&nbsp;|&nbsp;电子商务</span>
                     </div>
                     <br/>
                 </div>
@@ -1337,20 +1360,20 @@
                 <div class="col-md-4" style="background-color: white;">
                     <br/>
                     <div>
-											<span id="recommendposition">算法工程师&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">35-65K·16薪</span>
+											<span class="recommendPosition">算法工程师&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">35-65K·16薪</span>
 											</span>
                     </div>
                     <div>
-                        <span id="recomendmiddle">北京&nbsp;|&nbsp;经验不限&nbsp;|&nbsp;本科</span>
+                        <span class="recomendMiddle">北京&nbsp;|&nbsp;经验不限&nbsp;|&nbsp;本科</span>
                     </div>
                     <br/>
                     <div>
                         <span>-------------------------------------------------------------------------</span>
                     </div>
                     <div>&nbsp;&nbsp;&nbsp;
-                        <img src="${pageContext.request.contextPath}/img/didiLogo.png" id="recommendimg"/>
-                        <span id="recommendbottom">滴滴&nbsp;|&nbsp;移动互联网</span>
+                        <img src="${pageContext.request.contextPath}/img/didiLogo.png" class="recommendImg"/>
+                        <span class="recommendBottom">滴滴&nbsp;|&nbsp;移动互联网</span>
                     </div>
                     <br/>
                 </div>
@@ -1359,20 +1382,21 @@
                 <div class="col-md-4" style="background-color: white;">
                     <br/>
                     <div>
-											<span id="recommendposition">腾讯数据安全产品开发&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">30-60K·18薪</span>
+											<span class="recommendPosition">腾讯数据安全产品开发&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">30-60K·18薪</span>
 											</span>
                     </div>
                     <div>
-                        <span id="recomendmiddle">深圳&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科</span>
+                        <span class="recomendMiddle">深圳&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科</span>
                     </div>
                     <br/>
                     <div>
                         <span>-------------------------------------------------------------------------</span>
                     </div>
                     <div>&nbsp;&nbsp;&nbsp;
-                        <img src="${pageContext.request.contextPath}/img/tengxunLogo.jpg" id="recommendimg"/>
-                        <span id="recommendbottom">腾讯&nbsp;|&nbsp;互联网</span>
+                        <img src="${pageContext.request.contextPath}/img/tengxunLogo.jpg"
+                             class="recommendImg"/>
+                        <span class="recommendBottom">腾讯&nbsp;|&nbsp;互联网</span>
                     </div>
                     <br/>
                 </div>
@@ -1387,12 +1411,12 @@
                 <div class="col-md-4" style="background-color: white;">
                     <br/>
                     <div>
-											<span id="recommendposition">小米全球新零售&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">30-60K·14薪</span>
+											<span class="recommendPosition">小米全球新零售&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">30-60K·14薪</span>
 											</span>
                     </div>
                     <div>
-											<span id="recomendmiddle">北京&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科
+											<span class="recomendMiddle">北京&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科
 											</span>
                     </div>
                     <br/>
@@ -1400,8 +1424,8 @@
                         <span>-------------------------------------------------------------------------</span>
                     </div>
                     <div>&nbsp;&nbsp;&nbsp;
-                        <img src="${pageContext.request.contextPath}/img/xiaomiLogo.jpg" id="recommendimg"/>
-                        <span id="recommendbottom">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;小米&nbsp;|&nbsp;互联网</span>
+                        <img src="${pageContext.request.contextPath}/img/xiaomiLogo.jpg" class="recommendImg"/>
+                        <span class="recommendBottom">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;小米&nbsp;|&nbsp;互联网</span>
                     </div>
                     <br/>
                 </div>
@@ -1410,20 +1434,21 @@
                 <div class="col-md-4" style="background-color: white;">
                     <br/>
                     <div>
-											<span id="recommendposition">JAVA计数专家(秒反馈)&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">25-50K·16薪</span>
+											<span class="recommendPosition">JAVA计数专家(秒反馈)&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">25-50K·16薪</span>
 											</span>
                     </div>
                     <div>
-                        <span id="recomendmiddle">杭州&nbsp;|&nbsp;3-5年&nbsp;|&nbsp;本科</span>
+                        <span class="recomendMiddle">杭州&nbsp;|&nbsp;3-5年&nbsp;|&nbsp;本科</span>
                     </div>
                     <br/>
                     <div>
                         <span>-------------------------------------------------------------------------</span>
                     </div>
                     <div>&nbsp;&nbsp;&nbsp;
-                        <img src="${pageContext.request.contextPath}/img/mayijinfuLogo.jpg" id="recommendimg"/>
-                        <span id="recommendbottom">蚂蚁金服&nbsp;|&nbsp;互联网金融</span>
+                        <img src="${pageContext.request.contextPath}/img/mayijinfuLogo.jpg"
+                             class="recommendImg"/>
+                        <span class="recommendBottom">蚂蚁金服&nbsp;|&nbsp;互联网金融</span>
                     </div>
                     <br/>
                 </div>
@@ -1432,20 +1457,21 @@
                 <div class="col-md-4" style="background-color: white;">
                     <br/>
                     <div>
-											<span id="recommendposition">配置管理工程师&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">15-30K·16薪</span>
+											<span class="recommendPosition">配置管理工程师&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">15-30K·16薪</span>
 											</span>
                     </div>
                     <div>
-                        <span id="recomendmiddle">西安&nbsp;|&nbsp;3-5年&nbsp;|&nbsp;本科</span>
+                        <span class="recomendMiddle">西安&nbsp;|&nbsp;3-5年&nbsp;|&nbsp;本科</span>
                     </div>
                     <br/>
                     <div>
                         <span>-------------------------------------------------------------------------</span>
                     </div>
                     <div>&nbsp;&nbsp;&nbsp;
-                        <img src="${pageContext.request.contextPath}/img/zhongguoyidongLogo.jpg" id="recommendimg"/>
-                        <span id="recommendbottom">中国移动研究所&nbsp;|&nbsp;数据服务</span>
+                        <img src="${pageContext.request.contextPath}/img/zhongguoyidongLogo.jpg"
+                             class="recommendImg"/>
+                        <span class="recommendBottom">中国移动研究所&nbsp;|&nbsp;数据服务</span>
                     </div>
                     <br/>
                 </div>
@@ -1457,12 +1483,12 @@
                 <div class="col-md-4" style="background-color: white;">
                     <br/>
                     <div>
-											<span id="recommendposition">大数据开发工程师&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">15-30K·14薪</span>
+											<span class="recommendPosition">大数据开发工程师&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">15-30K·14薪</span>
 											</span>
                     </div>
                     <div>
-											<span id="recomendmiddle">深圳&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科
+											<span class="recomendMiddle">深圳&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科
 											</span>
                     </div>
                     <br/>
@@ -1470,8 +1496,8 @@
                         <span>-------------------------------------------------------------------------</span>
                     </div>
                     <div>&nbsp;&nbsp;&nbsp;
-                        <img src="${pageContext.request.contextPath}/img/ankerLogo.jpg" id="recommendimg"/>
-                        <span id="recommendbottom">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Anker&nbsp;|&nbsp;电子商务</span>
+                        <img src="${pageContext.request.contextPath}/img/ankerLogo.jpg" class="recommendImg"/>
+                        <span class="recommendBottom">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Anker&nbsp;|&nbsp;电子商务</span>
                     </div>
                     <br/>
                 </div>
@@ -1480,20 +1506,20 @@
                 <div class="col-md-4" style="background-color: white;">
                     <br/>
                     <div>
-											<span id="recommendposition">算法工程师&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">35-65K·16薪</span>
+											<span class="recommendPosition">算法工程师&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">35-65K·16薪</span>
 											</span>
                     </div>
                     <div>
-                        <span id="recomendmiddle">北京&nbsp;|&nbsp;经验不限&nbsp;|&nbsp;本科</span>
+                        <span class="recomendMiddle">北京&nbsp;|&nbsp;经验不限&nbsp;|&nbsp;本科</span>
                     </div>
                     <br/>
                     <div>
                         <span>-------------------------------------------------------------------------</span>
                     </div>
                     <div>&nbsp;&nbsp;&nbsp;
-                        <img src="${pageContext.request.contextPath}/img/didiLogo.png" id="recommendimg"/>
-                        <span id="recommendbottom">滴滴&nbsp;|&nbsp;移动互联网</span>
+                        <img src="${pageContext.request.contextPath}/img/didiLogo.png" class="recommendImg"/>
+                        <span class="recommendBottom">滴滴&nbsp;|&nbsp;移动互联网</span>
                     </div>
                     <br/>
                 </div>
@@ -1502,20 +1528,21 @@
                 <div class="col-md-4" style="background-color: white;">
                     <br/>
                     <div>
-											<span id="recommendposition">腾讯数据安全产品开发&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">30-60K·18薪</span>
+											<span class="recommendPosition">腾讯数据安全产品开发&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">30-60K·18薪</span>
 											</span>
                     </div>
                     <div>
-                        <span id="recomendmiddle">深圳&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科</span>
+                        <span class="recomendMiddle">深圳&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科</span>
                     </div>
                     <br/>
                     <div>
                         <span>-------------------------------------------------------------------------</span>
                     </div>
                     <div>&nbsp;&nbsp;&nbsp;
-                        <img src="${pageContext.request.contextPath}/img/tengxunLogo.jpg" id="recommendimg"/>
-                        <span id="recommendbottom">腾讯&nbsp;|&nbsp;互联网</span>
+                        <img src="${pageContext.request.contextPath}/img/tengxunLogo.jpg"
+                             class="recommendImg"/>
+                        <span class="recommendBottom">腾讯&nbsp;|&nbsp;互联网</span>
                     </div>
                     <br/>
                 </div>
@@ -1530,12 +1557,12 @@
                 <div class="col-md-4" style="background-color: white;">
                     <br/>
                     <div>
-											<span id="recommendposition">小米全球新零售&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">30-60K·14薪</span>
+											<span class="recommendPosition">小米全球新零售&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">30-60K·14薪</span>
 											</span>
                     </div>
                     <div>
-											<span id="recomendmiddle">北京&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科
+											<span class="recomendMiddle">北京&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科
 											</span>
                     </div>
                     <br/>
@@ -1543,8 +1570,8 @@
                         <span>-------------------------------------------------------------------------</span>
                     </div>
                     <div>&nbsp;&nbsp;&nbsp;
-                        <img src="${pageContext.request.contextPath}/img/xiaomiLogo.jpg" id="recommendimg"/>
-                        <span id="recommendbottom">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;小米&nbsp;|&nbsp;互联网</span>
+                        <img src="${pageContext.request.contextPath}/img/xiaomiLogo.jpg" class="recommendImg"/>
+                        <span class="recommendBottom">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;小米&nbsp;|&nbsp;互联网</span>
                     </div>
                     <br/>
                 </div>
@@ -1553,20 +1580,21 @@
                 <div class="col-md-4" style="background-color: white;">
                     <br/>
                     <div>
-											<span id="recommendposition">JAVA计数专家(秒反馈)&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">25-50K·16薪</span>
+											<span class="recommendPosition">JAVA计数专家(秒反馈)&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">25-50K·16薪</span>
 											</span>
                     </div>
                     <div>
-                        <span id="recomendmiddle">杭州&nbsp;|&nbsp;3-5年&nbsp;|&nbsp;本科</span>
+                        <span class="recomendMiddle">杭州&nbsp;|&nbsp;3-5年&nbsp;|&nbsp;本科</span>
                     </div>
                     <br/>
                     <div>
                         <span>-------------------------------------------------------------------------</span>
                     </div>
                     <div>&nbsp;&nbsp;&nbsp;
-                        <img src="${pageContext.request.contextPath}/img/mayijinfuLogo.jpg" id="recommendimg"/>
-                        <span id="recommendbottom">蚂蚁金服&nbsp;|&nbsp;互联网金融</span>
+                        <img src="${pageContext.request.contextPath}/img/mayijinfuLogo.jpg"
+                             class="recommendImg"/>
+                        <span class="recommendBottom">蚂蚁金服&nbsp;|&nbsp;互联网金融</span>
                     </div>
                     <br/>
                 </div>
@@ -1575,20 +1603,21 @@
                 <div class="col-md-4" style="background-color: white;">
                     <br/>
                     <div>
-											<span id="recommendposition">配置管理工程师&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">15-30K·16薪</span>
+											<span class="recommendPosition">配置管理工程师&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">15-30K·16薪</span>
 											</span>
                     </div>
                     <div>
-                        <span id="recomendmiddle">西安&nbsp;|&nbsp;3-5年&nbsp;|&nbsp;本科</span>
+                        <span class="recomendMiddle">西安&nbsp;|&nbsp;3-5年&nbsp;|&nbsp;本科</span>
                     </div>
                     <br/>
                     <div>
                         <span>-------------------------------------------------------------------------</span>
                     </div>
                     <div>&nbsp;&nbsp;&nbsp;
-                        <img src="${pageContext.request.contextPath}/img/zhongguoyidongLogo.jpg" id="recommendimg"/>
-                        <span id="recommendbottom">中国移动研究所&nbsp;|&nbsp;数据服务</span>
+                        <img src="${pageContext.request.contextPath}/img/zhongguoyidongLogo.jpg"
+                             class="recommendImg"/>
+                        <span class="recommendBottom">中国移动研究所&nbsp;|&nbsp;数据服务</span>
                     </div>
                     <br/>
                 </div>
@@ -1600,12 +1629,12 @@
                 <div class="col-md-4" style="background-color: white;">
                     <br/>
                     <div>
-											<span id="recommendposition">大数据开发工程师&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">15-30K·14薪</span>
+											<span class="recommendPosition">大数据开发工程师&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">15-30K·14薪</span>
 											</span>
                     </div>
                     <div>
-											<span id="recomendmiddle">深圳&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科
+											<span class="recomendMiddle">深圳&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科
 											</span>
                     </div>
                     <br/>
@@ -1613,8 +1642,8 @@
                         <span>-------------------------------------------------------------------------</span>
                     </div>
                     <div>&nbsp;&nbsp;&nbsp;
-                        <img src="${pageContext.request.contextPath}/img/ankerLogo.jpg" id="recommendimg"/>
-                        <span id="recommendbottom">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Anker&nbsp;|&nbsp;电子商务</span>
+                        <img src="${pageContext.request.contextPath}/img/ankerLogo.jpg" class="recommendImg"/>
+                        <span class="recommendBottom">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Anker&nbsp;|&nbsp;电子商务</span>
                     </div>
                     <br/>
                 </div>
@@ -1623,20 +1652,20 @@
                 <div class="col-md-4" style="background-color: white;">
                     <br/>
                     <div>
-											<span id="recommendposition">算法工程师&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">35-65K·16薪</span>
+											<span class="recommendPosition">算法工程师&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">35-65K·16薪</span>
 											</span>
                     </div>
                     <div>
-                        <span id="recomendmiddle">北京&nbsp;|&nbsp;经验不限&nbsp;|&nbsp;本科</span>
+                        <span class="recomendMiddle">北京&nbsp;|&nbsp;经验不限&nbsp;|&nbsp;本科</span>
                     </div>
                     <br/>
                     <div>
                         <span>-------------------------------------------------------------------------</span>
                     </div>
                     <div>&nbsp;&nbsp;&nbsp;
-                        <img src="${pageContext.request.contextPath}/img/didiLogo.png" id="recommendimg"/>
-                        <span id="recommendbottom">滴滴&nbsp;|&nbsp;移动互联网</span>
+                        <img src="${pageContext.request.contextPath}/img/didiLogo.png" class="recommendImg"/>
+                        <span class="recommendBottom">滴滴&nbsp;|&nbsp;移动互联网</span>
                     </div>
                     <br/>
                 </div>
@@ -1645,20 +1674,21 @@
                 <div class="col-md-4" style="background-color: white;">
                     <br/>
                     <div>
-											<span id="recommendposition">腾讯数据安全产品开发&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">30-60K·18薪</span>
+											<span class="recommendPosition">腾讯数据安全产品开发&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">30-60K·18薪</span>
 											</span>
                     </div>
                     <div>
-                        <span id="recomendmiddle">深圳&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科</span>
+                        <span class="recomendMiddle">深圳&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科</span>
                     </div>
                     <br/>
                     <div>
                         <span>-------------------------------------------------------------------------</span>
                     </div>
                     <div>&nbsp;&nbsp;&nbsp;
-                        <img src="${pageContext.request.contextPath}/img/tengxunLogo.jpg" id="recommendimg"/>
-                        <span id="recommendbottom">腾讯&nbsp;|&nbsp;互联网</span>
+                        <img src="${pageContext.request.contextPath}/img/tengxunLogo.jpg"
+                             class="recommendImg"/>
+                        <span class="recommendBottom">腾讯&nbsp;|&nbsp;互联网</span>
                     </div>
                     <br/>
                 </div>
@@ -1672,12 +1702,12 @@
                 <div class="col-md-4" style="background-color: white;">
                     <br/>
                     <div>
-											<span id="recommendposition">小米全球新零售&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">30-60K·14薪</span>
+											<span class="recommendPosition">小米全球新零售&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">30-60K·14薪</span>
 											</span>
                     </div>
                     <div>
-											<span id="recomendmiddle">北京&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科
+											<span class="recomendMiddle">北京&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科
 											</span>
                     </div>
                     <br/>
@@ -1685,8 +1715,8 @@
                         <span>-------------------------------------------------------------------------</span>
                     </div>
                     <div>&nbsp;&nbsp;&nbsp;
-                        <img src="${pageContext.request.contextPath}/img/xiaomiLogo.jpg" id="recommendimg"/>
-                        <span id="recommendbottom">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;小米&nbsp;|&nbsp;互联网</span>
+                        <img src="${pageContext.request.contextPath}/img/xiaomiLogo.jpg" class="recommendImg"/>
+                        <span class="recommendBottom">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;小米&nbsp;|&nbsp;互联网</span>
                     </div>
                     <br/>
                 </div>
@@ -1695,20 +1725,21 @@
                 <div class="col-md-4" style="background-color: white;">
                     <br/>
                     <div>
-											<span id="recommendposition">JAVA计数专家(秒反馈)&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">25-50K·16薪</span>
+											<span class="recommendPosition">JAVA计数专家(秒反馈)&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">25-50K·16薪</span>
 											</span>
                     </div>
                     <div>
-                        <span id="recomendmiddle">杭州&nbsp;|&nbsp;3-5年&nbsp;|&nbsp;本科</span>
+                        <span class="recomendMiddle">杭州&nbsp;|&nbsp;3-5年&nbsp;|&nbsp;本科</span>
                     </div>
                     <br/>
                     <div>
                         <span>-------------------------------------------------------------------------</span>
                     </div>
                     <div>&nbsp;&nbsp;&nbsp;
-                        <img src="${pageContext.request.contextPath}/img/mayijinfuLogo.jpg" id="recommendimg"/>
-                        <span id="recommendbottom">蚂蚁金服&nbsp;|&nbsp;互联网金融</span>
+                        <img src="${pageContext.request.contextPath}/img/mayijinfuLogo.jpg"
+                             class="recommendImg"/>
+                        <span class="recommendBottom">蚂蚁金服&nbsp;|&nbsp;互联网金融</span>
                     </div>
                     <br/>
                 </div>
@@ -1717,20 +1748,21 @@
                 <div class="col-md-4" style="background-color: white;">
                     <br/>
                     <div>
-											<span id="recommendposition">配置管理工程师&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">15-30K·16薪</span>
+											<span class="recommendPosition">配置管理工程师&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">15-30K·16薪</span>
 											</span>
                     </div>
                     <div>
-                        <span id="recomendmiddle">西安&nbsp;|&nbsp;3-5年&nbsp;|&nbsp;本科</span>
+                        <span class="recomendMiddle">西安&nbsp;|&nbsp;3-5年&nbsp;|&nbsp;本科</span>
                     </div>
                     <br/>
                     <div>
                         <span>-------------------------------------------------------------------------</span>
                     </div>
                     <div>&nbsp;&nbsp;&nbsp;
-                        <img src="${pageContext.request.contextPath}/img/zhongguoyidongLogo.jpg" id="recommendimg"/>
-                        <span id="recommendbottom">中国移动研究所&nbsp;|&nbsp;数据服务</span>
+                        <img src="${pageContext.request.contextPath}/img/zhongguoyidongLogo.jpg"
+                             class="recommendImg"/>
+                        <span class="recommendBottom">中国移动研究所&nbsp;|&nbsp;数据服务</span>
                     </div>
                     <br/>
                 </div>
@@ -1742,12 +1774,12 @@
                 <div class="col-md-4" style="background-color: white;">
                     <br/>
                     <div>
-											<span id="recommendposition">大数据开发工程师&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">15-30K·14薪</span>
+											<span class="recommendPosition">大数据开发工程师&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">15-30K·14薪</span>
 											</span>
                     </div>
                     <div>
-											<span id="recomendmiddle">深圳&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科
+											<span class="recomendMiddle">深圳&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科
 											</span>
                     </div>
                     <br/>
@@ -1755,8 +1787,8 @@
                         <span>-------------------------------------------------------------------------</span>
                     </div>
                     <div>&nbsp;&nbsp;&nbsp;
-                        <img src="${pageContext.request.contextPath}/img/ankerLogo.jpg" id="recommendimg"/>
-                        <span id="recommendbottom">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Anker&nbsp;|&nbsp;电子商务</span>
+                        <img src="${pageContext.request.contextPath}/img/ankerLogo.jpg" class="recommendImg"/>
+                        <span class="recommendBottom">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Anker&nbsp;|&nbsp;电子商务</span>
                     </div>
                     <br/>
                 </div>
@@ -1765,20 +1797,20 @@
                 <div class="col-md-4" style="background-color: white;">
                     <br/>
                     <div>
-											<span id="recommendposition">算法工程师&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">35-65K·16薪</span>
+											<span class="recommendPosition">算法工程师&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">35-65K·16薪</span>
 											</span>
                     </div>
                     <div>
-                        <span id="recomendmiddle">北京&nbsp;|&nbsp;经验不限&nbsp;|&nbsp;本科</span>
+                        <span class="recomendMiddle">北京&nbsp;|&nbsp;经验不限&nbsp;|&nbsp;本科</span>
                     </div>
                     <br/>
                     <div>
                         <span>-------------------------------------------------------------------------</span>
                     </div>
                     <div>&nbsp;&nbsp;&nbsp;
-                        <img src="${pageContext.request.contextPath}/img/didiLogo.png" id="recommendimg"/>
-                        <span id="recommendbottom">滴滴&nbsp;|&nbsp;移动互联网</span>
+                        <img src="${pageContext.request.contextPath}/img/didiLogo.png" class="recommendImg"/>
+                        <span class="recommendBottom">滴滴&nbsp;|&nbsp;移动互联网</span>
                     </div>
                     <br/>
                 </div>
@@ -1787,20 +1819,21 @@
                 <div class="col-md-4" style="background-color: white;">
                     <br/>
                     <div>
-											<span id="recommendposition">腾讯数据安全产品开发&nbsp;&nbsp;&nbsp;
-												<span id="recommendsalary">30-60K·18薪</span>
+											<span class="recommendPosition">腾讯数据安全产品开发&nbsp;&nbsp;&nbsp;
+												<span class="recommendSalary">30-60K·18薪</span>
 											</span>
                     </div>
                     <div>
-                        <span id="recomendmiddle">深圳&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科</span>
+                        <span class="recomendMiddle">深圳&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科</span>
                     </div>
                     <br/>
                     <div>
                         <span>-------------------------------------------------------------------------</span>
                     </div>
                     <div>&nbsp;&nbsp;&nbsp;
-                        <img src="${pageContext.request.contextPath}/img/tengxunLogo.jpg" id="recommendimg"/>
-                        <span id="recommendbottom">腾讯&nbsp;|&nbsp;互联网</span>
+                        <img src="${pageContext.request.contextPath}/img/tengxunLogo.jpg"
+                             class="recommendImg"/>
+                        <span class="recommendBottom">腾讯&nbsp;|&nbsp;互联网</span>
                     </div>
                     <br/>
                 </div>
@@ -1813,7 +1846,8 @@
 </div>
 <div class="container" style="text-align: center;">
     <button class="selectMore" style="width: 300px;height: 40px;background-color: white;text-align: center;" href="#">
-        查看更多</button>
+        查看更多
+    </button>
 </div>
 
 <br/>
@@ -1832,51 +1866,51 @@
             <div class="row" style="text-align: center;">
                 <div class="col-md-3">
                     <div>
-                        <img src="${pageContext.request.contextPath}/img/huaweiLogo.jpg" id="hotimg"/>
+                        <img src="${pageContext.request.contextPath}/img/huaweiLogo.jpg" class="hotImg"/>
                     </div>
                     <h4>华为</h4>
                     <h6 style="color: gray;">科技 | 热门</h6>
-                        <div>
-                            <br/>
-                            <button type="button" id="hotbtn"/>
-                            531个热招职位
-                        </div>
+                    <div>
+                        <br/>
+                        <button type="button" class="hotBtn"/>
+                        531个热招职位
+                    </div>
                 </div>
                 <div class="col-md-3">
                     <div>
-                        <img src="${pageContext.request.contextPath}/img/keeplogo.png" id="hotimg"/>
+                        <img src="${pageContext.request.contextPath}/img/keeplogo.png" class="hotImg"/>
                     </div>
                     <h4>Keep</h4>
                     <h6 style="color: gray;">互联网 | 健身</h6>
-                        <div>
-                            <br/>
-                            <button type="button" id="hotbtn"/>
-                            431个热招职位
-                        </div>
+                    <div>
+                        <br/>
+                        <button type="button" class="hotBtn"/>
+                        431个热招职位
+                    </div>
                 </div>
                 <div class="col-md-3">
                     <div>
-                        <img src="${pageContext.request.contextPath}/img/weilaiLogo.png" id="hotimg"/>
+                        <img src="${pageContext.request.contextPath}/img/weilaiLogo.png" class="hotImg"/>
                     </div>
                     <h4>蔚来汽车</h4>
                     <h6 style="color: gray;">科技 | 汽车</h6>
-                        <div>
-                            <br/>
-                            <button type="button" id="hotbtn"/>
-                            331个热招职位
-                        </div>
+                    <div>
+                        <br/>
+                        <button type="button" class="hotBtn"/>
+                        331个热招职位
+                    </div>
                 </div>
                 <div class="col-md-3">
                     <div>
-                        <img src="${pageContext.request.contextPath}/img/xiaomiLogo.jpg" id="hotimg"/>
+                        <img src="${pageContext.request.contextPath}/img/xiaomiLogo.jpg" class="hotImg"/>
                     </div>
                     <h4>小米科技</h4>
                     <h6 style="color: gray;">科技 | 小米生态</h6>
-                        <div>
-                            <br/>
-                            <button type="button" id="hotbtn"/>
-                            831个热招职位
-                        </div>
+                    <div>
+                        <br/>
+                        <button type="button" class="hotBtn"/>
+                        831个热招职位
+                    </div>
                 </div>
             </div>
         </div>
@@ -1888,51 +1922,51 @@
             <div class="row" style="text-align: center;">
                 <div class="col-md-3">
                     <div>
-                        <img src="${pageContext.request.contextPath}/img/kuaishouLogo.jpg" id="hotimg"/>
+                        <img src="${pageContext.request.contextPath}/img/kuaishouLogo.jpg"class="hotImg"/>
                     </div>
                     <h4>快手</h4>
                     <h6 style="color: gray;">科技 | 短视频</h6>
-                        <div>
-                            <br/>
-                            <button type="button" id="hotbtn"/>
-                            231个热招职位
-                        </div>
+                    <div>
+                        <br/>
+                        <button type="button" class="hotBtn"/>
+                        231个热招职位
+                    </div>
                 </div>
                 <div class="col-md-3">
                     <div>
-                        <img src="${pageContext.request.contextPath}/img/wanmeishijieLogo.png" id="hotimg"/>
+                        <img src="${pageContext.request.contextPath}/img/wanmeishijieLogo.png" class="hotImg"/>
                     </div>
                     <h4>完美世界</h4>
                     <h6 style="color: gray;">科技 | 游戏</h6>
-                        <div>
-                            <br/>
-                            <button type="button" id="hotbtn"/>
-                            431个热招职位
-                        </div>
+                    <div>
+                        <br/>
+                        <button type="button" class="hotBtn"/>
+                        431个热招职位
+                    </div>
                 </div>
                 <div class="col-md-3">
                     <div>
-                        <img src="${pageContext.request.contextPath}/img/yuewenjituanLogo.png" id="hotimg"/>
+                        <img src="${pageContext.request.contextPath}/img/yuewenjituanLogo.png" class="hotImg"/>
                     </div>
                     <h4>阅文集团</h4>
                     <h6 style="color: gray;">科技 | 读书</h6>
-                        <div>
-                            <br/>
-                            <button type="button" id="hotbtn"/>
-                            431个热招职位
-                        </div>
+                    <div>
+                        <br/>
+                        <button type="button" class="hotBtn"/>
+                        431个热招职位
+                    </div>
                 </div>
                 <div class="col-md-3">
                     <div>
-                        <img src="${pageContext.request.contextPath}/img/zijietiaodongLogo.jpg" id="hotimg"/>
+                        <img src="${pageContext.request.contextPath}/img/zijietiaodongLogo.jpg"class="hotImg"/>
                     </div>
                     <h4>字节跳动</h4>
                     <h6 style="color: gray;">科技 | 短视频</h6>
-                        <div>
-                            <br/>
-                            <button type="button" id="hotbtn"/>
-                            1031个热招职位
-                        </div>
+                    <div>
+                        <br/>
+                        <button type="button" id="hotbtn"/>
+                        1031个热招职位
+                    </div>
                 </div>
             </div>
         </div>
@@ -1943,7 +1977,8 @@
 
 <div class="container" style="text-align: center;">
     <button class="selectMore" style="width: 300px;height: 40px;background-color: white;text-align: center;" href="#">
-        查看更多</button>
+        查看更多
+    </button>
 </div>
 
 <br/>
