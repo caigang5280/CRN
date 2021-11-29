@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" isELIgnored="false" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -179,30 +180,30 @@
                             </ul>
                         </li>
                         <!-- 跳转至首页 -->
-                        <li class="active"><a href="${pageContext.request.contextPath}/personalHome.jsp">首页 <span
+                        <li class="active"><a href="${pageContext.request.contextPath}/personal/personalHome.jsp">首页 <span
                                 class="sr-only">(current)</span></a>
                         </li>
                         <!-- 跳转至查看所有职位 -->
-                        <li><a href="${pageContext.request.contextPath}/personalPosition.jsp">职位</a></li>
+                        <li><a href="${pageContext.request.contextPath}/personal/personalPosition.jsp">职位</a></li>
                         <!-- 求职详细 -->
-                        <li><a href="${pageContext.request.contextPath}/personalJobDetails.jsp">求职详细</a></li>
+                        <li><a href="${pageContext.request.contextPath}/personal/personalJobDetails.jsp">求职详细</a></li>
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
                         <!-- 查看我的简历 -->
-                        <li><a href="${pageContext.request.contextPath}/personalUpdateInfo.jsp">我的简历</a></li>
+                        <li><a href="${pageContext.request.contextPath}/personal/personalUpdateInfo.jsp">我的简历</a></li>
                         <!-- 用户名 -->
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                aria-haspopup="true" aria-expanded="false">${personalUser.username}<span
                                     class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="${pageContext.request.contextPath}/personalInfo.jsp">修改个人信息</a></li>
+                                <li><a href="${pageContext.request.contextPath}/personal/personalInfo.jsp">修改个人信息</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="${pageContext.request.contextPath}/personalLoginRegister.jsp">退出账号</a></li>
+                                <li><a href="${pageContext.request.contextPath}/personal/personalLoginRegister.jsp">退出账号</a></li>
                             </ul>
                         </li>
-                        <li><a href="${pageContext.request.contextPath}/companyLoginRegister.jsp">进入企业版</a></li>
+                        <li><a href="${pageContext.request.contextPath}/personal/companyLoginRegister.jsp">进入企业版</a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->

@@ -197,11 +197,14 @@
     <![endif]-->
 
 
+
+
 </head>
 <body>
 
-<c:set value="${pageContext.request.contextPath}" var="path" scope="application"></c:set>
 
+
+<c:set value="${pageContext.request.contextPath}" var="path" scope="application"></c:set>
 <div class="">
     <header class="htmleaf-header" style="background-color: white; height: 60px;">
         <div class="row" style="border: none;">
@@ -331,6 +334,7 @@
             }, 'slow');
         });
     });
+
 
 </script>
 </html>

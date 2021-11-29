@@ -1,8 +1,9 @@
-package service;
+package service.impl;
 
 import dao.impl.PersonalDao;
 import entity.PersonalUser;
 import entity.Resume;
+import service.IService;
 import utils.JDBCUtils;
 
 import java.sql.SQLException;
@@ -13,11 +14,12 @@ import java.sql.SQLException;
  * @Author 22413
  * @Aate 2021/11/28 17:15
  */
-public class PersonalService {
+public class PersonalService implements IService<PersonalUser> {
 
     PersonalDao dao = new PersonalDao();
 
     //根据账号，密码登录
+    @Override
     public PersonalUser login(String username, String password){
         try {
             return dao.selectOne(username, password);
@@ -28,7 +30,8 @@ public class PersonalService {
         }
         return null;
     }
-
+    @Override
+    //检查名字是否存在
     public boolean validateName(String username) {
         PersonalUser personalUser = null;
         try {
@@ -45,6 +48,7 @@ public class PersonalService {
     }
 
     //注册
+    @Override
     public boolean register(PersonalUser personalUser) {
         try {
             int i = dao.insert(personalUser);
@@ -56,6 +60,7 @@ public class PersonalService {
         }
         return false;
     }
+
 
     //根据用户id创建用户简历
     public boolean registerResume(int id,Resume resume) {

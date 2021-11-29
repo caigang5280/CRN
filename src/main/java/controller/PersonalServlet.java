@@ -3,7 +3,7 @@ package controller;
 import com.alibaba.fastjson.JSONObject;
 import entity.PersonalUser;
 import entity.Resume;
-import service.PersonalService;
+import service.impl.PersonalService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -30,10 +30,11 @@ public class PersonalServlet extends BasicServlet {
             HttpSession session = request.getSession();
             session.setAttribute("personalUser", personalUser);
 
-            System.out.println("111");
             request.getRequestDispatcher(request.getContextPath() + "/personal/personalHome.jsp").forward(request, response);
         } else {
             request.setAttribute("username", username);
+            request.setAttribute("flagLogin",false);
+            /*request.setAttribute("msg","用户名或密码有误！");*/
             request.getRequestDispatcher(request.getContextPath() + "/personal/personalLoginRegister.jsp").forward(request, response);
         }
     }
@@ -68,23 +69,19 @@ public class PersonalServlet extends BasicServlet {
         }
     }
 
+    //校验用户名是否存在
     public void validateName(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        System.out.println("1111");
         String username = request.getParameter("username");
+        System.out.println("username"+username);
         //判断用户名是否被占用
         boolean flag = service.validateName(username);
-        String message = "";
-        if (flag == true) {
-            message = "用户名未占用";
-        } else {
-            message = "用户名已占用";
-        }
-        //以JSON格式传递页面
-        JSONObject obj = new JSONObject();
-        obj.put("msg", message);
-        obj.put("flag", Boolean.toString(flag));
+        System.out.println("flag"+flag);
+        //true可用  false不可用
+        String msg = "{\"flag\""+flag+"}";
         //响应将JSON数据传输至页面
         PrintWriter out = response.getWriter();
-        out.println(obj);
+        out.println(msg);
         out.flush();
         out.close();
     }

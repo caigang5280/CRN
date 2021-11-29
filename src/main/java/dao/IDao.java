@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public interface IDao<T> {
 
     //根据用户名 密码查询账户
-    public PersonalUser selectOne(String name, String password) throws SQLException;
+    public T selectOne(String name, String password) throws SQLException;
 
     //注册
     public int insert(T t) throws SQLException;

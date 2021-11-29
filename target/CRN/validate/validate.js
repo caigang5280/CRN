@@ -5,6 +5,7 @@ $("#personalRegister").validate({
     rules:{
         "username":{
             "required":true,
+            "validateName":true
         },
         "password":{
             "required":true,
@@ -27,7 +28,8 @@ $("#personalRegister").validate({
 
     messages: {
         "username":{
-            "required":"用户名必填"
+            "required":"用户名必填",
+            "validateName":"昵称已存在"
         },
         "password": {
             "required":"密码必填",
@@ -47,7 +49,31 @@ $("#personalRegister").validate({
             "rangelength": "手机号由11位数字组成"
         }
     }
-})
+});
+
+//自定义一个校验规则，校验昵称是否存在  validateName
+//$.validator.addMethod("校验规则名称",function(value,element,params){});
+// value是校验组件的value值
+// element是校验组件的节点对象
+// params是校验规则的参数
+$.validator.addMethod("validateName",function(value,element,params){
+    console.log("log")
+    var flag = true;
+    $.ajax({
+        async:false,  //发送同步请求，请将此选项设置为 false
+        type:"post",
+        url:"/personal?method=validateName",
+        data:{"username":value},
+        dataType:"json",
+        success:function(obj){
+            //true可用  false不可用
+            flag = obj.flag;
+            console.log(flag)
+        }
+    })
+    //需要返回值 false----该校验器校验失败    true---校验通过
+    return flag;
+});
 
 
 /*
