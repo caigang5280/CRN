@@ -4,7 +4,7 @@ import java.util.Date;
 
 /**
  * @Version 1.0
- * @Description 企业用户表  最终版（11.28）
+ * @Description 企业用户表  最终版（11.30）
  * @Author 22413
  * @Aate 2021/11/28 12:58
  */

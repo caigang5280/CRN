@@ -29,8 +29,10 @@ public class BasicServlet extends HttpServlet {
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //通过请求参数，获取执行的方法名
         String methodName = request.getParameter("method");
+
         //获取类类型
         Class<? extends BasicServlet> clazz = this.getClass();
+        System.out.println(methodName);
         try {
             //获取方法对象
             Method method = clazz.getDeclaredMethod(methodName, HttpServletRequest.class, HttpServletResponse.class);

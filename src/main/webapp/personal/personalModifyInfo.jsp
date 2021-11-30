@@ -58,6 +58,9 @@
 		    font-size: 14px;
 		    border-radius: 4px;
 		}
+		label.error{
+			color: red;
+		}
 	</style>
 	<body>
 		
@@ -117,7 +120,7 @@
 				            <li><a href="/personal/personalLoginRegister.jsp">退出账号</a></li>
 				          </ul>
 				        </li>
-						<li><a href="/personal/companyLoginRegister.jsp">进入企业版</a></li>
+						<li><a href="/company/companyLoginRegister.jsp">进入企业版</a></li>
 				      </ul>
 				    </div><!-- /.navbar-collapse -->
 				  </div><!-- /.container-fluid -->
@@ -141,37 +144,37 @@
 				</div><!-- col-lg-4 -->
 				
 				<div class="col-lg-8 col-md-6 col-xs-6" style="margin-top: 30px;">
-					<form class="form-horizontal">
+					<form action="/personal?method=updateInfo" class="form-horizontal" id="personalUpdateInfo" method="post">
 					  <div class="form-group">
-					    <label for="inputEmail3" class="col-sm-2 control-label">姓名</label>
+					    <label for="inputEmail3" class="col-sm-2 control-label" >用户名</label>
 					    <div class="col-sm-10">
-					      <input type="email" class="form-control" id="inputEmail3" placeholder="Name">
+					      <input type="text" class="form-control" id="inputEmail3" placeholder="Name" id="username" value="${personalUser.username}">
 					    </div>
 					  </div>
 					  <div class="form-group">
-					    <label for="inputPassword3" class="col-sm-2 control-label">现住地址</label>
+					    <label for="inputPassword3" class="col-sm-2 control-label" >现住地址</label>
 					    <div class="col-sm-10">
-					      <input type="text" class="form-control" id="inputPassword3" placeholder="Address">
+					      <input type="text" class="form-control" id="inputPassword3" placeholder="Address" name="address" value="${personalUser.address}">
 					    </div>
 						</div>
 						<div class="form-group">
-						  <label for="inputPassword3" class="col-sm-2 control-label">学历</label>
+						  <label for="inputPassword3" class="col-sm-2 control-label" >学历</label>
 						  <div class="col-sm-10">
-						    <input type="text" class="form-control" id="inputPassword3" placeholder="Education">
+						    <input type="text" class="form-control" id="inputPassword3" placeholder="Education" name="eduction" value="${personalUser.education}">
 						  </div>
 						</div>
 						<div class="form-group">
-						  <label for="inputPassword3" class="col-sm-2 control-label">联系方式</label>
+						  <label for="inputPassword3" class="col-sm-2 control-label" >联系方式</label>
 						  <div class="col-sm-10">
-						    <input type="text" class="form-control" id="inputPassword3" placeholder="Telephone Number">
+						    <input type="text" class="form-control" id="inputPassword3" placeholder="Telephone Number" name="phone" value="${personalUser.phone}">
 						  </div>
 						</div>
 					  <div style="margin-left: 130px; margin-top: 30px;">
 							<div class="vi-form-item__content" >
-								<button class="vi-button vi-button--primary">
+								<button type="submit" class="vi-button vi-button--primary">
 								 <span>保存</span>
 								</button>
-								<button class="vi-button vi-button--primary" style="margin-left: 80px;">
+								<button type="reset" class="vi-button vi-button--primary" style="margin-left: 80px;">
 								 <span>取消</span>
 								</button>
 							</div>
@@ -214,6 +217,11 @@
 	<script src="${pageContext.request.contextPath}/js/jquery-3.1.1.js"></script>
 	<!-- 引入BootStrap核心js文件 -->
 	<script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
+
+	<!-- 2.引入校验插件 -->
+	<script src="${pageContext.request.contextPath}/validate/jquery.validate.min.js"></script>
+
+	<script src="${pageContext.request.contextPath}/validate/validate.js"></script>
 	
 	<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.horizontalmenu.js"></script>
 	

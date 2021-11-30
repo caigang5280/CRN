@@ -41,8 +41,8 @@ public class PersonalDao extends BaseDao<PersonalUser> implements IDao<PersonalU
 
     //第一次创建用户简历信息
     public int insertResume(int id, Resume resume) throws SQLException {
-        int i = this.update("insert into resume values(?,null,?,null,null,null,null,null,null,null," +
-                "null,null,null,null,null,null,null,null)",id,resume.getName());
+        int i = this.update("insert into resume values(?,null,null,null,null,null,null,null,null,null," +
+                "null,null,null,null,null,null,null,null)",id);
         return i;
     }
 }

@@ -14,5 +14,9 @@ public interface IService<T> {
     //校验昵称是否存在
     public boolean validateName(String name);
 
+    //通过id修改密码
+    public boolean updatePwd(int id, String password);
+
+
 
 }

@@ -132,7 +132,7 @@
 				            <li><a href="/personal/personalLoginRegister.jsp">退出账号</a></li>
 				          </ul>
 				        </li>
-						<li><a href="/personal/companyLoginRegister.jsp">进入企业版</a></li>
+						<li><a href="/company/companyLoginRegister.jsp">进入企业版</a></li>
 				      </ul>
 				    </div><!-- /.navbar-collapse -->
 				  </div><!-- /.container-fluid -->

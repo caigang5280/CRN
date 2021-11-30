@@ -30,8 +30,9 @@ public class PersonalService implements IService<PersonalUser> {
         }
         return null;
     }
-    @Override
+
     //检查名字是否存在
+    @Override
     public boolean validateName(String username) {
         PersonalUser personalUser = null;
         try {
@@ -61,7 +62,6 @@ public class PersonalService implements IService<PersonalUser> {
         return false;
     }
 
-
     //根据用户id创建用户简历
     public boolean registerResume(int id,Resume resume) {
         try {
@@ -73,5 +73,18 @@ public class PersonalService implements IService<PersonalUser> {
             JDBCUtils.close();
         }
         return false;
+    }
+
+    //通过id修改密码
+    public boolean updatePwd(int id, String password) {
+        int i = 0;
+        try {
+            i = dao.update("update personalUser set password=? where id=?", id, password);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } finally {
+            JDBCUtils.close();
+        }
+        return i>0;
     }
 }

@@ -2,7 +2,7 @@ package entity;
 
 /**
  * @Version 1.0
- * @Description 招聘信息  最终版11.26
+ * @Description 招聘信息  最终版11.30
  * @Author 22413
  * @Aate 2021/11/28 13:11
  */
@@ -27,13 +27,16 @@ public class RecruitInfo {
     String jobAddress;
     //所属部门
     String department;
-    //企业用户
-    CompanyUser companyUser;
+    //企业用户id
+    int companyUserId;
+    //计数，此招聘信息被点击次数
+    int count;
+
 
     public RecruitInfo() {
     }
 
-    public RecruitInfo(int id, String companyName, String jobType, String jobTitle, String jobExperience, String education, String companyLogo, String jobDescription, String jobAddress, String department, CompanyUser companyUser) {
+    public RecruitInfo(int id, String companyName, String jobType, String jobTitle, String jobExperience, String education, String companyLogo, String jobDescription, String jobAddress, String department, int companyUserId, int count) {
         this.id = id;
         this.companyName = companyName;
         this.jobType = jobType;
@@ -44,7 +47,8 @@ public class RecruitInfo {
         this.jobDescription = jobDescription;
         this.jobAddress = jobAddress;
         this.department = department;
-        this.companyUser = companyUser;
+        this.companyUserId = companyUserId;
+        this.count = count;
     }
 
     /**
@@ -209,21 +213,37 @@ public class RecruitInfo {
 
     /**
      * 获取
-     * @return companyUser
+     * @return companyUserId
      */
-    public CompanyUser getCompanyUser() {
-        return companyUser;
+    public int getCompanyUserId() {
+        return companyUserId;
     }
 
     /**
      * 设置
-     * @param companyUser
+     * @param companyUserId
      */
-    public void setCompanyUser(CompanyUser companyUser) {
-        this.companyUser = companyUser;
+    public void setCompanyUserId(int companyUserId) {
+        this.companyUserId = companyUserId;
+    }
+
+    /**
+     * 获取
+     * @return count
+     */
+    public int getCount() {
+        return count;
+    }
+
+    /**
+     * 设置
+     * @param count
+     */
+    public void setCount(int count) {
+        this.count = count;
     }
 
     public String toString() {
-        return "RecruitInfo{id = " + id + ", companyName = " + companyName + ", jobType = " + jobType + ", jobTitle = " + jobTitle + ", jobExperience = " + jobExperience + ", education = " + education + ", companyLogo = " + companyLogo + ", jobDescription = " + jobDescription + ", jobAddress = " + jobAddress + ", department = " + department + ", companyUser = " + companyUser + "}";
+        return "RecruitInfo{id = " + id + ", companyName = " + companyName + ", jobType = " + jobType + ", jobTitle = " + jobTitle + ", jobExperience = " + jobExperience + ", education = " + education + ", companyLogo = " + companyLogo + ", jobDescription = " + jobDescription + ", jobAddress = " + jobAddress + ", department = " + department + ", companyUserId = " + companyUserId + ", count = " + count + "}";
     }
 }

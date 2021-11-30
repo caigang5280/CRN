@@ -86,7 +86,7 @@
 				            <li><a href="/personal/personalLoginRegister.jsp">退出账号</a></li>
 				          </ul>
 				        </li>
-						<li><a href="/personal/companyLoginRegister.jsp">进入企业版</a></li>
+						<li><a href="/company/companyLoginRegister.jsp">进入企业版</a></li>
 				      </ul>
 				    </div><!-- /.navbar-collapse -->
 				  </div><!-- /.container-fluid -->
@@ -101,8 +101,8 @@
 						<nav class="dr-menu">
 							<div class="dr-trigger"><span class="dr-icon dr-icon-menu"></span><a class="dr-label">个人信息</a></div>
 							<ul>
-								<li><a class="dr-icon dr-icon-user" href="/personal/personalModifyInfo.html" style="color: black;">修改个人信息</a></li>
-								<li><a class="dr-icon dr-icon-settings" href="/personal/personalModifyPwd.html" style="color: black;">修改账户密码</a></li>
+								<li><a class="dr-icon dr-icon-user" href="/personal/personalModifyInfo.jsp" style="color: black;">修改个人信息</a></li>
+								<li><a class="dr-icon dr-icon-settings" href="/personal/personalModifyPwd.jsp" style="color: black;">修改账户密码</a></li>
 								<li><a class="dr-icon dr-icon-switch" href="#" style="color: black;">退出</a></li>
 							</ul>
 						</nav>
@@ -115,12 +115,12 @@
 						<br />
 						<span style="margin-left: 80px;">
 							<strong style="color: orange;">
-								姓名:张三
+								姓名:${personalUser.username}
 							</strong>
 						</span>
 						<span style="margin-left: 30px;">
 							<strong style="color: orange;">
-								性别:男
+								邮箱:${personalUser.email}
 							</strong>
 						</span>
 						<br />

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" isELIgnored="false" %>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -130,6 +130,8 @@
 </style>
 <body>
 <a name="top"></a>
+<c:set value="${pageContext.request.contextPath}" var="path" scope="application"></c:set>
+
 
 <!-- 右侧小火箭图标返回顶部 -->
 <div id="shangxia2">
@@ -169,14 +171,23 @@
                         <!-- location地点选择 -->
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                               aria-haspopup="true" aria-expanded="false">地点 <span class="caret"></span></a>
+                               aria-haspopup="true" aria-expanded="false">全国 <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">上海</a></li>
-                                <li><a href="#">无锡</a></li>
                                 <li><a href="#">北京</a></li>
+                                <li><a href="#">上海</a></li>
+                                <li><a href="#">深圳</a></li>
                                 <!-- <li role="separator" class="divider"></li> -->
+                                <li><a href="#">广州</a></li>
                                 <li><a href="#">杭州</a></li>
+                                <li><a href="#">成都</a></li>
+                                <li><a href="#">南京</a></li>
+                                <li><a href="#">武汉</a></li>
+                                <li><a href="#">西安</a></li>
+                                <li><a href="#">厦门</a></li>
+                                <li><a href="#">长沙</a></li>
                                 <li><a href="#">苏州</a></li>
+                                <li><a href="#">天津</a></li>
+
                             </ul>
                         </li>
                         <!-- 跳转至首页 -->
@@ -203,7 +214,7 @@
                                 <li><a href="${pageContext.request.contextPath}/personal/personalLoginRegister.jsp">退出账号</a></li>
                             </ul>
                         </li>
-                        <li><a href="${pageContext.request.contextPath}/personal/companyLoginRegister.jsp">进入企业版</a></li>
+                        <li><a href="${pageContext.request.contextPath}/company/companyLoginRegister.jsp">进入企业版</a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
@@ -220,7 +231,7 @@
         </div><!-- /.col-lg-6 -->
         <div class="col-lg-10" style="text-align: center;">
             <div class="input-group" style="text-align: center;">
-                <input type="text" class="form-control" placeholder="Search for..." style="height: 40px;">
+                <input type="text" class="form-control" placeholder="输入职位信息查询..." style="height: 40px;">
                 <span class="input-group-btn">
 			        <button class="btn btn-default" type="button"
                             style="height: 40px;width: 100px;background-color: #00b38a;color: white;">搜索</button>
@@ -236,14 +247,14 @@
 <div class="container">
     <div class="row" style="text-align: center;">
         <span>热门职位:</span>
-        <a class="searchHotPosition" href="#">Java</a>
-        <a class="searchHotPosition" href="#">产品经理</a>
-        <a class="searchHotPosition" href="#">Web前端</a>
-        <a class="searchHotPosition" href="#">项目经理/主管</a>
-        <a class="searchHotPosition" href="#">C++</a>
-        <a iclassd="searchHotPosition" href="#">测试工程师</a>
-        <a class="searchHotPosition" href="#">数据分析师</a>
+        <a class="searchHotPosition" href="/personal/personalPosition.jsp">桌面程序工程师</a>
+        <a class="searchHotPosition" href="#">网络应用工程师</a>
         <a class="searchHotPosition" href="#">运维工程师</a>
+        <a class="searchHotPosition" href="#">测试工程师</a>
+        <a class="searchHotPosition" href="#">安全工程师</a>
+        <a iclassd="searchHotPosition" href="#">架构师</a>
+        <a class="searchHotPosition" href="#">IC工程师</a>
+        <a class="searchHotPosition" href="#">数据挖掘工程师</a>
     </div>
 </div>
 

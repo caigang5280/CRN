@@ -58,6 +58,9 @@
 		    font-size: 14px;
 		    border-radius: 4px;
 		}
+		label.error{
+			color: red;
+		}
 	</style>
 	<body>
 		
@@ -117,7 +120,7 @@
 				            <li><a href="/personal/personalLoginRegister.jsp">退出账号</a></li>
 				          </ul>
 				        </li>
-						<li><a href="/personal/companyLoginRegister.jsp">进入企业版</a></li>
+						<li><a href="/company/companyLoginRegister.jsp">进入企业版</a></li>
 				      </ul>
 				    </div><!-- /.navbar-collapse -->
 				  </div><!-- /.container-fluid -->
@@ -141,25 +144,26 @@
 				</div><!-- col-lg-4 -->
 				
 				<div class="col-lg-8 col-md-6 col-xs-6" style="margin-top: 30px;">
-					<form class="form-horizontal">
+
+					<form action="/personal?method=updatePwd" class="form-horizontal" id="updatePassword" method="post">
 					  <div class="form-group">
 					    <label for="inputEmail3" class="col-sm-2 control-label">新密码</label>
 					    <div class="col-sm-10">
-					      <input type="email" class="form-control" id="inputEmail3" placeholder="New PassWord">
+					      <input type="password" class="form-control" id="inputEmail3" name="password" placeholder="New PassWord">
 					    </div>
 					  </div>
 					  <div class="form-group">
 					    <label for="inputPassword3" class="col-sm-2 control-label">确认密码</label>
 					    <div class="col-sm-10">
-					      <input type="text" class="form-control" id="inputPassword3" placeholder="RepassWord">
+					      <input type="password" class="form-control" id="inputPassword3" name="repassword"placeholder="RepassWord">
 					    </div>
 						</div>
 					  <div style="margin-left: 130px; margin-top: 30px;">
 							<div class="vi-form-item__content" >
-								<button class="vi-button vi-button--primary">
-								 <span>保存</span>
+								<button type="submit" class="vi-button vi-button--primary">
+								 保存
 								</button>
-								<button class="vi-button vi-button--primary" style="margin-left: 60px;">
+								<button type="reset" class="vi-button vi-button--primary" style="margin-left: 60px;">
 								 <span>取消</span>
 								</button>
 							</div>
@@ -198,10 +202,16 @@
 				
 		<script src="${pageContext.request.contextPath}/js/ytmenu.js"></script>
 	</body>
-	<!-- 先引入jQuery核心js文件 -->
+	<!-- 先引入jQuery核心js文件 -->0
+.
 	<script src="${pageContext.request.contextPath}/js/jquery-3.1.1.js"></script>
 	<!-- 引入BootStrap核心js文件 -->
 	<script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
+
+	<!-- 2.引入校验插件 -->
+	<script src="${pageContext.request.contextPath}/validate/jquery.validate.min.js"></script>
+
+	<script src="${pageContext.request.contextPath}/validate/validate.js"></script>
 	
 	<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.horizontalmenu.js"></script>
 	

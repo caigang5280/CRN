@@ -4,7 +4,7 @@ import java.util.Date;
 
 /**
  * @Version 1.0
- * @Description 简历 最终版11.28
+ * @Description 简历 最终版11.30
  * @Author 22413
  * @Aate 2021/11/28 12:47
  */
@@ -25,7 +25,7 @@ public class Resume {
     String college;
     //专业
     String major;
-    //学历-博士硕士 本科 专科
+    //学历-不限-博士-硕士 本科 专科
     String education;
     //毕业年份
     String graduationYear;
@@ -35,7 +35,7 @@ public class Resume {
     String jobExpectation;
     //期望地点
     String locationExpectation;
-    //期望工资（月薪）单位：万
+    //期望工资（月薪）单位：k
     String salaryExpectation;
     //工作经历
     String workExperience;
@@ -49,11 +49,8 @@ public class Resume {
         this.id = id;
     }
 
-    public Resume() {
-    }
 
-    public Resume(String name) {
-        this.name = name;
+    public Resume() {
     }
 
     public Resume(int id, String photo, String name, String email, String phone, Date birthday, String college, String major, String education, String graduationYear, String personalAdvantages, String jobExpectation, String locationExpectation, String salaryExpectation, String workExperience, String projectExperience, int state) {
