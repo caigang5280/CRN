@@ -79,7 +79,7 @@ public class PersonalService implements IService<PersonalUser> {
     public boolean updatePwd(int id, String password) {
         int i = 0;
         try {
-            i = dao.update("update personalUser set password=? where id=?", id, password);
+            i = dao.update("update personalUser set password=? where id=?", password, id);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         } finally {
@@ -87,4 +87,25 @@ public class PersonalService implements IService<PersonalUser> {
         }
         return i>0;
     }
+
+    //通过id修改信息
+    public boolean modifyInfo(PersonalUser personalUser){
+        int i = 0;
+        try {
+            i = dao.update("update personalUser set username=?,address=?,education=?,phone=? where id=?",
+                    personalUser.getUsername(), personalUser.getAddress(), personalUser.getEducation(), personalUser.getPhone(), personalUser.getId());
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } finally {
+            JDBCUtils.close();
+        }
+        return i>0;
+    }
+
+    //通过id修改简历信息
+    public boolean modifyResume(Resume resume) {
+
+        return false;
+    }
+
 }

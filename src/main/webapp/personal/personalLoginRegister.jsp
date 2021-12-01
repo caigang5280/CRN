@@ -203,7 +203,6 @@
 <body>
 
 
-
 <c:set value="${pageContext.request.contextPath}" var="path" scope="application"></c:set>
 <div class="">
     <header class="htmleaf-header" style="background-color: white; height: 60px;">

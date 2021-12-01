@@ -129,7 +129,10 @@
 <style>
 </style>
 <body>
+
 <a name="top"></a>
+
+<jsp:include page="/companyHeader.jsp"></jsp:include>
 
 <!-- 右侧小火箭图标返回顶部 -->
 <div id="shangxia2">
@@ -142,67 +145,7 @@
 			</span>
 </div>
 
-<!-- 导航栏 -->
-<div class="container">
-    <div class="row" style="margin: 5px;border: none;">
-        <nav class="navbar navbar-inverse">
-            <div class="container-fluid">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header"style="margin: 5px;border: none;" >
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <!-- logo图片 -->
-                    <img src="./img/Logo.png" style="width: 30px;height: 30px;"/>
-                    <!-- 网站名称 -->
-                    <span id="title"style="color: #00b38a; font-size: 25px;  margin-top: 15px;">千寻网</span>
-                </div>
-                
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    
-                    <ul class="nav navbar-nav">
-                        <!-- location地点选择 -->
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">地点 <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">上海</a></li>
-                                <li><a href="#">无锡</a></li>
-                                <li><a href="#">北京</a></li>
-                                <!-- <li role="separator" class="divider"></li> -->
-                                <li><a href="#">杭州</a></li>
-                                <li><a href="#">苏州</a></li>
-                            </ul>
-                        </li>
-                        <!-- 跳转至首页 -->
-                        <li class="active"><a href="${pageContext.request.contextPath}/companyHome.jsp">首页 <span class="sr-only">(current)</span></a></li>
-                        <!-- 跳转至人才搜索与邀请 -->
-                        <li><a href="${pageContext.request.contextPath}/companySearchInvitation.jsp">人才搜索与邀请</a></li>
-                        <!-- 查看简历 -->
-                        <li><a href="${pageContext.request.contextPath}/companyViewResume.jsp">查看简历</a></li>
-                    </ul>
-                    
-                    <ul class="nav navbar-nav navbar-right">
-                        <!-- 发布招聘信息 -->
-                        <li><a href="${pageContext.request.contextPath}/companyReleaseInfo.jsp">发布招聘信息</a></li>
-                        <!-- 企业用户名 -->
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">公司-用户名 <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="${pageContext.request.contextPath}/companyInfo.jsp">修改公司信息</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="${pageContext.request.contextPath}/companyLoginRegister.jsp">退出账号</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div><!-- /.navbar-collapse -->
-            </div><!-- /.container-fluid -->
-        </nav>
-    </div>
-</div>
+
 
 <!-- 搜索栏 -->
 <div class="container">
@@ -1978,38 +1921,7 @@
 <br/>
 <br/>
 
-<!--友情链接-->
-<div class="container" style="margin-top: 15px;">
-    <div class="row" style="text-align: center;">
-        <p>
-            <a href="#" style="margin-left: 30px;">关于我们</a>
-            <a href="#" style="margin-left: 30px;">联系我们</a>
-            <a href="#" style="margin-left: 30px;">招贤纳士</a>
-            <a href="#" style="margin-left: 30px;">法律声明</a>
-            <a href="#" style="margin-left: 30px;">友情链接</a>
-            <a href="#" style="margin-left: 30px;">服务声明</a>
-            <a href="#" style="margin-left: 30px;">广告声明</a>
-        </p>
-    </div>
-    <div class="row" style="text-align: center;">
-        <p>
-            Copyright © 20021-2021 千寻招聘网 版权所有
-        </p>
-    </div>
-</div>
-
-<div class="container" style="margin-top: 15px;">
-    <div class="row" style="text-align: center;">
-        <p style="color: grey;">
-            客服（投诉）电话: 4006 282 835 (9:00 - 18:00);&nbsp;&nbsp;&nbsp;&nbsp;
-            违法和不良信息、未成年人举报同客服电话;&nbsp;&nbsp;&nbsp;&nbsp;
-            北京人社局电话：12333&nbsp;&nbsp;&nbsp;
-            <a href="#" style="color: grey;">拉勾招聘投诉举报制度</a>
-            <a href="#" style="color: grey;">网上有害信息举报专区</a>
-        
-        </p>
-    </div>
-</div>
+<jsp:include page="/floor.jsp"></jsp:include>
 
 </body>
 <!-- 先引入jQuery核心js文件 -->

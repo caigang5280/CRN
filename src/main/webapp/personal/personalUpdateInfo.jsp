@@ -86,70 +86,9 @@
 	<style>
 	</style>
 	<body>
+	<jsp:include page="/personalHeader.jsp"></jsp:include>
+
 	<c:set value="${pageContext.request.contextPath}" var="path" scope="application"></c:set>
-		<!-- 导航栏 -->
-		<div class="container">
-			<div class="row" style="margin: 5px;border: none;">
-				<nav class="navbar navbar-inverse">
-				  <div class="container-fluid">
-				    <!-- Brand and toggle get grouped for better mobile display -->
-				    <div class="navbar-header"style="margin: 5px;border: none;" >
-				      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-				        <span class="sr-only">Toggle navigation</span>
-				        <span class="icon-bar"></span>
-				        <span class="icon-bar"></span>
-				        <span class="icon-bar"></span>
-				      </button>
-					  <!-- logo图片 -->
-					  <img src="${path}/img/Logo.png" style="width: 30px;height: 30px;"/>
-					  <!-- 网站名称 -->
-					  <span id="title" style="color: #00b38a; font-size: 25px;  margin-top: 15px;">千寻网</span>
-				    </div>
-				
-				    <!-- Collect the nav links, forms, and other content for toggling -->
-				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				      
-					  <ul class="nav navbar-nav">
-						  <!-- location地点选择 -->
-						  <li class="dropdown">
-						    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">地点 <span class="caret"></span></a>
-						    <ul class="dropdown-menu">
-						      <li><a href="#">上海</a></li>
-						      <li><a href="#">无锡</a></li>
-						      <li><a href="#">北京</a></li>
-						      <!-- <li role="separator" class="divider"></li> -->
-						      <li><a href="#">杭州</a></li>
-						      <li><a href="#">苏州</a></li>
-						    </ul>
-						   </li>
-						 <!-- 跳转至首页 -->
-				        <li ><a href="/personal/personalHome.jsp">首页 <span class="sr-only">(current)</span></a></li>
-						<!-- 跳转至查看所有职位 -->
-				        <li><a href="/personal/personalPosition.jsp">职位</a></li>
-						<!-- 求职详细 -->
-						<li><a href="/personal/personalJobDetails.jsp">求职详细</a></li>
-				      </ul>
-					  
-				      <ul class="nav navbar-nav navbar-right">
-						<!-- 查看我的简历 -->
-				        <li class="active"><a href="/personal/personalUpdateInfo.jsp">我的简历</a></li>
-						<!-- 用户名 -->
-				        <li class="dropdown">
-				          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">用户名 <span class="caret"></span></a>
-				          <ul class="dropdown-menu">
-				            <li><a href="/personal/personalInfo.jsp">修改个人信息</a></li>
-				            <li role="separator" class="divider"></li>
-				            <li><a href="/personal/personalLoginRegister.jsp">退出账号</a></li>
-				          </ul>
-				        </li>
-						<li><a href="/company/companyLoginRegister.jsp">进入企业版</a></li>
-				      </ul>
-				    </div><!-- /.navbar-collapse -->
-				  </div><!-- /.container-fluid -->
-				</nav>
-			</div>
-		</div>
-		
 		<!-- 提示信息 -->
 		<div class="container">
 			<div class="row" style="text-align: left;">
@@ -171,7 +110,7 @@
 		</div>
 		<br><br>
 
-	<form action="/personal?method=modifyResumeLower" method="post" id="updateResume">
+	<form action="/personal?method=modifyResume" method="post" id="updateResume">
 		<!-- 个人信息 -->
 		<div class="container" style="background-color: rgb(248,249,251);">
 			<div class="row" style="text-align: left;margin: 20px;float:left" >
@@ -185,27 +124,14 @@
 					<br/>
 					<input type="file" id="file" placeholder="file" name="file" id="photo" name="photo" value="上传证件照" onchange="showPreview(this)">
 				</div>
-
-<%--				<div class="col-lg-10" >
-					<legend>编辑个人资料</legend>
-					姓名：<input type="text" name="name" id="name" />
-					性别：<input type="radio" name="sex" id="man" checked="checked"/>男
-						<input type="radio" name="sex" id="woman"/>女
-					<select id="education">学历
-						<option value="专科">专科</option>
-						<option value="本科">本科</option>
-						<option value="硕士">硕士</option>
-						<option value="博士">博士</option>
-					</select>
-				</div>--%>
 				
 				<div class="col-lg-10" >
 					<table align="center" class="table1" >
 						<tr>
 							<td>
-								<legend>编辑个人资料</legend>
+								<legend>编辑简历个人信息</legend>
 									<table>
-										<tr>
+										<tr <%--style="width: 200px;height: 200px"--%>>
 											<td align="right">姓名</td>
 											<td><input type="text" name="name" id="name" /></td>
 											<td align="right">性别</td>
@@ -215,7 +141,6 @@
 											</td>
 
 										</tr>
-
 										<tr>
 											<!-- <input type="input" name="education" id="inp1education" /> -->
 											<td align="right" >学历</td>
@@ -377,6 +302,8 @@
 		<br />
 		<br />
 
+	<jsp:include page="/floor.jsp"></jsp:include>
+
 		
 	</body>
 	<!-- 先引入jQuery核心js文件 -->
@@ -404,8 +331,5 @@
 			}
 		}
 	</script>
-
-	
-	
 
 </html>

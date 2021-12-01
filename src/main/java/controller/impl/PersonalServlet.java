@@ -75,25 +75,6 @@ public class PersonalServlet extends BasicServlet implements IServlet {
         }
     }
 
-    //修改个人信息
-    @Override
-    public void updateInfo(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
-
-    //修改密码
-    @Override
-    public void updatePwd(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("111");
-        HttpSession session = request.getSession();
-        Object personalUser = session.getAttribute("personalUser");
-        String password = request.getParameter("password");
-        if(personalUser instanceof PersonalUser){
-            System.out.println(personalUser);
-            service.updatePwd(((PersonalUser) personalUser).getId(),password);
-        }
-    }
-
     //校验用户名是否存在
     @Override
     public void validateName(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -104,6 +85,7 @@ public class PersonalServlet extends BasicServlet implements IServlet {
         if(code==null || code.equals("")) {
 
         }else if(code.equals("updateInfo")){
+            System.out.println(code+";;");
             //修改账户用户名 检验重复
             HttpSession session = request.getSession();
             PersonalUser personalUser = (PersonalUser)session.getAttribute("personalUser");
@@ -122,16 +104,56 @@ public class PersonalServlet extends BasicServlet implements IServlet {
         out.close();
     }
 
-    //修改简历中下半部分
-    public void modifyResumeLower(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+
+    //修改个人信息
+    @Override
+    public void updateInfo(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        //获取会话域中的personalUser
+        HttpSession session = request.getSession();
+        PersonalUser personalUser = (PersonalUser)session.getAttribute("personalUser");
+        System.out.println("updateInfo");
+        //获取值 赋值到personalUser对象中
+        String username = request.getParameter("username");
+        String address = request.getParameter("address");
+        String education = request.getParameter("education");
+        String phone = request.getParameter("phone");
+        personalUser.setUsername(username);
+        personalUser.setAddress(address);
+        personalUser.setEducation(education);
+        personalUser.setPhone(phone);
+        boolean b = service.modifyInfo(personalUser);
+        if(b){
+            request.getRequestDispatcher("personal/personalModifyInfo.jsp").forward(request, response);
+        }
+    }
+
+    //修改密码
+    @Override
+    public void updatePwd(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        PersonalUser personalUser = (PersonalUser)session.getAttribute("personalUser");
+        String password = request.getParameter("password");
+        System.out.println("password:"+password);
+        boolean b = service.updatePwd(personalUser.getId(), password);
+        System.out.println("b:"+b);
+        if(b){
+            request.getRequestDispatcher("personal/personalModifyPwd.jsp").forward(request, response);
+        }
+
+    }
+
+
+    //修改简历
+    public void modifyResume(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         System.out.println("111");
         String personalAdvantage = request.getParameter("personalAdvantage");
         System.out.println(personalAdvantage);
-    }
 
-    //个人基本信息修改
-    public void modifyResumeInfo(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-        System.out.println("modifyResumeInfo");
+
+
 
     }
+
+
+
 }
