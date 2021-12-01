@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 		 pageEncoding="UTF-8" isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -13,11 +14,11 @@
 		
 		<title>千寻招聘网</title>
 		
-		<link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet" />
+		<link href="${path}/css/bootstrap.min.css" rel="stylesheet" />
 		
-		<link href="${pageContext.request.contextPath}/css/jquery.horizontalmenu.css" rel="stylesheet">
+		<link href="${path}/css/jquery.horizontalmenu.css" rel="stylesheet">
 		
-		<link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
+		<link href="${path}/css/bootstrap.min.css" rel="stylesheet">
 		
 		<style>
 			/* 整体 */
@@ -75,6 +76,9 @@
 			.table1 td{
 				padding: 10px;
 			}
+			label.error{
+				color: red;
+			}
 		</style>
 		
 		
@@ -82,6 +86,7 @@
 	<style>
 	</style>
 	<body>
+	<c:set value="${pageContext.request.contextPath}" var="path" scope="application"></c:set>
 		<!-- 导航栏 -->
 		<div class="container">
 			<div class="row" style="margin: 5px;border: none;">
@@ -96,9 +101,9 @@
 				        <span class="icon-bar"></span>
 				      </button>
 					  <!-- logo图片 -->
-					  <img src="${pageContext.request.contextPath}/img/Logo.png" style="width: 30px;height: 30px;"/>
+					  <img src="${path}/img/Logo.png" style="width: 30px;height: 30px;"/>
 					  <!-- 网站名称 -->
-					  <span id="title"style="color: #00b38a; font-size: 25px;  margin-top: 15px;">千寻网</span>
+					  <span id="title" style="color: #00b38a; font-size: 25px;  margin-top: 15px;">千寻网</span>
 				    </div>
 				
 				    <!-- Collect the nav links, forms, and other content for toggling -->
@@ -159,335 +164,247 @@
 				</div>
 				<br>
 				<div class="row" style="text-align: left;">
-					<span style="margin-left: 50px; margin-bottom:10px; ">个人优势  去完善</span>
+					<span style="margin-left: 50px; margin-bottom: 10px; ">个人优势  去完善</span>
 				</div>
 			</div>
 			
 		</div>
 		<br><br>
-		
-		
-		
-		
-		
+
+	<form action="/personal?method=modifyResumeLower" method="post" id="updateResume">
 		<!-- 个人信息 -->
 		<div class="container" style="background-color: rgb(248,249,251);">
 			<div class="row" style="text-align: left;margin: 20px;float:left" >
-				
-				<img src="${pageContext.request.contextPath}/img/ankerLogo.jpg" alt="..." class="img-circle">
-				
-			</div>
-			
-			<div class="" style="float:left">
-					<h4 >&nbsp;&nbsp;&nbsp;&nbsp;戚一鸣</h4>
+				<div class="col-lg-2">
+					<br/>
+					<br/>
+					<img src="${resume.photo}" id="pic" alt="..." style="width: 100px;height: 100px" class="img-circle">
 					
-					<div class="row" style="text-align: left;margin: 20px;float:left" >
-						<li>淮北师范大学</li>
-						<li>本科.统招</li>
-						<li>2022年毕业</li>
-						<li>21岁</li>
-						<li>15655444543</li>
-						<li>1205509129@qq.com</li>
-					</div>
-			</div>
-			
-			<div class="row" style="text-align: left;margin: 20px;float:left" >
+					<br/>
+					<br/>
+					<br/>
+					<input type="file" id="file" placeholder="file" name="file" id="photo" name="photo" value="上传证件照" onchange="showPreview(this)">
+				</div>
+
+<%--				<div class="col-lg-10" >
+					<legend>编辑个人资料</legend>
+					姓名：<input type="text" name="name" id="name" />
+					性别：<input type="radio" name="sex" id="man" checked="checked"/>男
+						<input type="radio" name="sex" id="woman"/>女
+					<select id="education">学历
+						<option value="专科">专科</option>
+						<option value="本科">本科</option>
+						<option value="硕士">硕士</option>
+						<option value="博士">博士</option>
+					</select>
+				</div>--%>
 				
-				<button name="btn1" type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" style="position: absolute; margin-left: 300px;">
-				  编辑
-				</button>
-				
-			</div>
-			
-			
-			
+				<div class="col-lg-10" >
+					<table align="center" class="table1" >
+						<tr>
+							<td>
+								<legend>编辑个人资料</legend>
+									<table>
+										<tr>
+											<td align="right">姓名</td>
+											<td><input type="text" name="name" id="name" /></td>
+											<td align="right">性别</td>
+											<td>
+												<input type="radio" name="sex" id="man" checked="checked"/>男
+												<input type="radio" name="sex" id="woman"/>女
+											</td>
+
+										</tr>
+
+										<tr>
+											<!-- <input type="input" name="education" id="inp1education" /> -->
+											<td align="right" >学历</td>
+											<td>
+												<select id="education">学历
+													<option value="专科">专科</option>
+													<option value="本科">本科</option>
+													<option value="硕士">硕士</option>
+													<option value="博士">博士</option>
+												</select>
+											</td>
+											<td align="right">毕业时间</td>
+											<td><input type="date" name="graduationYear" id="graduationYear" /></td>
+
+										</tr>
+
+										<tr>
+											<td >手机号码</td>
+											<td><input type="text" name="phone" id="phone" /></td>
+											<td >邮箱</td>
+											<td><input type="email" name="email" id="email" /></td>
+										</tr>
+
+
+										<tr>
+											<td >生日</td>
+											<td><input type="date" name="birthday" id="birthday"/></td>
+											<td >毕业院校</td>
+											<td><input type="text" name="college" id="college"/></td>
+										</tr>
+
+										<tr>
+											<td >专业</td>
+											<td><input type="text" name="major" id="major"/></td>
+										</tr>
+									</table>
+							</td>
+					</table>
+				</div><%--col-lg-10--%>
+			</div><%--row--%>
 			<br>
 		</div>
-		
-		<form action="#" method="get"  name="form1" style="display: none;" >
-			<table align="center" class="table1" >
-				<tr>
-					<td>
-						<fieldset>
-							<legend>编辑个人资料</legend>
-							<table>
-								<tr>
-									<td align="right" >姓名</td>
-									<td><input type="text" name="name" placeholder="" /></td>
-									<td align="right">性别</td>
-									<td>
-										<input type="radio" name="男" />男
-										<input type="radio" name="女" />女
-									</td>
-									
-								</tr>
-								
-								<tr>
-									<td align="right">手机号码</td>
-									<td><input type="input" name="repwd" /></td>
-									<td align="right">邮箱</td>
-									<td><input type="email" name="email" /></td>
-								</tr>
-								
-								
-								<tr>
-									<td align="right">生日</td>
-									<td><input type="date" name="birthday" /></td>
-								</tr>
-							</table>
-						</fieldset>
-					</td>
-				</tr>
-				
-				
-				<tr>
-					<td align="center">
-						<input type="submit" value="提交您的资料"/>
-						<input type="reset" value="重新填写您的资料"/>
-					</td>
-				</tr>
-				
-			</table>
-		</form>
-		
 		<br />
 		<br />
-	
+
+
+
 		<!-- 个人优势 -->
-		
-		
-		<div class="container" style="background-color: rgb(248,249,251);">
-			
-			<div class="" style="float:left">
+			<div class="container" style="background-color: rgb(248,249,251);">
+				<div class="" style="float:left">
 					<h3>个人优势</h3>
-					
-					<div class="row" style="text-align: left;margin: 20px;float:left" >
-						<div style="border: 1px dotted grey; border-radius: 5px; width: 600px; height: 50px; background-color: rgb(248,249,251); ">
-							90%的招聘者非常关注候选人的个人优势&nbsp;<a href="#">立即添加</a>
-						</div>
-						
+					<div class="row" style="text-align: left;margin: 10px;float:left" >
+						<textarea name="personalAdvantage" class="form-control" cols="100" rows="5" placeholder="请输入您的个人优势..."></textarea>
 					</div>
+				</div>
+				<br>
 			</div>
-			
-			<br>
-		</div>
-		
-		
 		<br />
 		<br />
 		
 		<!-- 求职期望 -->
-		<div class="container" style="background-color: rgb(248,249,251);">
-			
+			<div class="container" style="background-color: rgb(248,249,251);">
 			<div class="" style="float:left">
-					<h3>求职期望</h3>
-					
-					<div class="row" style="text-align: left;margin: 20px;float:left" >
-						
-						
-						<!-- Single button -->
-						<div class="btn-group">
-						  <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						    JAVA工程师 <span class="caret"></span>
-						  </button>
-						  <ul class="dropdown-menu">
-						    <li><a href="#">JAVA工程师</a></li>
-						    <li><a href="#">JAVA工程师</a></li>
-						    <li><a href="#">JAVA工程师</a></li>
-						  </ul>
-						</div>
-						
-						<div class="btn-group">
-						  <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						    上海 <span class="caret"></span>
-						  </button>
-						  <ul class="dropdown-menu">
-						    <li><a href="#">上海</a></li>
-						    <li><a href="#">上海</a></li>
-						    <li><a href="#">上海</a></li>
-						  </ul>
-						</div>
-						
-						<div class="btn-group">
-						  <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						    10k-20k <span class="caret"></span>
-						  </button>
-						  <ul class="dropdown-menu">
-						    <li><a href="#">10k-20k</a></li>
-						    <li><a href="#">10k-20k</a></li>
-						    <li><a href="#">10k-20k</a></li>
-						    <li><a href="#">10k-20k</a></li>
-						  </ul>
-						</div>
+				<h3>求职期望</h3>
+				<div class="row" style="text-align: left;margin: 20px;float:left" >
+					<select id="jobExpectation" name="jobExpectation">
+						<option value="1">桌面程序工程师</option>
+						<option value="2">网络应用工程师</option>
+						<option value="3">运维工程师</option>
+						<option value="4">测试工程师</option>
+						<option value="5">安全工程师</option>
+						<option value="6">架构师</option>
+						<option value="7">PCB工程师</option>
+						<option value="8">FPGA工程师</option>
+						<option value="9">IC工程师</option>
+						<option value="10">数据挖掘工程师</option>
+					</select>
+
+					<select name="locationExcepctation">
+						<option value="1">全国</option>
+						<option value="2">北京</option>
+						<option value="3">上海</option>
+						<option value="4">深圳</option>
+						<option value="5">广州</option>
+						<option value="6">杭州</option>
+						<option value="7">成都</option>
+						<option value="8">南京</option>
+						<option value="9">武汉</option>
+						<option value="10">西安</option>
+						<option value="11">厦门</option>
+						<option value="12">长沙</option>
+						<option value="13">苏州</option>
+						<option value="14">天津</option>
+					</select>
+
+					<select name="salaryExpectation">
+						<option value="1">薪资不限</option>
+						<option value="2">2k及以下</option>
+						<option value="3">2k-5k</option>
+						<option value="4">5k-10k</option>
+						<option value="5">10k-15k</option>
+						<option value="6">15k-25k</option>
+						<option value="7">25k-30k</option>
+						<option value="8">50k及以上</option>
+					</select>
 					</div>
-					
-					<button  type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" style="position: absolute; margin-left: 300px;">
+					<!-- 
+					<button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" style="position: absolute; margin-left: 300px;">
 					  修改
-					</button>
+					</button> -->
 			</div>
-			
 			<br>
-		</div>
-		
+		</div><%--container--%>
 		<br />
 		<br />
-		
-		
+
 		<!-- 工作经历 -->
-		<div class="container" style="background-color: rgb(248,249,251);">
-			
+			<div class="container" style="background-color: rgb(248,249,251);">
 			<div class="" style="float:left">
-					<h3>工作经历</h3>
-					
-					<div class="row" style="text-align: left;margin: 20px;float:left" >
-						<button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" style="position: absolute; margin-left: 550px; margin-top: -50px;">
-							修改
-						</button>
-					</div>
-					
+				<h3>工作经历</h3>
+				<div class="row" style="text-align: left;margin: 10px;float:left" >
+					<textarea name="workExperience" id="workExperience" class="form-control" cols="100" rows="5" placeholder="请输入您的工作经历..."></textarea>
+				</div>
 			</div>
-			
 			<br>
 		</div>
-		
 		<br />
 		<br />
-		
 		
 		<!-- 项目经历 -->
-		<div class="container" style="background-color: rgb(248,249,251);">
-			
-			<div class="" style="float:left">
+			<div class="container" style="background-color: rgb(248,249,251);">
+			<div class="" style="float:left;">
 					<h3>项目经历</h3>
-					
-					<div class="row" style="text-align: left;margin: 20px;float:left" >
-						<button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" style="position: absolute; margin-left: 550px; margin-top: -50px;">
-							修改
-						</button>
+					<div class="row"style="text-align: left;margin: 10px;float:left" >
+						<textarea name="projectExperience" class="form-control" cols="100" rows="5" placeholder="请输入您的项目经历..."></textarea>
 					</div>
+					<br />
 			</div>
 			<br>
 		</div>
 		
 		<br />
 		<br />
-		
-		
-		<!-- 教育经历 -->
-		<div class="container" style="background-color: rgb(248,249,251);">
-			
-			<div class="" style="float:left">
-					<h3>教育经历</h3>
-					
-					<div class="row" style="text-align: left;margin: 20px;float:left" >
-						<button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" style="position: absolute; margin-left: 550px; margin-top: -50px;">
-							修改
-						</button>
-					</div>
-					
-			</div>
-			
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			
-			<!-- 添加模块 -->
-			<div  name="education">
-				<div class="row" style="text-align: left;margin: 20px;position: absolute; margin-left: 20px; margin-bottom: 20px;" >
-					
-					<img src="${pageContext.request.contextPath}/img/ankerLogo.jpg" alt="..." class="img-circle">
-					
+
+			<%--提交按钮--%>
+			<div class="container">
+				<div class="row" style="text-align: left;margin: 20px;float:left" >
+					<button type="submit" style="position: absolute; margin-left: 300px; margin-top: -50px;width: 120px;" >
+						确认更改简历
+					</button>
+					<button type="reset" style="position: absolute; margin-left: 550px; margin-top: -50px;width: 120px;">
+						取消
+					</button>
 				</div>
-				
-				<div class="" style="float:left">
-						<h4>&nbsp;&nbsp;&nbsp;&nbsp;淮北师范大学</h4>
-						
-						<div class="row" style="text-align: left;margin: 10px;float:left" >
-							
-							<li  class="paral">本科.统招</li>
-							<li  class="paral">2022年毕业</li>
-							<li  class="paral">21岁</li>
-						</div>
-				</div>
-				
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />
 			</div>
-			
-		</div>
+		
+		</form>  <%--form--%>
 		
 		<br />
 		<br />
-		
-		
-		
-		<div class="container" style="background-color: rgb(248,249,251);">
-			
-					<h4 >&nbsp;&nbsp;&nbsp;&nbsp;设计作品</h4>
-					
-					<div class="row" style="text-align: left;margin: 20px;float:left" >
-						<div id="" style="border: 1px dotted grey; border-radius: 5px; width: 200px; height: 150px; background-color: rgb(248,249,251); ">
-							
-							<a href="#" style="position: absolute; margin-left: 65px; margin-top: 60px;">上传图片</a>
-						</div>
-						
-					</div>
-			<br>
-		</div>
-		
-		<!--友情链接-->
-		<div class="container" style="margin-top: 15px;">
-			<div class="row" style="text-align: center;">
-				<p>
-					<a href="#" style="margin-left: 20px;">关于我们</a>
-					<a href="#"style="margin-left: 20px;">联系我们</a>
-					<a href="#"style="margin-left: 20px;">招贤纳士</a>
-					<a href="#"style="margin-left: 20px;">法律声明</a>
-					<a href="#"style="margin-left: 20px;">友情链接</a>
-					<a href="#"style="margin-left: 20px;">服务声明</a>
-					<a href="#"style="margin-left: 20px;">广告声明</a>
-				</p>
-			</div>
-			<div class="row" style="text-align: center;">
-				<p>
-					Copyright © 20021-2021 千寻招聘网 版权所有
-				</p>
-			</div>
-		</div>
+
 		
 	</body>
 	<!-- 先引入jQuery核心js文件 -->
 	<script src="${pageContext.request.contextPath}/js/jquery-3.1.1.js"></script>
 	<!-- 引入BootStrap核心js文件 -->
-	<script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
+	<script src="${path}/js/bootstrap.min.js"></script>
 	
-	<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.horizontalmenu.js"></script>
-	
-	<script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
-	
-	<script>
-		$(function () {
-		  $('.ah-tab-wrapper').horizontalmenu({
-		    itemClick : function(item) {
-		      $('.ah-tab-content-wrapper .ah-tab-content').removeAttr('data-ah-tab-active');
-		      $('.ah-tab-content-wrapper .ah-tab-content:eq(' + $(item).index() + ')').attr('data-ah-tab-active', 'true');
-		      return false; //if this finction return true then will be executed http request
-		    }
-		  });
-		});
-		
-		
-		
-		var btn1 = document.getElementsByName("btn1")[0];
-		var form1 = document.getElementsByName("form1")[0];
-		btn1.onclick=function(){
-			form1.style.display="initial";
+	<script type="text/javascript" src="${path}/js/jquery.horizontalmenu.js"></script>
+
+	<!-- 2.引入校验插件 -->
+	<script src="${pageContext.request.contextPath}/validate/jquery.validate.min.js"></script>
+
+	<script src="${pageContext.request.contextPath}/validate/validate.js"></script>
+
+	<script type="text/javascript">
+		//将文件流以url形式读取，实现图片实时显示：
+		function showPreview(source){
+			var file = source.files[0];
+			if(window.FileReader){
+				var fr = new FileReader();
+				fr.onloadend = function(e){
+					document.getElementById("pic").src=e.target.result;
+				}
+				fr.readAsDataURL(file);
+			}
 		}
 	</script>
+
 	
 	
 

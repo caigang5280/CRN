@@ -192,3 +192,91 @@ $.validator.addMethod("validateNameModify",function(value,element,params){
     //需要返回值 false----该校验器校验失败    true---校验通过
     return flag;
 });
+
+
+/*
+修改简历信息
+*/
+$("#updateResume").validate({
+    rules:{
+        "photo":{
+            "required":true
+        },
+        "name":{
+          "required":true,
+        },
+        "graduationTime":{
+            "required":true
+        },
+        "phone":{
+            "required":true
+        },
+        "email":{
+            "required":true
+        },
+        "birthday":{
+            "required":true
+        },
+        "college":{
+            "required":true
+        },
+        "major":{
+            "required":true
+        },
+        "education":{
+            "required":true
+        },
+        "graduationYear":{
+            "required":true
+        },
+        "personalAdvantage":{
+            "required":true
+        },
+        "workExperience":{
+            "required":true
+        },
+        "projectExperience":{
+            "required":true
+        }
+    },
+    messages: {
+        "photo":{
+            "required":"请选择证件照"
+        },
+        "name":{
+            "required":"姓名必填",
+        },
+        "phone":{
+            "required":"手机号必填"
+        },
+        "email":{
+            "required":"邮箱必填"
+        },
+        "birthday":{
+            "required":"生日必填"
+        },
+        "college":{
+            "required":"学院必填"
+        },
+        "major":{
+            "required":"专业必填"
+        },
+        "education":{
+            "required":"学历必填"
+        },
+        "graduationYear":{
+            "required":"毕业年份必填"
+        },
+        "personalAdvantage":{
+            "required":"个人优势必填"
+        },
+        "workExperience":{
+            "required":"求职期望必填"
+        },
+        "projectExperience":{
+            "required":"工作经历必填"
+        }
+    }
+});
+
+

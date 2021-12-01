@@ -122,4 +122,16 @@ public class PersonalServlet extends BasicServlet implements IServlet {
         out.close();
     }
 
+    //修改简历中下半部分
+    public void modifyResumeLower(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+        System.out.println("111");
+        String personalAdvantage = request.getParameter("personalAdvantage");
+        System.out.println(personalAdvantage);
+    }
+
+    //个人基本信息修改
+    public void modifyResumeInfo(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+        System.out.println("modifyResumeInfo");
+
+    }
 }

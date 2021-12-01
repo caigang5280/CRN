@@ -252,7 +252,7 @@
         <a class="searchHotPosition" href="#">运维工程师</a>
         <a class="searchHotPosition" href="#">测试工程师</a>
         <a class="searchHotPosition" href="#">安全工程师</a>
-        <a iclassd="searchHotPosition" href="#">架构师</a>
+        <a class="searchHotPosition" href="#">架构师</a>
         <a class="searchHotPosition" href="#">IC工程师</a>
         <a class="searchHotPosition" href="#">数据挖掘工程师</a>
     </div>
@@ -840,13 +840,13 @@
                 <div class="col-md-4" style="background-color: white;">
                     <br/>
                     <div>
-											<span class="recommendPosition">小米全球新零售&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-												<span class="recommendSalary">30-60K·14薪</span>
-											</span>
+                        <span class="recommendPosition">小米全球新零售&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<span class="recommendSalary">30-60K·14薪</span>
+						</span>
                     </div>
                     <div>
-											<span class="recomendMiddle">北京&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科
-											</span>
+						<span class="recomendMiddle">北京&nbsp;|&nbsp;5-10年&nbsp;|&nbsp;本科
+                        </span>
                     </div>
                     <br/>
                     <div>
