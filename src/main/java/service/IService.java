@@ -17,6 +17,9 @@ public interface IService<T> {
     //通过id修改密码
     public boolean updatePwd(int id, String password);
 
+    //通过id修改信息
+    public boolean modifyInfo(T t);
+
 
 
 }

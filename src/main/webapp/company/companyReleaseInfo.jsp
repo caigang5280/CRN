@@ -161,13 +161,13 @@
                 </div><!-- row -->
             </div><!-- container -->
             
-            <!-- 经验学历 -->
+            <!-- 经验学历薪资 -->
             <div class="container">
                 <div class="row" style="margin-left: -32px;">
                     <div class="col-lg-5 col-md-6 col-xs-12">
-                        <label class="l1" style="font-size: 12px;">经验学历</label>
+                        <label class="l1" style="font-size: 12px;">经验学历薪资</label>
                         <select class="zhao" name="jobExperience">
-                            <option>不限</option>
+                            <option>经验不限</option>
                             <option>1年以下</option>
                             <option>1-3年</option>
                             <option>3-5年</option>
@@ -175,11 +175,22 @@
                             <option>10年以上</option>
                         </select>
                         <select class="zhao" name="education">
-                            <option>不限</option>
+                            <option>学历不限</option>
                             <option>大专</option>
                             <option>本科</option>
                             <option>硕士</option>
                             <option>博士</option>
+                        </select>
+                        <select class="zhao" name="salary">
+                            <option>不限</option>
+                            <option>2k以下</option>
+                            <option>2k-5k</option>
+                            <option>5k-10k</option>
+                            <option>10k-15k</option>
+                            <option>15k-25k</option>
+                            <option>25k-30k</option>
+                            <option>30k-50k</option>
+                            <option>50k以上</option>
                         </select>
                     </div>
                 </div><!-- row -->

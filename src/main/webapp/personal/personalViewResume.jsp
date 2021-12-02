@@ -55,10 +55,11 @@
 	        <div class="ah-tab-wrapper">
 				<div class="row" style="margin-left: 40px;">
 	            <div class="ah-tab">
-	                <a class="ah-tab-item" data-ah-tab-active="true" href="">人才简历</a>
+					
+	                <a class="ah-tab-item" data-ah-tab-active="true" href="">我的投递</a>
 	                <a class="ah-tab-item" href="">企业邀请</a>
-					</div>
 	            </div>
+				</div>
 	        </div>
 	        <div class="ah-tab-content-wrapper">
 	            <div class="ah-tab-content" data-ah-tab-active="true">
@@ -170,10 +171,10 @@
 	                						  <!-- On cells (`td` or `th`) -->
 	                						  <tr>
 	                							<td class="info">序号</td>
-	                							<td class="info">投放日期</td>
-	                							<td class="info">投放公司</td>
-	                							<td class="info">公司已查阅</td>
-	                							<td class="info">收到回信</td>
+	                							<td class="info">投递日期</td>
+	                							<td class="info">投递公司</td>
+	                							<td class="info">投递状态</td>
+	                							<td class="info">处理状态</td>
 	                							<td class="info"></td>
 	                							<td class="info"></td>
 	                							<td class="info">查看详情</td>
@@ -326,22 +327,11 @@
 	                			<div class="col-lg-1"></div>
 	                				<!-- 表格正文 -->
 	                				<div class="col-lg-10 col-xs-12">
-	                					<table class="table table-hover">
+	                					<table class="table table-hover" id="table1">
 	                						<br />
-	                						
-	                						<!-- 不会用 -->
-	                						  <!-- On rows -->
-	                <!-- 						  <tr class="info">序号</tr>
-	                						  <tr class="info">公司名</tr>
-	                						  <tr class="active">Logo</tr>
-	                						  <tr class="active">...</tr>
-	                						  <tr class="active">...</tr>
-	                						  <tr class="active">...</tr> -->
-	                						  
-	                						  <!-- On cells (`td` or `th`) -->
 	                						  <tr>
 	                							<td class="info">序号</td>
-	                							<td class="info">人才姓名</td>
+	                							<td class="info">企业名</td>
 	                							<td class="info">招聘信息</td>
 	                							<td class="info">处理状态</td>
 	                							<td class="info">岗位信息</td>
@@ -350,8 +340,7 @@
 	                							<td class="info">查看详情</td>
 	                							
 	                						  </tr>
-	                						  
-	                						  
+
 	                						  <tr>
 	                						  	<td class="active">1</td>
 	                						  	<td class="active">李四</td>
@@ -370,7 +359,7 @@
 	                							</td>
 	                							<td class="active"></td>
 	                							<td class="active"></td>
-	                						  	<td class="active"><button href="#" style="background-color: #00b38a;color: white;">查看简历</button></td>
+	                						  	<td class="active"><button href="#" style="background-color: #00b38a;color: white;">查看公司</button></td>
 	                						  </tr>
 	                						  
 	                						  
@@ -392,7 +381,7 @@
 	                							</td>
 	                							<td class="active"></td>
 	                							<td class="active"></td>
-	                							<td class="active"><button href="#" style="background-color: #00b38a;color: white;">查看简历</button></td>
+	                							<td class="active"><button href="#" style="background-color: #00b38a;color: white;">查看公司</button></td>
 	                						</tr>  
 	                					</table>
 	                		</div> <!-- col-lg-10 col-xs-10 -->
@@ -419,17 +408,17 @@
 		</div>
 
 	<jsp:include page="/floor.jsp"></jsp:include>
-
+		
 	</body>
 	<!-- 先引入jQuery核心js文件 -->
 	<script src="${pageContext.request.contextPath}/js/jquery-3.1.1.js"></script>
 	<!-- 引入BootStrap核心js文件 -->
-	<script src=".${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
+	<script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
 	
 	<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.horizontalmenu.js"></script>
 	
-	<script src="${pageContext.request.contextPath}/新建文件夹/jQuery响应式Tabs选项卡插件/js/jquery-1.11.0.min.js"></script>
-	<script src="${pageContext.request.contextPath}/新建文件夹/jQuery响应式Tabs选项卡插件/js/jquery.horizontalmenu.js"></script>
+	<script src="${pageContext.request.contextPath}/js/jquery-1.11.0.min.js"></script>
+	<script src="${pageContext.request.contextPath}/js/jquery.horizontalmenu.js"></script>
 	<script>
 		$(function () {
 		  $('.ah-tab-wrapper').horizontalmenu({

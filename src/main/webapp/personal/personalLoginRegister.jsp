@@ -285,10 +285,8 @@
                         <input type="text" placeholder="用户名"  name="username" id="username"/>
                         <input type="password" placeholder="密码"  name="password" id="registerPassword"/>
                         <input type="password" placeholder="确认密码"  name="repassword" />
-                        <span id="registerRePasswordMsg"></span>
                         <input type="email" placeholder="电子邮件" id="r_emial" name="email"/>
                         <input type="text" placeholder="手机号" id="r_phone" name="phone"/>
-                        <span id="phoneMsg"></span>
                         <button type="submit" id="create" style="background-color: rgb(0,179,138);">立即注册</button>
                         <p class="message">已经有了一个账户? <a href="#">立刻登录</a></p>
                     </form>

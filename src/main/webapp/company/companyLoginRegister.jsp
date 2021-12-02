@@ -279,19 +279,21 @@
 						 <span style="font-size: 20px; ">招兵买马</span>
 						 </span>
                     </p>
-                    <form class="register-form">
-                        <input type="text" placeholder="公司名" id="r_user_name"/>
-                        <input type="password" placeholder="密码" id="r_password" />
-                        <input type="password" placeholder="确认密码" id="r_repassword"/>
-                        <input type="text" placeholder="电子邮件" id="r_emial"/>
-                        <input type="text" placeholder="手机号" id="r_phone"/>
-                        <button id="create" style="background-color: rgb(0,179,138);">立即注册</button>
+                    <form action="/company?method=register" method="post" class="register-form" id="companyRegister">
+                        <input type="text" placeholder="公司名"  name="username" id="username"/>
+                        <input type="password" placeholder="密码"  name="password" id="registerPassword"/>
+                        <input type="password" placeholder="确认密码"  name="repassword" />
+                        <input type="email" placeholder="电子邮件" id="r_emial" name="email"/>
+                        <input type="text" placeholder="手机号" id="r_phone" name="phone"/>
+                        <button type="submit" id="create" style="background-color: rgb(0,179,138);">立即注册</button>
                         <p class="message">已经有了一个账户? <a href="#">立刻登录</a></p>
                     </form>
-                    <form class="login-form">
-                        <input type="text" placeholder="公司名" id="user_name"/>
-                        <input type="password" placeholder="密码" id="password"/>
-                        <button id="login" style="background-color: rgb(0,179,138);">登　录</button>
+
+                    <%--登录--%>
+                    <form action="/company?method=login" method="post" id="companyLogin" class="login-form">
+                        <input type="text" placeholder="公司名" id="user_name" name="loginUsername" value="${username}"/>
+                        <input type="password" placeholder="密码" id="password" name="loginPassword"/>
+                        <button type="submit" id="login" style="background-color: rgb(0,179,138);">登 录</button>
                         <p class="message">还没有账户? <a href="#">立刻创建</a></p>
                     </form>
                 </div>
@@ -303,7 +305,7 @@
 
 
 <div id="" style="text-align: center; margin-top: 540px;">
-    <img src="img/登录底部.png">
+    <img src="${path}/img/登录底部.png">
 </div>
 </body>
 
@@ -315,7 +317,7 @@
 <!-- 2.引入校验插件 -->
 <script src="${pageContext.request.contextPath}/validate/jquery.validate.min.js"></script>
 
-<script src="${pageContext.request.contextPath}/validate/validate.js"></script>
+<script src="${pageContext.request.contextPath}/validate/companyValidate.js"></script>
 
 <script type="text/javascript">
     //切换登录注册

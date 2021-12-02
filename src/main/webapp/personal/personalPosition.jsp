@@ -27,7 +27,7 @@
 
 
     /* 搜索热门职位 */
-    .searchhotposition {
+    .searchHotPosition {
         margin-left: 20px;
         color: gray;
         text-decoration: none;
@@ -99,14 +99,13 @@
 <div class="container" id="hot">
     <div class="row" style="margin-left: -180px">
         <span style="color: gray;"><strong>相关搜索:</strong></span>
-        <a class="searchhotposition" href="#">python web</a>
-        <a class="searchhotposition" href="#">JAVA</a>
-        <a class="searchhotposition" href="#">前端</a>
-        <a class="searchhotposition" href="#">python数据分析</a>
-        <a class="searchhotposition" href="#">C++</a>
-        <a class="searchhotposition" href="#">测试工程师</a>
-        <a class="searchhotposition" href="#">HTML</a>
-        <a class="searchhotposition" href="#">运维工程师</a>
+        <a class="searchHotPosition" href="#">架构师</a>
+        <a class="searchHotPosition" href="#">IC工程师</a>
+        <a class="searchHotPosition" href="#">数据挖掘工程师</a>
+        <a class="searchHotPosition" href="#">网络应用工程师</a>
+        <a class="searchHotPosition" href="#">运维工程师</a>
+        <a class="searchHotPosition" href="#">测试工程师</a>
+        <a class="searchHotPosition" href="#">安全工程师</a>
     </div>
     <br/>
 </div>
@@ -250,6 +249,9 @@
 
 <!-- 职位工作表 -->
 <div class="container">
+
+
+
     <div class="row" style="border: 1px darkgray solid; width: 900px; margin-left: 30px; border-radius: 10px;">
         <div>
             <div>

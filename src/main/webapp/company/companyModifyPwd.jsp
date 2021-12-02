@@ -72,8 +72,8 @@
                 <nav class="dr-menu">
                     <div class="dr-trigger"><span class="dr-icon dr-icon-menu"></span><a class="dr-label">企业信息</a></div>
                     <ul>
-                        <li><a class="dr-icon dr-icon-user" href="companyModifyInfo.html" style="color: black;">修改企业信息</a></li>
-                        <li class="active"><a class="dr-icon dr-icon-settings" href="companyModifyPwd.html" style="color: black;">修改账户密码</a></li>
+                        <li><a class="dr-icon dr-icon-user" href="${pageContext.request.contextPath}/company/companyModifyInfo.jsp" style="color: black;">修改企业信息</a></li>
+                        <li class="active"><a class="dr-icon dr-icon-settings" href="${pageContext.request.contextPath}/company/companyModifyPwd.jsp" style="color: black;">修改账户密码</a></li>
                         <li><a class="dr-icon dr-icon-switch" href="#" style="color: black;">退出</a></li>
                     </ul>
                 </nav>
@@ -81,25 +81,25 @@
         </div><!-- col-lg-4 -->
         
         <div class="col-lg-8 col-md-6 col-xs-6" style="margin-top: 30px;">
-            <form class="form-horizontal">
+            <form action="/company?method=updatePwd" class="form-horizontal" id="companyUpdatePassword" method="post">
                 <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-2 control-label" >新密码</label>
+                    <label for="inputEmail3" class="col-sm-2 control-label">新密码</label>
                     <div class="col-sm-10">
-                        <input type="text" name="passwrod"class="form-control" id="inputEmail3" placeholder="New PassWord">
+                        <input type="password" style="width: 250px" class="form-control" id="inputEmail3" name="password" placeholder="New PassWord">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputPassword3" class="col-sm-2 control-label" name="repassword">确认密码</label>
+                    <label for="inputPassword3" class="col-sm-2 control-label">确认密码</label>
                     <div class="col-sm-10">
-                        <input type="text"name="repasswrod" class="form-control" id="inputPassword3" placeholder="RepassWord">
+                        <input type="password" style="width: 250px" class="form-control" id="inputPassword3" name="repassword" placeholder="RepassWord">
                     </div>
                 </div>
                 <div style="margin-left: 130px; margin-top: 30px;">
                     <div class="vi-form-item__content" >
-                        <button class="vi-button vi-button--primary">
-                            <span>保存</span>
+                        <button type="submit" class="vi-button vi-button--primary">
+                            保存
                         </button>
-                        <button class="vi-button vi-button--primary" style="margin-left: 60px;">
+                        <button type="reset" class="vi-button vi-button--primary" style="margin-left: 60px;">
                             <span>取消</span>
                         </button>
                     </div>
@@ -119,6 +119,11 @@
 <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
 
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.horizontalmenu.js"></script>
+
+<!-- 2.引入校验插件 -->
+<script src="${pageContext.request.contextPath}/validate/jquery.validate.min.js"></script>
+
+<script src="${pageContext.request.contextPath}/validate/companyValidate.js"></script>
 
 <script src="${pageContext.request.contextPath}/js/ytmenu.js"></script>
 <script>

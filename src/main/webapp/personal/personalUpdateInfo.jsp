@@ -25,47 +25,6 @@
 			body{
 				background-color: rgb(246,246,248);
 			}
-			/* 查看更多按钮 */
-			#selectmore{
-				color: green;
-				border: 1px solid green;
-			}
-			/* 热门企业logo */
-			#hotimg{
-				height: 100px;
-				width: 100px;
-			}
-			/* 热门企业按钮 */
-			#hotbtn{
-				width: 110px;
-				height:25px;
-				background-color: white;
-				border: 1px solid;
-				
-			}
-			
-			/* 搜索热门职位 */
-			#searchhotposition{
-				margin-left: 20px;
-				color: #00b38a;
-			}
-			
-			#recommendposition{
-				font-size: 20px;
-				
-			}
-			#recommendbottom{
-				color: gray;
-			}
-			#recommendimg{
-				height: 40px;
-			}
-			#recommendsalary{
-				color: red;
-			}
-			#recomendmiddle{
-				color: gray;
-			}
 			
 			li.paral{
 				float: left;
@@ -93,8 +52,6 @@
 		<div class="container">
 			<div class="row" style="text-align: left;">
 				<span style="margin-left: 50px; color: rgb(255,138,121);">*根据法律规定，进行网络求职应如实提供个人信息</span>
-				
-				
 			</div>
 			<br>
 			<div style="background-color: rgb(255,250,233); padding: 0px; border:1px solid orange;border-radius: 3px;">
@@ -110,14 +67,14 @@
 		</div>
 		<br><br>
 
-	<form action="/personal?method=modifyResume" method="post" id="updateResume">
+	<form action="/personal?method=modifyResume" method="post" id="updateResume" enctype="multipart/form-data">
 		<!-- 个人信息 -->
 		<div class="container" style="background-color: rgb(248,249,251);">
 			<div class="row" style="text-align: left;margin: 20px;float:left" >
 				<div class="col-lg-2">
 					<br/>
 					<br/>
-					<img src="${resume.photo}" id="pic" alt="..." style="width: 100px;height: 100px" class="img-circle">
+					<img src="${pageContext.request.contextPath}${resume.photo}" id="pic" alt="..." style="width: 100px;height: 100px" class="img-circle">
 					
 					<br/>
 					<br/>
@@ -133,11 +90,11 @@
 									<table>
 										<tr <%--style="width: 200px;height: 200px"--%>>
 											<td align="right">姓名</td>
-											<td><input type="text" name="name" id="name" /></td>
+											<td><input type="text" name="name" id="name" value="${resume.name}" /></td>
 											<td align="right">性别</td>
 											<td>
-												<input type="radio" name="sex" id="man" checked="checked"/>男
-												<input type="radio" name="sex" id="woman"/>女
+												<input type="radio" name="sex" id="man" value="男" checked="checked"/>男
+												<input type="radio" name="sex" id="woman" value="女"/>女
 											</td>
 
 										</tr>
@@ -153,28 +110,28 @@
 												</select>
 											</td>
 											<td align="right">毕业时间</td>
-											<td><input type="date" name="graduationYear" id="graduationYear" /></td>
+											<td><input type="date" name="graduationYear" id="graduationYear" value="${resume.graduationYear}" /></td>
 
 										</tr>
 
 										<tr>
 											<td >手机号码</td>
-											<td><input type="text" name="phone" id="phone" /></td>
+											<td><input type="text" name="phone" id="phone" value="${resume.phone}"/></td>
 											<td >邮箱</td>
-											<td><input type="email" name="email" id="email" /></td>
+											<td><input type="email" name="email" id="email"  value="${resume.email}" /></td>
 										</tr>
 
 
 										<tr>
 											<td >生日</td>
-											<td><input type="date" name="birthday" id="birthday"/></td>
+											<td><input type="date" name="birthday" id="birthday" value="${resume.birthday}"/></td>
 											<td >毕业院校</td>
-											<td><input type="text" name="college" id="college"/></td>
+											<td><input type="text" name="college" id="college" value="${resume.college}"/></td>
 										</tr>
 
 										<tr>
 											<td >专业</td>
-											<td><input type="text" name="major" id="major"/></td>
+											<td><input type="text" name="major" id="major" value="${resume.major}"/></td>
 										</tr>
 									</table>
 							</td>
@@ -193,7 +150,7 @@
 				<div class="" style="float:left">
 					<h3>个人优势</h3>
 					<div class="row" style="text-align: left;margin: 10px;float:left" >
-						<textarea name="personalAdvantage" class="form-control" cols="100" rows="5" placeholder="请输入您的个人优势..."></textarea>
+						<textarea name="personalAdvantage" class="form-control" cols="100" rows="5" placeholder="请输入您的个人优势..." >${resume.personalAdvantages}</textarea>
 					</div>
 				</div>
 				<br>
@@ -262,7 +219,7 @@
 			<div class="" style="float:left">
 				<h3>工作经历</h3>
 				<div class="row" style="text-align: left;margin: 10px;float:left" >
-					<textarea name="workExperience" id="workExperience" class="form-control" cols="100" rows="5" placeholder="请输入您的工作经历..."></textarea>
+					<textarea name="workExperience" id="workExperience" class="form-control" cols="100" rows="5" placeholder="请输入您的工作经历...">${resume.workExperience}</textarea>
 				</div>
 			</div>
 			<br>
@@ -275,7 +232,7 @@
 			<div class="" style="float:left;">
 					<h3>项目经历</h3>
 					<div class="row"style="text-align: left;margin: 10px;float:left" >
-						<textarea name="projectExperience" class="form-control" cols="100" rows="5" placeholder="请输入您的项目经历..."></textarea>
+						<textarea name="projectExperience" class="form-control" cols="100" rows="5" placeholder="请输入您的项目经历...">${resume.projectExperience}</textarea>
 					</div>
 					<br />
 			</div>

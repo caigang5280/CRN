@@ -17,6 +17,10 @@
 </style>
 
 <body>
+<br>
+<br>
+<br>
+<br>
 
 <div class="container" style="background-color: white; width: 1300px;height: 240px;">
     <div class="row">
@@ -24,11 +28,11 @@
             <div style="display: inline-block;">
                 <input id="qian" class="app" type="button" value="下载千寻APP"
                        style="width: 140px;height: 50px;margin-top: 40px; border: 1px solid lightseagreen;"
-                       onmouseover="document.getElementById('img1').style.display='block';"
-                       onmouseout="document.getElementById('img1').style.display='none';"/>
+                       onmouseover="document.getElementById('img11').style.display='block';"
+                       onmouseout="document.getElementById('img11').style.display='none';"/>
             </div>
             <div id="img1" style="display: none;display: inline-block;">
-                <img src="${pageContext.request.contextPath}/img/app.PNG" style="width: 120px;height: 120px;margin-top: -80px;margin-left: 160px;"/>
+                <img id="img11" src="${pageContext.request.contextPath}/img/app.PNG" style="display:none;width: 120px;height: 120px;margin-top: -80px;margin-left: 160px;"/>
             </div>
             <br/>
             <div style="display: inline-block;">

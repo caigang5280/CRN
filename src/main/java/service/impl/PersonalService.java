@@ -10,7 +10,7 @@ import java.sql.SQLException;
 
 /**
  * @Version 1.0
- * @Description TODO
+ * @Description 个人用户Service
  * @Author 22413
  * @Aate 2021/11/28 17:15
  */
@@ -33,10 +33,10 @@ public class PersonalService implements IService<PersonalUser> {
 
     //检查名字是否存在
     @Override
-    public boolean validateName(String username) {
+    public boolean validateName(String name) {
         PersonalUser personalUser = null;
         try {
-            personalUser = dao.selectOneByName(username);
+            personalUser = dao.selectOneByName(name);
             if(personalUser == null){
                 return true;
             }
@@ -104,8 +104,25 @@ public class PersonalService implements IService<PersonalUser> {
 
     //通过id修改简历信息
     public boolean modifyResume(Resume resume) {
-
-        return false;
+        int i = 0;
+        try
+        {
+            i = dao.update("update resume set photo=?,name=?,sex=?,email=?,phone=?," +
+                            "birthday=?,college=?,major=?,education=?," +
+                            "graduationYear=?,personalAdvantages=?,jobExpectation=?," +
+                            "locationExpectation=?,salaryExpectation=?,workExperience=?," +
+                            "projectExperience=?,state=? where id=?",
+                    resume.getPhoto(),resume.getName(),resume.getSex(), resume.getEmail(),resume.getPhone(),
+                    resume.getBirthday(),resume.getCollege(),resume.getMajor(),resume.getEducation(),
+                    resume.getGraduationYear(),resume.getPersonalAdvantages(),resume.getJobExpectation(),
+                    resume.getLocationExpectation(),resume.getSalaryExpectation(),resume.getWorkExperience(),
+                    resume.getProjectExperience(),1,resume.getId());
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } finally {
+            JDBCUtils.close();
+        }
+        return i>0;
     }
 
 }

@@ -8,13 +8,20 @@ import entity.Resume;
 import service.impl.PersonalService;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.Part;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.UUID;
 
+@MultipartConfig
 @WebServlet(name = "PersonalServlet", urlPatterns = "/personal")
 public class PersonalServlet extends BasicServlet implements IServlet {
 
@@ -145,13 +152,66 @@ public class PersonalServlet extends BasicServlet implements IServlet {
 
     //修改简历
     public void modifyResume(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-        System.out.println("111");
+        HttpSession session = request.getSession();
+        PersonalUser personalUser = (PersonalUser) session.getAttribute("personalUser");
+
+        //获取表单请求参数
+        int id = personalUser.getId();
+        String photo = request.getParameter("photo");
+        String name = request.getParameter("name");
+        String sex = request.getParameter("sex");
+        String email = request.getParameter("email");
+        String phone = request.getParameter("phone");
+        String birthdayStr = request.getParameter("birthday");
+        String college = request.getParameter("college");
+        String major = request.getParameter("major");
+        String education = request.getParameter("eduction");
+        String graduationYear = request.getParameter("graduationYear");
         String personalAdvantage = request.getParameter("personalAdvantage");
-        System.out.println(personalAdvantage);
+        String jobExpectation = request.getParameter("jobExpectation");
+        String locationExpectation = request.getParameter("locationExpectation");
+        String salaryExpectation = request.getParameter("salaryExpectation");
+        String workExperience = request.getParameter("workExperience");
+        String projectExperience = request.getParameter("projectExperience");
 
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date birthday = null;
+        try {
+            birthday = sdf.parse(birthdayStr);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
 
+        //获取表单中上传的文件信息
+        Part part = request.getPart("photo");
 
+        //执行修改的业务逻辑
+        Resume resume = new Resume(
+                id,photo,name,sex,email,phone,birthday,college,major,education,
+                graduationYear,personalAdvantage,jobExpectation,locationExpectation,
+                salaryExpectation,workExperience,projectExperience, 1
+        );
+        System.out.println(resume);
 
+        if(part!=null){
+            //制作一个新名字
+            String oldName = part.getHeader("content-disposition");
+            //实际上传了图片
+            if(oldName!=null && oldName.lastIndexOf(".")>0){
+                String newName =  UUID.randomUUID()+oldName.substring(oldName.lastIndexOf("."),oldName.length()-1);
+                //给用户设置头像信息
+                resume.setPhoto("/pic/"+newName);
+                //写出上传图片至服务器路径
+                part.write("F:\\jkyTest\\project\\pic"+newName);
+            }
+        }
+        boolean flag = service.modifyResume(resume);
+        //根据修改结果进行页面跳转
+        if(flag){
+            //将数据放入会话区
+            session.setAttribute("resume", resume);
+            request.getRequestDispatcher("personal/personalUpdateInfo.jsp").forward(request, response);
+        }
     }
 
 

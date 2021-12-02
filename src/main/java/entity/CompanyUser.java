@@ -25,7 +25,15 @@ public class CompanyUser {
     String phone;
     //地址
     String address;
-	//经营规模
+
+    public CompanyUser(String companyName, String companyEmail, String password, String phone) {
+        this.companyName = companyName;
+        this.companyEmail = companyEmail;
+        this.password = password;
+        this.phone = phone;
+    }
+
+    //经营规模
     String businessScale;
 	//企业logo
     String companyLogo;

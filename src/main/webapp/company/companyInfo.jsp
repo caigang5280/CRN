@@ -41,8 +41,8 @@
                 <nav class="dr-menu">
                     <div class="dr-trigger active"><span class="dr-icon dr-icon-menu"></span><a class="dr-label">企业信息</a></div>
                     <ul>
-                        <li><a class="dr-icon dr-icon-user" href="companyModifyInfo.html" style="color: black;">修改企业信息</a></li>
-                        <li><a class="dr-icon dr-icon-settings" href="companyModifyPwd.html" style="color: black;">修改账户密码</a></li>
+                        <li><a class="dr-icon dr-icon-user" href="/company/companyModifyInfo.jsp" style="color: black;">修改企业信息</a></li>
+                        <li><a class="dr-icon dr-icon-settings" href="/company/companyModifyPwd.jsp" style="color: black;">修改账户密码</a></li>
                         <li><a class="dr-icon dr-icon-switch" href="#" style="color: black;">退出</a></li>
                     </ul>
                 </nav>
@@ -55,17 +55,17 @@
             <br />
             <span style="margin-left: 0px;">
 							<strong style="color: orange;">
-								公司名:极客营
+								公司名:${companyUser.companyName}
 							</strong>
 						</span>
             <span style="margin-left: 30px;">
 							<strong style="color: orange;">
-								注册资金:1000万
+								公司邮箱:${companyUser.companyEmail}
 							</strong>
 						</span>
             <span style="margin-left: 30px;">
 							<strong style="color: orange;">
-								注册日期:2000年10月1日
+								联系方式:${companyUser.phone}
 							</strong>
 						</span>
             <br />

@@ -13,280 +13,178 @@
 		
 		<title>千寻网</title>
 		
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/default.css" />
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/component.css" />
+		<script src="${pageContext.request.contextPath}/js/modernizr.custom.js"></script>
 		<link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet" />
-		
+		<link rel="shortcut icon" href="${pageContext.request.contextPath}/img/favicon.ico"/>
 		<link href="${pageContext.request.contextPath}/css/jquery.horizontalmenu.css" rel="stylesheet">
-		
-		<link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
 	</head>
-	
 	<style>
-		/* 整体 */
 		body{
 			background-color: rgb(246,246,248);
 		}
-		/* 查看更多按钮 */
-		#selectmore{
-			color: green;
-			border: 1px solid green;
+		
+		.vi-button.vi-button--primary:focus, .vi-button.vi-button--primary:hover {
+		    background: #33c2a1;
+		    border-color: #33c2a1;
+		    color: #fff;
 		}
-		/* 热门企业logo */
-		#hotimg{
-			height: 100px;
-			width: 100px;
-		}
-		/* 热门企业按钮 */
-		#hotbtn{
-			width: 110px;
-			height:25px;
-			background-color: white;
-			border: 1px solid;
-			
+		.vi-button {
+		    display: inline-block;
+		    -webkit-box-sizing: border-box;
+		    box-sizing: border-box;
+		    line-height: 1;
+		    white-space: nowrap;
+		    cursor: pointer;
+		    background: #fff;
+		    border: 1px solid #dcdfe6;
+		    color: #606266;
+		    text-align: center;
+		    outline: 0;
+		    margin: 0;
+		    -webkit-transition: .1s;
+		    transition: .1s;
+		    padding: 12px 20px;
+		    font-size: 14px;
+		    border-radius: 4px;
 		}
 		
-		/* 搜索热门职位 */
-		#searchhotposition{
-			margin-left: 20px;
-			color: #00b38a;
-		}
-		
-		#recommendposition{
-			font-size: 20px;
-			
-		}
-		#recommendbottom{
-			color: gray;
-		}
-		#recommendimg{
-			height: 40px;
-		}
-		#recommendsalary{
-			color: red;
-		}
-		#recomendmiddle{
-			color: gray;
-		}
 	</style>
-	
 	<body>
 	<jsp:include page="/personalHeader.jsp"></jsp:include>
 
-		<!-- 搜索栏 -->
-		<div class="container">
-			<div class="row" style="text-align: left; margin-left: 10px;" >
-			  <div class="col-lg-10" style="text-align: left;">
-			    <div class="input-group" style="text-align: left;">
-			      <input type="text" class="form-control" placeholder="请输入公司名搜索..."style="height: 40px;">
-			      <span class="input-group-btn">
-			        <button class="btn btn-default" type="button"
-					style="height: 40px;width: 100px;background-color: #00b38a;color: white;">搜索</button>
-			      </span>
-			    </div><!-- /input-group -->
-			  </div><!-- /.col-lg-6 -->
-			</div><!-- /.row -->
-		</div>
-		<br />
-		
-		<!-- 职位工作筛选 -->
-		<div class="container">
-			<div class="row" style="margin-left: 25px;">
-				<div class="col-lg-10 col-xs-10">
-				<!-- 工作经验 button -->
-				<div class="btn-group">
-				  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				    工作经验 <span class="caret"></span>
-				  </button>
-				  <ul class="dropdown-menu">
-				    <li><a href="#">不限</a></li>
-				    <li><a href="#">在校/应届</a></li>
-				    <li><a href="#">3年及以下</a></li>
-				    <li><a href="#">3-5年</a></li>
-				    <li><a href="#">5-10年</a></li>
-				    <li><a href="#">10年以上</a></li>
-					<!-- 分割线 -->
-				    <!-- <li role="separator" class="divider"></li>
-				    <li><a href="#">Separated link</a></li> -->
-				  </ul>
-				</div><!-- btn-group -->
-				
-				<!-- 学历要求 button -->
-				<div class="btn-group">
-				  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				    学历要求 <span class="caret"></span>
-				  </button>
-				  <ul class="dropdown-menu">
-				    <li><a href="#">不限</a></li>
-				    <li><a href="#">大专</a></li>
-				    <li><a href="#">本科</a></li>
-				    <li><a href="#">硕士</a></li>
-				    <li><a href="#">博士</a></li>
-				    <!-- <li role="separator" class="divider"></li>
-				    <li><a href="#">Separated link</a></li> -->
-				  </ul>
-				</div><!-- btn-group -->
-				
-				<!-- 薪资要求 button -->
-				<div class="btn-group">
-				  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				    薪资要求 <span class="caret"></span>
-				  </button>
-				  <ul class="dropdown-menu">
-				    <li><a href="#">3k以下</a></li>
-				    <li><a href="#">3k-6k</a></li>
-				    <li><a href="#">6k-10k</a></li>
-				    <li><a href="#">10k-15k</a></li>
-				    <li><a href="#">15k-20k</a></li>
-				    <li><a href="#">20k-25k</a></li>
-				    <li><a href="#">25k-30k</a></li>
-				    <li><a href="#">30k及以上</a></li>
-				    <!-- <li role="separator" class="divider"></li>
-				    <li><a href="#">Separated link</a></li> -->
-				  </ul>
-				</div><!-- btn-group -->
-				
-				<!-- 工作地点 button -->
-				<div class="btn-group hidden-xs">
-				  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				    工作地点 <span class="caret"></span>
-				  </button>
-				  <ul class="dropdown-menu">
-				    <li><a href="#">不限</a></li>
-				    <li><a href="#">北京</a></li>
-				    <li><a href="#">上海</a></li>
-				    <li><a href="#">深圳</a></li>
-				    <li><a href="#">广州</a></li>
-				    <li><a href="#">武汉</a></li>
-				    <li><a href="#">无锡</a></li>
-				    <li><a href="#">苏州</a></li>
-				    <li><a href="#">南京</a></li>
-				    <!-- <li role="separator" class="divider"></li>
-				    <li><a href="#">Separated link</a></li> -->
-				  </ul>
-				</div><!-- btn-group -->
-				
-				</div><!-- col-lg-10 -->
-				
-				<div class="col-lg-2 col-xs-2">
-					<a href="#" />清空筛选条件
-				</div>
-				
-			</div> <!-- row -->
-		</div> <!-- container -->
-		
-		<!-- 投递简历详情 -->
-		<div class="container">
+		<div class="container" style="background-color: #FFF2E3;/*margin-left: 68px;*/width: 1130px;">
+			<br />
 			<div class="row">
-				<!-- 表格左 边留白 -->
-					<div class="col-lg-1"></div>
-						<!-- 表格正文 -->
-						<div class="col-lg-10 col-xs-12">
-							<table class="table table-hover">
-								<br />
-								
-								<!-- 不会用 -->
-								  <!-- On rows -->
-		<!-- 						  <tr class="info">序号</tr>
-								  <tr class="info">公司名</tr>
-								  <tr class="active">Logo</tr>
-								  <tr class="active">...</tr>
-								  <tr class="active">...</tr>
-								  <tr class="active">...</tr> -->
-								  
-								  <!-- On cells (`td` or `th`) -->
-								  <tr>
-									<td class="info">序号</td>
-									<td class="info">投放日期</td>
-									<td class="info">投放公司</td>
-									<td class="info">公司已查阅</td>
-									<td class="info">收到回信</td>
-									<td class="info"></td>
-									<td class="info"></td>
-									<td class="info">查看详情</td>
-									
-								  </tr>
-								  
-								  
-								  <tr>
-								  	<td class="active">1</td>
-								  	<td class="active">投放日期</td>
-								  	<td class="active">投放公司</td>
-								  	<td class="active">
-										<div class="mui-input-row mui-checkbox ">
-											<label></label>
-											<input name="Checkbox" type="checkbox" >
-										</div>
-									</td>
-								  	<td class="active">
-										<div class="mui-input-row mui-checkbox ">
-											<label></label>
-											<input name="Checkbox" type="checkbox" >
-										</div>
-									</td>
-									<td class="active"></td>
-									<td class="active"></td>
-								  	<td class="active"><button href="#" style="background-color: #00b38a;color: white;">查看详情</button></td>
-								  </tr>
-								  
-								  
-								<tr>
-									<td class="active">2</td>
-									<td class="active">投放日期</td>
-									<td class="active">投放公司</td>
-									<td class="active">
-										<div class="mui-input-row mui-checkbox ">
-											<label></label>
-											<input name="Checkbox" type="checkbox" >
-										</div>
-									</td>
-									<td class="active">
-										<div class="mui-input-row mui-checkbox ">
-											<label></label>
-											<input name="Checkbox" type="checkbox" >
-										</div>
-									</td>
-									<td class="active"></td>
-									<td class="active"></td>
-									<td class="active"><button href="#" style="background-color: #00b38a;color: white;">查看详情</button></td>
-								</tr>  
-							</table>
-				</div> <!-- col-lg-10 col-xs-10 -->
-			<!-- 表格右边留白 -->
-			<div class="col-lg-1"></div>
-			</div><!-- 职位工作表container -->
-		</div>
-
-		<div class="container">
-			<div class="row"style="background-color: white;height: 100px;">
-				<div class="col-lg-1"></div>
-				<div class="col-lg-10" >
-					<img src="${pageContext.request.contextPath}/img/Logo.png" style="width: 80px;margin-top: 10px;"/>
-		
-					<span style="font-size: 30px;color: #000000;">千寻网——大家喜欢的招聘求职平台</span>
-					
+				<div class="col-lg-5"style="margin-left: 80px;">
+					<span style="font-size: 26px;">Java中级开发工程师</span>
+					<span style="color: red; font-size: 26px;">12K-20K</span>
+					<br />
+					<br />
+					<span style="font-size: 18px;">上海&nbsp/&nbsp经验1-3年&nbsp/&nbsp本科及以上&nbsp/&nbspJava&nbsp/&nbsp全职</span>
+					<br />
+					<span style="font-size: 14px;border: 1px darkgray solid;"><span style="color: lightseagreen;">软件服务|咨询</span></span>
+					<span style="font-size: 14px;border: 1px darkgray solid; margin-left:4px;"><span style="color: lightseagreen;">JAVA</span></span>
+					<span style="font-size: 14px;border: 1px darkgray solid; margin-left:4px;"><span style="color: lightseagreen;">Spring</span></span>
+					<span style="font-size: 14px;border: 1px darkgray solid; margin-left:4px;"><span style="color: lightseagreen;">MySQL</span></span>
+					<span style="font-size: 14px;border: 1px darkgray solid; margin-left:4px;"><span style="color: lightseagreen;">Web前端开发</span></span>
+					<br />
+					<br />
+					<br />
+					<span style="font-size: 16px; color: gray;">捷箭科技研发部</span>
+					<span style="font-size: 14px; color: darkgray; margin-left: 14px;">2021-11-23  发布于千寻网</span>
 				</div>
-				
+				<div class="col-lg-6" style="margin-top: 40px;">
+					<button class="vi-button vi-button--primary" style="background-color: lightseagreen;">
+					 <span><strong style="font-size: 20px; color: white;">投简历</strong></span>
+					</button>
+					<input type="radio" name="jianli" style="margin-left: 80px" /><span style="font-size: 14px; margin-left: 4px;">在线简历</span>
+					<br />
+					<input type="radio" name="jianli" style="margin-left: 186px;" /><span style="font-size: 14px; margin-left: 4px;">无</span>
+					<br />
+					<button class="vi-button vi-button--primary" style="margin-left: 180px;">
+					 <span>上传附件简历</span>
+					</button>
+				</div>
 			</div>
 		</div>
 
-	<br>
+		<br />
+		<br />
+		
+		<div class="container" style=" background-color: white;/*margin-left: 68px;*/width: 1130px;">
+			<div class="row" >
+				<div class="col-lg-8" >
+					<br />
+						<span><strong style="font-size: 16px;">职位描述:</strong></span>
+						<br />
+						<br />
+						<span>岗位职责：1、负责公司Java产品系统设计、开发工作；2、负责开发系统功能模块；3、负责业务逻辑设计、编码以及BUG修改、模块集成；任职要求：1、大学及以上学历，2年以上Java开发经验，一定英文基础，能够熟练阅读英文资料；2、技术要求：精通Java语言，熟练使用Struts、Spring、Spring.cloud等主流框架；3、了解JavaScript，能简单使用Vue.JS, JQuery、ExtJSs、Dojo、HTML、CSS等前端开发技术；4、熟练使用Linux操作系统，能编写简单的脚本；5、熟悉Sql server、MySQL等数据库；6、对微服务有一定了解，有相关经验更佳；7、责任心强，具有较强的逻辑分析和表达能力、较强的学习能力、理解力和团队合作精神，能够顺畅交流；</span>
+						<br />
+						<br />
+						<span><strong style="font-size: 16px;">工作地址:</strong></span>
+						<br />
+						<br />
+						<span>上海 - 浦东新区 - 张江- 海趣园2号楼202室</span>
+						<br />
+						<br />
+						<span><strong style="font-size: 16px;">职位发布者:</strong></span>	
+						<br />
+						<br />
+						<img style="margin-left: 50px;" alt="" src="//www.lgstatic.com/thumbnail_120x120/i/image2/M01/0E/8C/CgoB5lyhgdiAN-4AAACeGEp-ay0931.png" width="60" height="60">
+						<span style="font-size: 18px;margin-left: 10px;">
+							James+Qian
+							<br />	
+							<span style="color: darkseagreen;font-size: 14px;">CEO+联合创始人本周·活跃</span>
+						</span>
+						<br />
+						<br />
+						<br />
+						<span><strong>千寻安全提示</strong></span>
+						<br />
+						<br />
+						<span style="font-size: 10px; color: lightseagreen;">· 求职中如遇招聘方扣押证件、要求提供担保或收取财物、强迫入股或集资、收取不正当利益或其他违法情形，请立即举报</span>
+						<br />
+						<span style="font-size: 10px; color: lightseagreen;">· 如遇岗位要求海外工作，请提高警惕，谨防诈骗</span>
+				</div>
+				<div class="col-lg-3" style="margin-left: 70px; margin-top: 40px;">
+					<img style="border: 2px solid lightgrey;" class="b2" src="//www.lgstatic.com/thumbnail_160x160/i/image6/M01/5F/BB/Cgp9HWGCPoyAVHUUAAA-OcTvpFM099.jpg" width="96" height="96" alt="上海捷箭信息科技有限公司">
+					<br />
+					<a style="cursor: pointer; text-decoration: none;margin-left: 10px;"><span style="color: black; font-size: 18px;">捷箭科技</span></a>
+					<br />
+					<br />
+					<span style="margin-left: 10px;"><strong>移动互联网,企业服务</strong></span>
+					<br />
+					<br />
+					<!--  -->
+<!-- 					<span style="margin-left: 10px;"><strong>A轮</strong></span>
+					<br />
+					<br /> -->
+					<span style="margin-left: 10px;"><strong>50-150人</strong></span>
+					<br />
+					<br />
+					<a style="cursor: pointer; text-decoration: none;margin: 10px;">http://www.parrowtech.com</a>
+				</div>
+			</div>
+		</div>
+					<br />
+						<br />
+						<br />
+						<br />
+						<br />
+						<br />
+						<br />
+						<br />
+						<br />
+						<br />
+						<br />
+						<br />
+						<br />
+						<br />		
+		<script src="js/ytmenu.js"></script>
+
+
 	<jsp:include page="/floor.jsp"></jsp:include>
 
-	</body>      
+	</body>
 	
 	<!-- 先引入jQuery核心js文件 -->
 	<script src="${pageContext.request.contextPath}/js/jquery-3.1.1.js"></script>
 	<!-- 引入BootStrap核心js文件 -->
 	<script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
+	<script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
 	
 	<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.horizontalmenu.js"></script>
 	
+	<script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
 	<script>
 		$(function () {
 		  $('.ah-tab-wrapper').horizontalmenu({
 		    itemClick : function(item) {
 		      $('.ah-tab-content-wrapper .ah-tab-content').removeAttr('data-ah-tab-active');
 		      $('.ah-tab-content-wrapper .ah-tab-content:eq(' + $(item).index() + ')').attr('data-ah-tab-active', 'true');
-		      return false; //if this finction return true then will be executed http request
+		      return false; //if this 	finction return true then will be executed http request
 		    }
 		  });
 		});

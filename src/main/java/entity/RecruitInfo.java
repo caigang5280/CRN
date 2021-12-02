@@ -19,6 +19,8 @@ public class RecruitInfo {
     String jobExperience;
     //学历要求
     String education;
+    //职位薪资
+    String salary;
     //企业logo图
     String companyLogo;
     //职位描述
@@ -36,13 +38,14 @@ public class RecruitInfo {
     public RecruitInfo() {
     }
 
-    public RecruitInfo(int id, String companyName, String jobType, String jobTitle, String jobExperience, String education, String companyLogo, String jobDescription, String jobAddress, String department, int companyUserId, int count) {
+    public RecruitInfo(int id, String companyName, String jobType, String jobTitle, String jobExperience, String education, String salary, String companyLogo, String jobDescription, String jobAddress, String department, int companyUserId, int count) {
         this.id = id;
         this.companyName = companyName;
         this.jobType = jobType;
         this.jobTitle = jobTitle;
         this.jobExperience = jobExperience;
         this.education = education;
+        this.salary = salary;
         this.companyLogo = companyLogo;
         this.jobDescription = jobDescription;
         this.jobAddress = jobAddress;
@@ -149,6 +152,22 @@ public class RecruitInfo {
 
     /**
      * 获取
+     * @return salary
+     */
+    public String getSalary() {
+        return salary;
+    }
+
+    /**
+     * 设置
+     * @param salary
+     */
+    public void setSalary(String salary) {
+        this.salary = salary;
+    }
+
+    /**
+     * 获取
      * @return companyLogo
      */
     public String getCompanyLogo() {
@@ -244,6 +263,6 @@ public class RecruitInfo {
     }
 
     public String toString() {
-        return "RecruitInfo{id = " + id + ", companyName = " + companyName + ", jobType = " + jobType + ", jobTitle = " + jobTitle + ", jobExperience = " + jobExperience + ", education = " + education + ", companyLogo = " + companyLogo + ", jobDescription = " + jobDescription + ", jobAddress = " + jobAddress + ", department = " + department + ", companyUserId = " + companyUserId + ", count = " + count + "}";
+        return "RecruitInfo{id = " + id + ", companyName = " + companyName + ", jobType = " + jobType + ", jobTitle = " + jobTitle + ", jobExperience = " + jobExperience + ", education = " + education + ", salary = " + salary + ", companyLogo = " + companyLogo + ", jobDescription = " + jobDescription + ", jobAddress = " + jobAddress + ", department = " + department + ", companyUserId = " + companyUserId + ", count = " + count + "}";
     }
 }

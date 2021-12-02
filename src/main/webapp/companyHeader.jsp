@@ -29,7 +29,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <!-- logo图片 -->
-                    <img src="./img/Logo.png" style="width: 30px;height: 30px;"/>
+                    <img src="${pageContext.request.contextPath}/img/Logo.png" style="width: 30px;height: 30px;"/>
                     <!-- 网站名称 -->
                     <span id="title"style="color: #00b38a; font-size: 25px;  margin-top: 15px;">千寻网</span>
                 </div>
@@ -40,7 +40,8 @@
                     <ul class="nav navbar-nav">
                         <!-- location地点选择 -->
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">地点 <span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                全国 <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">北京</a></li>
                                 <li><a href="#">上海</a></li>
@@ -60,23 +61,23 @@
                             </ul>
                         </li>
                         <!-- 跳转至首页 -->
-                        <li class="active"><a href="${pageContext.request.contextPath}/companyHome.jsp">首页 <span class="sr-only">(current)</span></a></li>
+                        <li class="active"><a href="${pageContext.request.contextPath}/company/companyHome.jsp">首页 <span class="sr-only">(current)</span></a></li>
                         <!-- 跳转至人才搜索与邀请 -->
-                        <li><a href="${pageContext.request.contextPath}/companySearchInvitation.jsp">人才搜索与邀请</a></li>
+                        <li><a href="${pageContext.request.contextPath}/company/companySearchInvitation.jsp">人才搜索与邀请</a></li>
                         <!-- 查看简历 -->
-                        <li><a href="${pageContext.request.contextPath}/companyViewResume.jsp">查看简历</a></li>
+                        <li><a href="${pageContext.request.contextPath}/company/companyViewResume.jsp">查看简历</a></li>
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
                         <!-- 发布招聘信息 -->
-                        <li><a href="${pageContext.request.contextPath}/companyReleaseInfo.jsp">发布招聘信息</a></li>
+                        <li><a href="${pageContext.request.contextPath}/company/companyReleaseInfo.jsp">发布招聘信息</a></li>
                         <!-- 企业用户名 -->
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">公司-用户名 <span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${companyUser.companyName} <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="${pageContext.request.contextPath}/companyInfo.jsp">修改公司信息</a></li>
+                                <li><a href="${pageContext.request.contextPath}/company/companyInfo.jsp">修改公司信息</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="${pageContext.request.contextPath}/companyLoginRegister.jsp">退出账号</a></li>
+                                <li><a href="${pageContext.request.contextPath}/company/companyLoginRegister.jsp">退出账号</a></li>
                             </ul>
                         </li>
                     </ul>

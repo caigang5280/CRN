@@ -57,7 +57,6 @@
                                 <li><a href="#">长沙</a></li>
                                 <li><a href="#">苏州</a></li>
                                 <li><a href="#">天津</a></li>
-
                             </ul>
                         </li>
                         <!-- 跳转至首页 -->
@@ -65,7 +64,8 @@
                                 class="sr-only">(current)</span></a>
                         </li>
                         <!-- 跳转至查看所有职位 -->
-                        <li><a href="${pageContext.request.contextPath}/personal/personalPosition.jsp">职位</a></li>
+                        <%--<li><a href="${pageContext.request.contextPath}/personal/personalPosition.jsp">职位</a></li>--%>
+                        <li><a href="/job&method=flushPositionPage">职位</a></li>
                         <!-- 求职详细 -->
                         <li><a href="${pageContext.request.contextPath}/personal/personalJobDetails.jsp">求职详细</a></li>
                     </ul>

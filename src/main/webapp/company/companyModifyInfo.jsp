@@ -79,8 +79,8 @@
                 <nav class="dr-menu">
                     <div class="dr-trigger active"><span class="dr-icon dr-icon-menu"></span><a class="dr-label">企业信息</a></div>
                     <ul>
-                        <li class="active"><a class="dr-icon dr-icon-user" href="${pageContext.request.contextPath}/companyModifyInfo.jsp" style="color: black;">修改企业信息</a></li>
-                        <li><a class="dr-icon dr-icon-settings" href="${pageContext.request.contextPath}/companyModifyPwd.jsp" style="color: black;">修改账户密码</a></li>
+                        <li class="active"><a class="dr-icon dr-icon-user" href="${pageContext.request.contextPath}/company/companyModifyInfo.jsp" style="color: black;">修改企业信息</a></li>
+                        <li><a class="dr-icon dr-icon-settings" href="${pageContext.request.contextPath}/company/companyModifyPwd.jsp" style="color: black;">修改账户密码</a></li>
                         <li><a class="dr-icon dr-icon-switch" href="#" style="color: black;">退出</a></li>
                     </ul>
                 </nav>
@@ -88,54 +88,44 @@
         </div><!-- col-lg-4 -->
         
         <div class="col-lg-8 col-md-6 col-xs-6" style="margin-top: 30px;">
-            <form class="form-horizontal">
+            <form action="/company?method=updateInfo" class="form-horizontal" id="companyUpdateInfo" method="post">
                 <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-2 control-label">公司名</label>
+                    <label for="inputEmail3" class="col-sm-2 control-label" >公司名</label>
                     <div class="col-sm-10">
-                        <input type="email" class="form-control" id="inputEmail3" placeholder="Name">
+                        <input type="text" style="width: 250px" class="form-control" id="inputEmail3" placeholder="Name" name="username" id="username" value="${companyUser.companyName}">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputPassword3" class="col-sm-2 control-label">办公地址</label>
+                    <label for="inputPassword3" class="col-sm-2 control-label" >办公地址</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputPassword3" placeholder="Address">
+                        <input type="text" style="width: 250px" class="form-control" id="inputPassword3" placeholder="Address" name="address" value="${companyUser.address}">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputPassword3" class="col-sm-2 control-label">公司邮箱</label>
+                    <label for="inputPassword3" class="col-sm-2 control-label" >公司邮箱</label>
                     <div class="col-sm-10">
-                        <input type="email" class="form-control" id="inputPassword3" placeholder="E-mail">
+                        <input type="text" style="width: 250px" class="form-control" id="inputPassword4" placeholder="Education" name="education" value="${companyUser.companyEmail}">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputPassword3" class="col-sm-2 control-label">联系方式</label>
+                    <label for="inputPassword3" class="col-sm-2 control-label" >联系方式</label>
                     <div class="col-sm-10">
-                        <input type="email" class="form-control" id="inputPassword3" placeholder="Telephone">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="inputPassword3" class="col-sm-2 control-label">经营规模</label>
-                    <div class="col-sm-10">
-                        <select class="zhao" name="address">
-                            <option>100人以内</option>
-                            <option>100~300人</option>
-                            <option>300~500人</option>
-                            <option>500~800人</option>
-                            <option>1000人以上</option>
-                        </select>
+                        <input type="text" style="width: 250px" class="form-control" id="inputPassword4" placeholder="Telephone Number" name="phone" value="${companyUser.phone}">
                     </div>
                 </div>
                 <div style="margin-left: 130px; margin-top: 30px;">
                     <div class="vi-form-item__content" >
-                        <button class="vi-button vi-button--primary">
+                        <button type="submit" class="vi-button vi-button--primary">
                             <span>保存</span>
                         </button>
-                        <button class="vi-button vi-button--primary" style="margin-left: 80px;">
+                        <button type="reset" class="vi-button vi-button--primary" style="margin-left: 80px;">
                             <span>取消</span>
                         </button>
                     </div>
                 </div>
             </form>
+
+
         </div><!-- col-lg-8 -->
     </div><!-- row -->
 </div><!-- /container -->
@@ -150,6 +140,11 @@
 <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
 
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.horizontalmenu.js"></script>
+
+<!-- 2.引入校验插件 -->
+<script src="${pageContext.request.contextPath}/validate/jquery.validate.min.js"></script>
+
+<script src="${pageContext.request.contextPath}/validate/companyValidate.js"></script>
 
 
 <script src="${pageContext.request.contextPath}/js/ytmenu.js"></script>
