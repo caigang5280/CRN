@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: 22413
@@ -6,14 +7,16 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8" isELIgnored="false"%>
+         pageEncoding="UTF-8" isELIgnored="false" %>
 <head>
-    <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet"/>
 
     <link href="${pageContext.request.contextPath}/css/jquery.horizontalmenu.css" rel="stylesheet">
 
     <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
+<c:set value="${pageContext.request.contextPath}" var="path" scope="application"></c:set>
 
 <!-- 导航栏 -->
 <div class="container">
@@ -21,8 +24,9 @@
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header"style="margin: 5px;border: none;" >
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <div class="navbar-header" style="margin: 5px;border: none;">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -31,7 +35,7 @@
                     <!-- logo图片 -->
                     <img src="${pageContext.request.contextPath}/img/Logo.png" style="width: 30px;height: 30px;"/>
                     <!-- 网站名称 -->
-                    <span id="title"style="color: #00b38a; font-size: 25px;  margin-top: 15px;">千寻网</span>
+                    <span id="title" style="color: #00b38a; font-size: 25px;  margin-top: 15px;">千寻网</span>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -40,7 +44,8 @@
                     <ul class="nav navbar-nav">
                         <!-- location地点选择 -->
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-haspopup="true" aria-expanded="false">
                                 全国 <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">北京</a></li>
@@ -61,9 +66,11 @@
                             </ul>
                         </li>
                         <!-- 跳转至首页 -->
-                        <li class="active"><a href="${pageContext.request.contextPath}/company/companyHome.jsp">首页 <span class="sr-only">(current)</span></a></li>
+                        <li class="active"><a href="${pageContext.request.contextPath}/company/companyHome.jsp">首页 <span
+                                class="sr-only">(current)</span></a></li>
                         <!-- 跳转至人才搜索与邀请 -->
-                        <li><a href="${pageContext.request.contextPath}/company/companySearchInvitation.jsp">人才搜索与邀请</a></li>
+                        <li><a href="${pageContext.request.contextPath}/company/companySearchInvitation.jsp">人才搜索与邀请</a>
+                        </li>
                         <!-- 查看简历 -->
                         <li><a href="${pageContext.request.contextPath}/company/companyViewResume.jsp">查看简历</a></li>
                     </ul>
@@ -73,11 +80,15 @@
                         <li><a href="${pageContext.request.contextPath}/company/companyReleaseInfo.jsp">发布招聘信息</a></li>
                         <!-- 企业用户名 -->
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${companyUser.companyName} <span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-haspopup="true" aria-expanded="false">${companyUser.companyName} <span
+                                    class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="${pageContext.request.contextPath}/company/companyInfo.jsp">修改公司信息</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="${pageContext.request.contextPath}/company/companyLoginRegister.jsp">退出账号</a></li>
+                                <li>
+                                    <a href="${pageContext.request.contextPath}/company/companyLoginRegister.jsp">退出账号</a>
+                                </li>
                             </ul>
                         </li>
                     </ul>

@@ -34,6 +34,21 @@ public class RecruitInfo {
     //计数，此招聘信息被点击次数
     int count;
 
+    //发布招聘信息
+    public RecruitInfo(String companyName, String jobType, String jobTitle, String jobExperience, String education, String salary, String companyLogo, String jobDescription, String jobAddress, String department, int companyUserId, int count) {
+        this.companyName = companyName;
+        this.jobType = jobType;
+        this.jobTitle = jobTitle;
+        this.jobExperience = jobExperience;
+        this.education = education;
+        this.salary = salary;
+        this.companyLogo = companyLogo;
+        this.jobDescription = jobDescription;
+        this.jobAddress = jobAddress;
+        this.department = department;
+        this.companyUserId = companyUserId;
+        this.count = count;
+    }
 
     public RecruitInfo() {
     }

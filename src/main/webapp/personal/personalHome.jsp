@@ -130,21 +130,21 @@
 </style>
 <body>
 <a name="top"></a>
-<c:set value="${pageContext.request.contextPath}" var="path" scope="application"></c:set>
 
+<c:set value="${pageContext.request.contextPath}" var="path" scope="application"></c:set>
 
 <!-- 右侧小火箭图标返回顶部 -->
 <div id="shangxia2">
 			<span id="gotop1">
 				<a href="#top">
-					<img src="${pageContext.request.contextPath}/img/huojian.svg" alt="返回顶部小火箭">
+					<img src="${path}/img/huojian.svg" alt="返回顶部小火箭">
 				</a>
 
                 <!-- <img src="img/rocked.png" alt="返回顶部小火箭"> -->
 			</span>
 </div>
 
-        <jsp:include page="/personalHeader.jsp"></jsp:include>
+<jsp:include page="/personalHeader.jsp"></jsp:include>
 
 <!-- 搜索栏 -->
 <div class="container">
@@ -153,15 +153,19 @@
             <div class="input-group" style="text-align: center;">
             </div><!-- /input-group -->
         </div><!-- /.col-lg-6 -->
-        <div class="col-lg-10" style="text-align: center;">
-            <div class="input-group" style="text-align: center;">
-                <input type="text" class="form-control" placeholder="输入职位信息查询..." style="height: 40px;">
-                <span class="input-group-btn">
-			        <button class="btn btn-default" type="button"
+        <form action="/job?method=findAllPositions" method="post">
+            <div class="col-lg-10" style="text-align: center;">
+                <div class="input-group" style="text-align: center;">
+                    <input type="text" class="form-control"  placeholder="输入职位信息查询..." style="height: 40px;"
+                           name="queryJobTitle" >
+                    <span class="input-group-btn">
+			        <button class="btn btn-default" type="submit"
                             style="height: 40px;width: 100px;background-color: #00b38a;color: white;">搜索</button>
 			      </span>
-            </div><!-- /input-group -->
-        </div><!-- /.col-lg-6 -->
+                </div><!-- /input-group -->
+            </div><!-- /.col-lg-6 -->
+        </form>
+
     </div><!-- /.row -->
 </div>
 <br/>
@@ -171,14 +175,14 @@
 <div class="container">
     <div class="row" style="text-align: center;">
         <span>热门职位:</span>
-        <a class="searchHotPosition" href="/personal/personalPosition.jsp">桌面程序工程师</a>
-        <a class="searchHotPosition" href="#">网络应用工程师</a>
-        <a class="searchHotPosition" href="#">运维工程师</a>
-        <a class="searchHotPosition" href="#">测试工程师</a>
-        <a class="searchHotPosition" href="#">安全工程师</a>
-        <a class="searchHotPosition" href="#">架构师</a>
-        <a class="searchHotPosition" href="#">IC工程师</a>
-        <a class="searchHotPosition" href="#">数据挖掘工程师</a>
+        <a class="searchHotPosition" href="${path}/job?method=findAllPositions&queryJobTitle=桌面程序工程师">桌面程序工程师</a>
+        <a class="searchHotPosition" href="${path}/job?method=findAllPositions&queryJobTitle=网络应用工程师">网络应用工程师</a>
+        <a class="searchHotPosition" href="${path}/job?method=findAllPositions&queryJobTitle=运维工程师">运维工程师</a>
+        <a class="searchHotPosition" href="${path}/job?method=findAllPositions&queryJobTitle=测试工程师">测试工程师</a>
+        <a class="searchHotPosition" href="${path}/job?method=findAllPositions&queryJobTitle=安全工程师">安全工程师</a>
+        <a class="searchHotPosition" href="${path}/job?method=findAllPositions&queryJobTitle=架构师">架构师</a>
+        <a class="searchHotPosition" href="${path}/job?method=findAllPositions&queryJobTitle=IC工程师">IC工程师</a>
+        <a class="searchHotPosition" href="${path}/job?method=findAllPositions&queryJobTitle=数据挖掘工程师">数据挖掘工程师</a>
     </div>
 </div>
 

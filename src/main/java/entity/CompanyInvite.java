@@ -22,10 +22,10 @@ public class CompanyInvite {
     //企业招聘信息
     int recruitInfoId;
 
-    //投递状态-是否投递 0代表否  1代表是
+    //邀请状态-是否邀请 0代表否  1代表是
     int inviteState;
 
-    //处理状态-是否处理 0代表-企业未读  1代表-企业已阅  2代表-企业已回复
+    //处理状态-是否处理 0代表-个人用户未读  1代表-个人用户已读  2代表-企业已回复
     int handleState;
 
 

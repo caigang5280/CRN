@@ -58,7 +58,7 @@ public class EncodeFilter implements Filter {
         //resp.setContentType("text/html;charset="+encode);
         resp.setCharacterEncoding(encode);
         //过滤链  链接到下一个资源，下一个资源：可能是过滤器，也可能是目标资源
-        chain.doFilter(req,resp);
+          chain.doFilter(req,resp);
 
     }
 

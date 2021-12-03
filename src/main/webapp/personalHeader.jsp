@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: 22413
@@ -14,6 +15,9 @@
 
     <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
+<c:set value="${pageContext.request.contextPath}" var="path" scope="application"></c:set>
+
 <!-- 导航栏 -->
 <div class="container">
     <div class="row" style="margin: 5px;border: none;">
@@ -65,9 +69,9 @@
                         </li>
                         <!-- 跳转至查看所有职位 -->
                         <%--<li><a href="${pageContext.request.contextPath}/personal/personalPosition.jsp">职位</a></li>--%>
-                        <li><a href="/job&method=flushPositionPage">职位</a></li>
+                        <li><a href="/job?method=findAllPositions">职位</a></li>
                         <!-- 求职详细 -->
-                        <li><a href="${pageContext.request.contextPath}/personal/personalJobDetails.jsp">求职详细</a></li>
+                        <li><a href="${pageContext.request.contextPath}/personal/personalViewResume.jsp">求职详细</a></li>
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">

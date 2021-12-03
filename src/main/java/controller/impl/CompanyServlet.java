@@ -4,6 +4,7 @@ import controller.BasicServlet;
 import controller.IServlet;
 import entity.CompanyUser;
 import entity.PersonalUser;
+import entity.RecruitInfo;
 import entity.Resume;
 import service.impl.CompanyService;
 
@@ -11,7 +12,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.Part;
 import java.io.PrintWriter;
+import java.util.UUID;
 
 /**
  * @Version 1.0
@@ -19,6 +22,7 @@ import java.io.PrintWriter;
  * @Author 22413
  * @Aate 2021/11/30 18:50
  */
+
 @WebServlet(name = "CompanyServlet", urlPatterns = "/company")
 public class CompanyServlet extends BasicServlet implements IServlet {
     private CompanyService service = new CompanyService();
@@ -104,6 +108,7 @@ public class CompanyServlet extends BasicServlet implements IServlet {
             request.getRequestDispatcher(request.getContextPath() + "/company/companyInfo.jsp").forward(request, response);
         }
     }
+
     //校验用户名是否存在
     @Override
     public void validateName(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -132,4 +137,49 @@ public class CompanyServlet extends BasicServlet implements IServlet {
         out.flush();
         out.close();
     }
+
+    //发布招聘信息
+    public void postInformation(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+        //获取会话域的companyUser
+        HttpSession session = request.getSession();
+        CompanyUser companyUser = (CompanyUser) session.getAttribute("companyUser");
+
+        //获取表单中的请求参数 根据id获取
+        String jobType = request.getParameter("jobType");
+        String jobTitle = request.getParameter("jobTitle");
+        String jobExperience = request.getParameter("jobExperience");
+        String education = request.getParameter("education");
+        String salary = request.getParameter("salary");
+        String companyLogo = request.getParameter("companyLogo");
+        String jobDescription = request.getParameter("jobDescription");
+        String jobAddress = request.getParameter("jobAddress");
+        String department = request.getParameter("department");
+
+        RecruitInfo recruitInfo = new RecruitInfo(
+                companyUser.getCompanyName(),jobType,jobTitle,jobExperience,
+                education,salary,companyLogo,jobDescription,jobAddress,
+                department,companyUser.getId(),0
+        );
+
+        //获取表单中上传的文件信息
+        Part part = request.getPart("companyLogo");
+        if(part!=null){
+            //制作一个新名字
+            String oldName = part.getHeader("content-disposition");
+            if(oldName!=null && oldName.lastIndexOf(".")>0){
+                String newName = UUID.randomUUID()+oldName.substring(oldName.lastIndexOf("."),oldName.length()-1);
+                recruitInfo.setCompanyLogo("/pic/"+newName);
+                part.write("F:\\jkyTest\\project\\pic\\"+newName);
+            }
+        }
+        System.out.println(recruitInfo);
+
+        boolean flag = service.postInformation(recruitInfo);
+        if(flag){
+            request.getRequestDispatcher(request.getContextPath() + "/company/companyHome.jsp").forward(request,response);
+        }
+    }
+
+
 }

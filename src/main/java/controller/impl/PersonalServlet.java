@@ -41,10 +41,14 @@ public class PersonalServlet extends BasicServlet implements IServlet {
             HttpSession session = request.getSession();
             session.setAttribute("personalUser", personalUser);
 
+            //查找用户简历 放置会话域中
+            Resume resume = service.selectResume(personalUser.getId());
+            session.setAttribute("resume", resume);
+
             request.getRequestDispatcher(request.getContextPath() + "/personal/personalHome.jsp").forward(request, response);
         } else {
             request.setAttribute("username", username);
-            request.setAttribute("flagLogin",false);
+            request.setAttribute("flagLogin", false);
             /*request.setAttribute("msg","用户名或密码有误！");*/
             request.getRequestDispatcher(request.getContextPath() + "/personal/personalLoginRegister.jsp").forward(request, response);
         }
@@ -89,15 +93,15 @@ public class PersonalServlet extends BasicServlet implements IServlet {
         String username = request.getParameter("username");
         //判断用户名是否被占用
         boolean flag = service.validateName(username);
-        if(code==null || code.equals("")) {
+        if (code == null || code.equals("")) {
 
-        }else if(code.equals("updateInfo")){
-            System.out.println(code+";;");
+        } else if (code.equals("updateInfo")) {
+            System.out.println(code + ";;");
             //修改账户用户名 检验重复
             HttpSession session = request.getSession();
-            PersonalUser personalUser = (PersonalUser)session.getAttribute("personalUser");
+            PersonalUser personalUser = (PersonalUser) session.getAttribute("personalUser");
 
-            if(personalUser.getUsername().equals(username)){
+            if (personalUser.getUsername().equals(username)) {
                 flag = true;
             }
         }
@@ -117,7 +121,7 @@ public class PersonalServlet extends BasicServlet implements IServlet {
     public void updateInfo(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //获取会话域中的personalUser
         HttpSession session = request.getSession();
-        PersonalUser personalUser = (PersonalUser)session.getAttribute("personalUser");
+        PersonalUser personalUser = (PersonalUser) session.getAttribute("personalUser");
         System.out.println("updateInfo");
         //获取值 赋值到personalUser对象中
         String username = request.getParameter("username");
@@ -129,7 +133,7 @@ public class PersonalServlet extends BasicServlet implements IServlet {
         personalUser.setEducation(education);
         personalUser.setPhone(phone);
         boolean b = service.modifyInfo(personalUser);
-        if(b){
+        if (b) {
             request.getRequestDispatcher("personal/personalModifyInfo.jsp").forward(request, response);
         }
     }
@@ -138,12 +142,12 @@ public class PersonalServlet extends BasicServlet implements IServlet {
     @Override
     public void updatePwd(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-        PersonalUser personalUser = (PersonalUser)session.getAttribute("personalUser");
+        PersonalUser personalUser = (PersonalUser) session.getAttribute("personalUser");
         String password = request.getParameter("password");
-        System.out.println("password:"+password);
+        System.out.println("password:" + password);
         boolean b = service.updatePwd(personalUser.getId(), password);
-        System.out.println("b:"+b);
-        if(b){
+        System.out.println("b:" + b);
+        if (b) {
             request.getRequestDispatcher("personal/personalModifyPwd.jsp").forward(request, response);
         }
 
@@ -151,7 +155,7 @@ public class PersonalServlet extends BasicServlet implements IServlet {
 
 
     //修改简历
-    public void modifyResume(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+    public void modifyResume(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         PersonalUser personalUser = (PersonalUser) session.getAttribute("personalUser");
 
@@ -165,7 +169,7 @@ public class PersonalServlet extends BasicServlet implements IServlet {
         String birthdayStr = request.getParameter("birthday");
         String college = request.getParameter("college");
         String major = request.getParameter("major");
-        String education = request.getParameter("eduction");
+        String education = request.getParameter("education");
         String graduationYear = request.getParameter("graduationYear");
         String personalAdvantage = request.getParameter("personalAdvantage");
         String jobExpectation = request.getParameter("jobExpectation");
@@ -174,46 +178,50 @@ public class PersonalServlet extends BasicServlet implements IServlet {
         String workExperience = request.getParameter("workExperience");
         String projectExperience = request.getParameter("projectExperience");
 
+        String experience = request.getParameter("experience");
+
+
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         Date birthday = null;
         try {
             birthday = sdf.parse(birthdayStr);
+
         } catch (ParseException e) {
             e.printStackTrace();
         }
 
-        //获取表单中上传的文件信息
-        Part part = request.getPart("photo");
-
         //执行修改的业务逻辑
         Resume resume = new Resume(
-                id,photo,name,sex,email,phone,birthday,college,major,education,
-                graduationYear,personalAdvantage,jobExpectation,locationExpectation,
-                salaryExpectation,workExperience,projectExperience, 1
+                id, photo, name, sex, email, phone, birthday, college, major, education,
+                graduationYear, experience, personalAdvantage, jobExpectation, locationExpectation,
+                salaryExpectation, workExperience, projectExperience, 1
         );
-        System.out.println(resume);
 
-        if(part!=null){
+        //再手机上传信息 此处应该与input type="file" 的属性值
+        //获取表单中上传的文件信息
+        Part part = request.getPart("file");
+
+        if (part != null) {
             //制作一个新名字
             String oldName = part.getHeader("content-disposition");
             //实际上传了图片
-            if(oldName!=null && oldName.lastIndexOf(".")>0){
-                String newName =  UUID.randomUUID()+oldName.substring(oldName.lastIndexOf("."),oldName.length()-1);
+            if (oldName != null && oldName.lastIndexOf(".") > 0) {
+                String newName = UUID.randomUUID() + oldName.substring(oldName.lastIndexOf("."), oldName.length() - 1);
                 //给用户设置头像信息
-                resume.setPhoto("/pic/"+newName);
+                System.out.println("photo - " + "图片已上传");
+                resume.setPhoto("/pic/" + newName);
                 //写出上传图片至服务器路径
-                part.write("F:\\jkyTest\\project\\pic"+newName);
+                part.write("F:\\jkyTest\\project\\pic\\" + newName);
+            }
+
+            boolean flag = service.modifyResume(resume);
+            //根据修改结果进行页面跳转
+            if (flag) {
+                //将数据放入会话区
+                session.setAttribute("resume", resume);
+                request.getRequestDispatcher("personal/personalUpdateInfo.jsp").forward(request, response);
             }
         }
-        boolean flag = service.modifyResume(resume);
-        //根据修改结果进行页面跳转
-        if(flag){
-            //将数据放入会话区
-            session.setAttribute("resume", resume);
-            request.getRequestDispatcher("personal/personalUpdateInfo.jsp").forward(request, response);
-        }
     }
-
-
 
 }

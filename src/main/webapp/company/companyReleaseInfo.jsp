@@ -123,11 +123,9 @@
 <hr color="black" />
 </div>  <!-- container -->
 
-
-
 <div class="container">
-    <div class="col-lg-4 col-md-12">
-        <form>
+    <form action="/company?method=postInformation" method="post" id="releaseInfo" enctype="multipart/form-data">
+         <div class="col-lg-4 col-md-12">
             <!-- 基本信息 -->
             <div class="container">
                 <div class="row" >
@@ -146,7 +144,7 @@
             <div class="container">
                 <div class="row" >
                     <label class="l1" style="font-size: 12px;">企业名称</label>
-                    <input class="t1" name="companyName"type="text" style="border:1px solid #369"/ >
+                    <input class="t1" value="${companyUser.companyName}" disabled name="companyName"type="text" style="border:1px solid #369"/>
                 </div><!-- row -->
                 <div class="row" >
                     <label class="l1" style="font-size: 12px;">招聘类型</label>
@@ -157,15 +155,45 @@
                 </div><!-- row -->
                 <div class="row">
                     <label class="l1" style="font-size: 12px;">职位名称</label>
-                    <input class="t1" type="jobTitle" style="border:1px solid #369"/ >
+                    <select class="zhao" name="jobTitle">
+                        <option>桌面程序工程师</option>
+                        <option>网络应用工程师</option>
+                        <option>运维工程师</option>
+                        <option>测试工程师</option>
+                        <option>安全工程师</option>
+                        <option>PCB工程师</option>
+                        <option>FPGA工程师</option>
+                        <option>IC工程师</option>
+                        <option>数据挖掘工程师</option>
+                    </select>
                 </div><!-- row -->
             </div><!-- container -->
-            
+
+             <!-- 经验学历薪资 -->
+             <div class="container">
+                 <div class="row" style="margin-left: -32px;">
+                     <div class="col-lg-5 col-md-6 col-xs-12">
+                         <label class="l1" style="font-size: 12px;">薪资要求</label>
+                         <select class="zhao" name="salary">
+                             <option>不限</option>
+                             <option>2k以下</option>
+                             <option>2k-5k</option>
+                             <option>5k-10k</option>
+                             <option>10k-15k</option>
+                             <option>15k-25k</option>
+                             <option>25k-50k</option>
+                             <option>50k以上</option>
+                         </select>
+                     </div>
+                 </div><!-- row -->
+             </div><!-- container -->
+
+
             <!-- 经验学历薪资 -->
             <div class="container">
                 <div class="row" style="margin-left: -32px;">
                     <div class="col-lg-5 col-md-6 col-xs-12">
-                        <label class="l1" style="font-size: 12px;">经验学历薪资</label>
+                        <label class="l1" style="font-size: 12px;">经验学历</label>
                         <select class="zhao" name="jobExperience">
                             <option>经验不限</option>
                             <option>1年以下</option>
@@ -181,17 +209,6 @@
                             <option>硕士</option>
                             <option>博士</option>
                         </select>
-                        <select class="zhao" name="salary">
-                            <option>不限</option>
-                            <option>2k以下</option>
-                            <option>2k-5k</option>
-                            <option>5k-10k</option>
-                            <option>10k-15k</option>
-                            <option>15k-25k</option>
-                            <option>25k-30k</option>
-                            <option>30k-50k</option>
-                            <option>50k以上</option>
-                        </select>
                     </div>
                 </div><!-- row -->
             </div><!-- container -->
@@ -203,7 +220,13 @@
                         <span class="l2" style="font-size: 12px;margin-left: 0px;">企业logo</span>
                     </div>
                     <div class="col-lg-4 col-md-8 col-xs-6" style="margin-left: -80px;">
-                        <input name="companyLogo"type="file" />
+                        <br/>
+                        <br/>
+                        <img src="${pageContext.request.contextPath}${resume.photo}" id="pic" alt="..." style="width: 100px;height: 100px" class="img-circle">
+
+                        <br/>
+                        <br/>
+                        <input name="companyLogo"type="file" onchange="showPreview(this)"/>
                     </div>
                 </div>
             </div>
@@ -228,11 +251,11 @@
                 </div>
                 <div class="row" >
                     <label class="l1" style="font-size: 12px;">工作地址</label>
-                    <input class="t1" name="jobAddress" type="text" style="border:1px solid #369"/ >
+                    <input class="t1" name="jobAddress" type="text" style="border:1px solid #369"/>
                 </div>
                 <div class="row" >
                     <label class="l1" style="font-size: 12px;">所属部门</label>
-                    <input class="t1" name="department" type="text" style="border:1px solid #369"/ >
+                    <input class="t1" name="department" type="text" style="border:1px solid #369"/>
                 </div>
             </div><!-- container -->
             <br />
@@ -240,13 +263,14 @@
             <div class="container">
                 <div class="row clearfix">
                     <div class="col-  md-12 column">
-                        <button type="button" class="btn btn-default btn-success">发布职位</button>
+                        <button type="submit" class="btn btn-default btn-success">发布职位</button>
                     </div>
                 </div>
             </div><!-- container -->
-        </form>
-    </div>
+        </div>
+    </form> <%--form--%>
     
+<%--
     <!-- 轮播图 -->
     <div class="container">
         <div class="row" style="margin-left: 500px; margin-top: 20px;">
@@ -292,6 +316,8 @@
             </div>
         </div>
     </div>
+--%>
+
 </div>
 
 <br />
@@ -319,5 +345,19 @@
             }
         });
     });
+</script>
+
+<script type="text/javascript">
+    //将文件流以url形式读取，实现图片实时显示：
+    function showPreview(source){
+        var file = source.files[0];
+        if(window.FileReader){
+            var fr = new FileReader();
+            fr.onloadend = function(e){
+                document.getElementById("pic").src=e.target.result;
+            }
+            fr.readAsDataURL(file);
+        }
+    }
 </script>
 </html>

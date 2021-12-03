@@ -4,6 +4,7 @@ import dao.BaseDao;
 import dao.IDao;
 import entity.CompanyUser;
 import entity.PersonalUser;
+import entity.RecruitInfo;
 
 import java.sql.SQLException;
 
@@ -40,4 +41,17 @@ public class CompanyDao extends BaseDao<CompanyUser> implements IDao<CompanyUser
                 CompanyUser.class, name);
         return companyUser;
     }
+    //发布招聘信息
+    public int insertRecruit(RecruitInfo recruitInfo) throws SQLException {
+        int i = this.update("insert into recruitinfo values(null,?,?,?,?,?,?,?,?,?,?,?,?)",
+                recruitInfo.getCompanyName(),recruitInfo.getJobType(),recruitInfo.getJobTitle(),
+                recruitInfo.getJobExperience(),recruitInfo.getEducation(),
+                recruitInfo.getSalary(),recruitInfo.getCompanyLogo(),
+                recruitInfo.getJobDescription(),recruitInfo.getJobAddress(),
+                recruitInfo.getDepartment(),recruitInfo.getCompanyUserId(),0);
+        return i;
+    }
+
+
+
 }

@@ -4,6 +4,9 @@ import dao.BaseDao;
 import dao.IDao;
 import entity.PersonalUser;
 import entity.Resume;
+import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.BeanHandler;
+import utils.JDBCUtils;
 
 import java.sql.SQLException;
 
@@ -14,6 +17,8 @@ import java.sql.SQLException;
  * @Aate 2021/11/28 15:07
  */
 public class PersonalDao extends BaseDao<PersonalUser> implements IDao<PersonalUser> {
+
+    private QueryRunner queryRunner = new QueryRunner();
 
     //根据用户名 密码查询账户
     public PersonalUser selectOne(String username,String password) throws SQLException {
@@ -42,7 +47,12 @@ public class PersonalDao extends BaseDao<PersonalUser> implements IDao<PersonalU
     //第一次创建用户简历信息
     public int insertResume(int id, Resume resume) throws SQLException {
         int i = this.update("insert into resume values(?,null,null,null,null,null,null,null,null,null," +
-                "null,null,null,null,null,null,null,null)",id);
+                "null,null,null,null,null,null,null,null,null)",id);
         return i;
+    }
+
+    public Resume selectResume(int id) throws SQLException {
+        Resume resume = queryRunner.query(JDBCUtils.getConn(), "select * from resume where id = ?", new BeanHandler<>(Resume.class), id);
+        return resume;
     }
 }

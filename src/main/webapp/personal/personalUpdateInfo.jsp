@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 		 pageEncoding="UTF-8" isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -74,12 +75,12 @@
 				<div class="col-lg-2">
 					<br/>
 					<br/>
-					<img src="${pageContext.request.contextPath}${resume.photo}" id="pic" alt="..." style="width: 100px;height: 100px" class="img-circle">
+					<img src="${resume.photo}" id="pic" alt="..." style="width: 100px;height: 100px" class="img-circle">
 					
 					<br/>
 					<br/>
 					<br/>
-					<input type="file" id="file" placeholder="file" name="file" id="photo" name="photo" value="上传证件照" onchange="showPreview(this)">
+					<input type="file" id="file" placeholder="file" name="file"  value="上传证件照" onchange="showPreview(this)">
 				</div>
 				
 				<div class="col-lg-10" >
@@ -93,24 +94,24 @@
 											<td><input type="text" name="name" id="name" value="${resume.name}" /></td>
 											<td align="right">性别</td>
 											<td>
-												<input type="radio" name="sex" id="man" value="男" checked="checked"/>男
-												<input type="radio" name="sex" id="woman" value="女"/>女
+												<input type="radio" name="sex" id="man" value="男" <c:if test="${resume.sex eq '男'}">checked</c:if>/>男
+												<input type="radio" name="sex" id="woman" value="女" <c:if test="${resume.sex eq '女'}">checked</c:if>  />女
 											</td>
-
 										</tr>
+
 										<tr>
 											<!-- <input type="input" name="education" id="inp1education" /> -->
 											<td align="right" >学历</td>
 											<td>
-												<select id="education">学历
-													<option value="专科">专科</option>
-													<option value="本科">本科</option>
-													<option value="硕士">硕士</option>
-													<option value="博士">博士</option>
+												<select id="education" name="education">学历
+													<option value="专科" <c:if test="${resume.education eq '专科'}">selected</c:if> >专科</option>
+													<option value="本科" <c:if test="${resume.education eq '本科'}">selected</c:if> >本科</option>
+													<option value="硕士" <c:if test="${resume.education eq '硕士'}">selected</c:if> >硕士</option>
+													<option value="博士" <c:if test="${resume.education eq '博士'}">selected</c:if> >博士</option>
 												</select>
 											</td>
-											<td align="right">毕业时间</td>
-											<td><input type="date" name="graduationYear" id="graduationYear" value="${resume.graduationYear}" /></td>
+											<td align="right">毕业年份</td>
+											<td><input type="text" name="graduationYear" id="graduationYear" value="${resume.graduationYear}"/></td>
 
 										</tr>
 
@@ -124,7 +125,9 @@
 
 										<tr>
 											<td >生日</td>
-											<td><input type="date" name="birthday" id="birthday" value="${resume.birthday}"/></td>
+											<td><input type="date" name="birthday" id="birthday"
+													   value="<fmt:formatDate value='${resume.birthday}' pattern='yyyy-MM-dd'/>" />
+											</td>
 											<td >毕业院校</td>
 											<td><input type="text" name="college" id="college" value="${resume.college}"/></td>
 										</tr>
@@ -132,6 +135,17 @@
 										<tr>
 											<td >专业</td>
 											<td><input type="text" name="major" id="major" value="${resume.major}"/></td>
+											<td >工作经验</td>
+											<td>
+												<select id="experience" name="experience">工作经验
+													<option value="不限" <c:if test="${resume.experience eq '不限'}">selected</c:if> >不限</option>
+													<option value="在校/应届生" <c:if test="${resume.experience eq '在校/应届生'}">selected</c:if> >在校/应届生</option>
+													<option value="3年及以下" <c:if test="${resume.experience eq '3年及以下'}">selected</c:if> >3年及以下</option>
+													<option value="3-5年" <c:if test="${resume.experience eq '3-5年'}">selected</c:if> >3-5年</option>
+													<option value="5-10年" <c:if test="${resume.experience eq '5-10年'}">selected</c:if> >5-10年</option>
+													<option value="10年以上" <c:if test="${resume.experience eq '10年以上'}">selected</c:if> >10年以上</option>
+												</select>
+											</td>
 										</tr>
 									</table>
 							</td>
@@ -164,44 +178,44 @@
 				<h3>求职期望</h3>
 				<div class="row" style="text-align: left;margin: 20px;float:left" >
 					<select id="jobExpectation" name="jobExpectation">
-						<option value="1">桌面程序工程师</option>
-						<option value="2">网络应用工程师</option>
-						<option value="3">运维工程师</option>
-						<option value="4">测试工程师</option>
-						<option value="5">安全工程师</option>
-						<option value="6">架构师</option>
-						<option value="7">PCB工程师</option>
-						<option value="8">FPGA工程师</option>
-						<option value="9">IC工程师</option>
-						<option value="10">数据挖掘工程师</option>
+						<option value="桌面程序工程师" <c:if test="${resume.jobExpectation eq '桌面程序工程师'}">selected</c:if>>桌面程序工程师</option>
+						<option value="网络应用工程师" <c:if test="${resume.jobExpectation eq '网络应用工程师'}">selected</c:if>>网络应用工程师</option>
+						<option value="运维工程师" <c:if test="${resume.jobExpectation eq '运维工程师'}">selected</c:if>>运维工程师</option>
+						<option value="测试工程师" <c:if test="${resume.jobExpectation eq '测试工程师'}">selected</c:if>>测试工程师</option>
+						<option value="安全工程师" <c:if test="${resume.jobExpectation eq '安全工程师'}">selected</c:if>>安全工程师</option>
+						<option value="架构师" <c:if test="${resume.jobExpectation eq '架构师'}">selected</c:if>>架构师</option>
+						<option value="PCB工程师" <c:if test="${resume.jobExpectation eq 'PCB工程师'}">selected</c:if>>PCB工程师</option>
+						<option value="FPGA工程师" <c:if test="${resume.jobExpectation eq 'FPGA工程师'}">selected</c:if>>FPGA工程师</option>
+						<option value="IC工程师" <c:if test="${resume.jobExpectation eq 'IC工程师'}">selected</c:if>>IC工程师</option>
+						<option value="数据挖掘工程师" <c:if test="${resume.jobExpectation eq '数据挖掘工程师'}">selected</c:if>>数据挖掘工程师</option>
 					</select>
 
-					<select name="locationExcepctation">
-						<option value="1">全国</option>
-						<option value="2">北京</option>
-						<option value="3">上海</option>
-						<option value="4">深圳</option>
-						<option value="5">广州</option>
-						<option value="6">杭州</option>
-						<option value="7">成都</option>
-						<option value="8">南京</option>
-						<option value="9">武汉</option>
-						<option value="10">西安</option>
-						<option value="11">厦门</option>
-						<option value="12">长沙</option>
-						<option value="13">苏州</option>
-						<option value="14">天津</option>
+					<select name="locationExpectation">
+						<option value="全国" <c:if test="${resume.locationExpectation eq '全国'}">selected</c:if>>全国</option>
+						<option value="北京" <c:if test="${resume.locationExpectation eq '北京'}">selected</c:if>>北京</option>
+						<option value="上海" <c:if test="${resume.locationExpectation eq '上海'}">selected</c:if>>上海</option>
+						<option value="深圳"  <c:if test="${resume.locationExpectation eq '深圳'}">selected</c:if>>深圳</option>
+						<option value="广州"  <c:if test="${resume.locationExpectation eq '广州'}">selected</c:if>>广州</option>
+						<option value="杭州"  <c:if test="${resume.locationExpectation eq '杭州'}">selected</c:if>>杭州</option>
+						<option value="成都"  <c:if test="${resume.locationExpectation eq '成都'}">selected</c:if>>成都</option>
+						<option value="南京"  <c:if test="${resume.locationExpectation eq '南京'}">selected</c:if>>南京</option>
+						<option value="武汉"  <c:if test="${resume.locationExpectation eq '武汉'}">selected</c:if>>武汉</option>
+						<option value="西安"  <c:if test="${resume.locationExpectation eq '西安'}">selected</c:if>>西安</option>
+						<option value="厦门"  <c:if test="${resume.locationExpectation eq '厦门'}">selected</c:if>>厦门</option>
+						<option value="长沙"  <c:if test="${resume.locationExpectation eq '长沙'}">selected</c:if>>长沙</option>
+						<option value="苏州"  <c:if test="${resume.locationExpectation eq '苏州'}">selected</c:if>>苏州</option>
+						<option value="天津"  <c:if test="${resume.locationExpectation eq '天津'}">selected</c:if>>天津</option>
 					</select>
 
 					<select name="salaryExpectation">
-						<option value="1">薪资不限</option>
-						<option value="2">2k及以下</option>
-						<option value="3">2k-5k</option>
-						<option value="4">5k-10k</option>
-						<option value="5">10k-15k</option>
-						<option value="6">15k-25k</option>
-						<option value="7">25k-30k</option>
-						<option value="8">50k及以上</option>
+						<option value="薪资不限" <c:if test="${resume.locationExpectation eq '薪资不限'}">selected</c:if>>薪资不限</option>
+						<option value="2k及以下" <c:if test="${resume.locationExpectation eq '2k及以下'}">selected</c:if>>2k及以下</option>
+						<option value="2k-5k" <c:if test="${resume.locationExpectation eq '2k-5k'}">selected</c:if>>2k-5k</option>
+						<option value="5k-10k" <c:if test="${resume.locationExpectation eq '5k-10k'}">selected</c:if>>5k-10k</option>
+						<option value="10k-15k"<c:if test="${resume.locationExpectation eq '10k-15k'}">selected</c:if>>10k-15k</option>
+						<option value="15k-25k"<c:if test="${resume.locationExpectation eq '15k-25k'}">selected</c:if>>15k-25k</option>
+						<option value="25k-50k"<c:if test="${resume.locationExpectation eq '25k-50k'}">selected</c:if>>25k-50k</option>
+						<option value="50k及以上"<c:if test="${resume.locationExpectation eq '50k及以上'}">selected</c:if>>50k及以上</option>
 					</select>
 					</div>
 					<!-- 

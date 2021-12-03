@@ -31,6 +31,8 @@ public class Resume {
     String education;
     //毕业年份
     String graduationYear;
+    //经验
+    String experience;
     //个人优势
     String personalAdvantages;
     //期望职位
@@ -55,7 +57,7 @@ public class Resume {
     public Resume() {
     }
 
-    public Resume(int id, String photo, String name, String sex, String email, String phone, Date birthday, String college, String major, String education, String graduationYear, String personalAdvantages, String jobExpectation, String locationExpectation, String salaryExpectation, String workExperience, String projectExperience, int state) {
+    public Resume(int id, String photo, String name, String sex, String email, String phone, Date birthday, String college, String major, String education, String graduationYear, String experience, String personalAdvantages, String jobExpectation, String locationExpectation, String salaryExpectation, String workExperience, String projectExperience, int state) {
         this.id = id;
         this.photo = photo;
         this.name = name;
@@ -67,6 +69,7 @@ public class Resume {
         this.major = major;
         this.education = education;
         this.graduationYear = graduationYear;
+        this.experience = experience;
         this.personalAdvantages = personalAdvantages;
         this.jobExpectation = jobExpectation;
         this.locationExpectation = locationExpectation;
@@ -254,6 +257,22 @@ public class Resume {
 
     /**
      * 获取
+     * @return experience
+     */
+    public String getExperience() {
+        return experience;
+    }
+
+    /**
+     * 设置
+     * @param experience
+     */
+    public void setExperience(String experience) {
+        this.experience = experience;
+    }
+
+    /**
+     * 获取
      * @return personalAdvantages
      */
     public String getPersonalAdvantages() {
@@ -365,6 +384,6 @@ public class Resume {
     }
 
     public String toString() {
-        return "Resume{id = " + id + ", photo = " + photo + ", name = " + name + ", sex = " + sex + ", email = " + email + ", phone = " + phone + ", birthday = " + birthday + ", college = " + college + ", major = " + major + ", education = " + education + ", graduationYear = " + graduationYear + ", personalAdvantages = " + personalAdvantages + ", jobExpectation = " + jobExpectation + ", locationExpectation = " + locationExpectation + ", salaryExpectation = " + salaryExpectation + ", workExperience = " + workExperience + ", projectExperience = " + projectExperience + ", state = " + state + "}";
+        return "Resume{id = " + id + ", photo = " + photo + ", name = " + name + ", sex = " + sex + ", email = " + email + ", phone = " + phone + ", birthday = " + birthday + ", college = " + college + ", major = " + major + ", education = " + education + ", graduationYear = " + graduationYear + ", experience = " + experience + ", personalAdvantages = " + personalAdvantages + ", jobExpectation = " + jobExpectation + ", locationExpectation = " + locationExpectation + ", salaryExpectation = " + salaryExpectation + ", workExperience = " + workExperience + ", projectExperience = " + projectExperience + ", state = " + state + "}";
     }
 }

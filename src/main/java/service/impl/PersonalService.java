@@ -125,4 +125,15 @@ public class PersonalService implements IService<PersonalUser> {
         return i>0;
     }
 
+    public Resume selectResume(int id) {
+        Resume resume = null;
+        try {
+            resume = dao.selectResume(id);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } finally {
+            JDBCUtils.close();
+        }
+        return resume;
+    }
 }

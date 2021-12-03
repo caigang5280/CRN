@@ -3,6 +3,7 @@ package service.impl;
 import dao.impl.CompanyDao;
 import entity.CompanyUser;
 import entity.PersonalUser;
+import entity.RecruitInfo;
 import service.IService;
 import utils.JDBCUtils;
 
@@ -87,6 +88,19 @@ public class CompanyService implements IService<CompanyUser> {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         } finally {
+            JDBCUtils.close();
+        }
+        return i>0;
+    }
+
+    //发布招聘信息
+    public boolean postInformation(RecruitInfo recruitInfo){
+        int i = 0;
+        try {
+            i = dao.insertRecruit(recruitInfo);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
             JDBCUtils.close();
         }
         return i>0;

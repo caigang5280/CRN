@@ -60,6 +60,15 @@
         font-size: 14px;
         border-radius: 4px;
     }
+    label.error{
+        color: red;
+    }
+
+    label.success{
+        color: green;
+    }
+
+
 </style>
 <body>
 

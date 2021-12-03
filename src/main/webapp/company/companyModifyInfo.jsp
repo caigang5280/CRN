@@ -68,6 +68,14 @@
         font-size: 7px;
         border-radius: 10px;
     }
+    label.error{
+        color: red;
+    }
+
+    label.success{
+        color: green;
+    }
+
 </style>
 <body>
 <jsp:include page="/companyHeader.jsp"></jsp:include>

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" isELIgnored="false" %>
 <!DOCTYPE html>
@@ -77,18 +78,23 @@
 </style>
 
 <body>
+
+
 <jsp:include page="/personalHeader.jsp"></jsp:include>
 <!-- 搜索栏 -->
 <div class="container">
     <div class="row" style="text-align: left; margin-left: 10px;">
         <div class="col-lg-10" style="text-align: left;">
-            <div class="input-group" style="text-align: left;">
-                <input type="text" class="form-control" placeholder="Search for..." style="height: 40px;">
-                <span class="input-group-btn">
-			        <button class="btn btn-default" type="button"
-                            style="height: 40px;width: 100px;background-color: #00b38a;color: white;">搜索</button>
-			      </span>
-            </div><!-- /input-group -->
+            <form action="/job?method=findAllPositions" method="post">
+                <div class="input-group" style="text-align: left;">
+                    <input type="text" class="form-control" placeholder="Search for..." style="height: 40px;"
+                           name="queryJobTitle" value="${vo.queryJobTitle}">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="submit"
+                                style="height: 40px;width: 100px;background-color: #00b38a;color: white;">搜索</button>
+                    </span>
+                </div><!-- /input-group -->
+            </form>
         </div><!-- /.col-lg-6 -->
     </div><!-- /.row -->
 </div>
@@ -99,13 +105,13 @@
 <div class="container" id="hot">
     <div class="row" style="margin-left: -180px">
         <span style="color: gray;"><strong>相关搜索:</strong></span>
-        <a class="searchHotPosition" href="#">架构师</a>
-        <a class="searchHotPosition" href="#">IC工程师</a>
-        <a class="searchHotPosition" href="#">数据挖掘工程师</a>
-        <a class="searchHotPosition" href="#">网络应用工程师</a>
-        <a class="searchHotPosition" href="#">运维工程师</a>
-        <a class="searchHotPosition" href="#">测试工程师</a>
-        <a class="searchHotPosition" href="#">安全工程师</a>
+        <a class="searchHotPosition" href="${path}/job?method=findAllPositions&pageNow=${page}&queryJobTitle=架构师&queryJobExperience=${vo.queryJobExperience}&queryEducation=${vo.queryEducation}&querySalary=${vo.querySalary}&queryJobAddress=${vo.queryJobAddress}" >架构师</a>
+        <a class="searchHotPosition" href="${path}/job?method=findAllPositions&queryJobTitle=IC工程师" >IC工程师</a>
+        <a class="searchHotPosition" href="${path}/job?method=findAllPositions&queryJobTitle=数据挖掘工程师" >数据挖掘工程师</a>
+        <a class="searchHotPosition" href="${path}/job?method=findAllPositions&queryJobTitle=网络应用工程师" >网络应用工程师</a>
+        <a class="searchHotPosition" href="${path}/job?method=findAllPositions&queryJobTitle=运维工程师" >运维工程师</a>
+        <a class="searchHotPosition" href="${path}/job?method=findAllPositions&queryJobTitle=测试工程师" >测试工程师</a>
+        <a class="searchHotPosition" href="${path}/job?method=findAllPositions&queryJobTitle=安全工程师" >安全工程师</a>
     </div>
     <br/>
 </div>
@@ -199,44 +205,6 @@
                 </ul>
             </div><!-- btn-group -->
 
-            <!-- 融资阶段 button -->
-            <div class="btn-group hidden-xs">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                    <strong>融资阶段</strong> <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a href="#">不限</a></li>
-                    <li><a href="#">未融资</a></li>
-                    <li><a href="#">天使轮</a></li>
-                    <li><a href="#">A轮</a></li>
-                    <li><a href="#">B轮</a></li>
-                    <li><a href="#">C轮</a></li>
-                    <li><a href="#">D轮以上</a></li>
-                    <li><a href="#">上市公司</a></li>
-                    <!-- <li role="separator" class="divider"></li>
-                    <li><a href="#">Separated link</a></li> -->
-                </ul>
-            </div><!-- btn-group -->
-
-            <!-- 公司规模 button -->
-            <div class="btn-group hidden-xs">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                    <strong>公司规模</strong> <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a href="#">不限</a></li>
-                    <li><a href="#">少于15人</a></li>
-                    <li><a href="#">50-150人</a></li>
-                    <li><a href="#">150-500人</a></li>
-                    <li><a href="#">500-2000人</a></li>
-                    <li><a href="#">2000人以上</a></li>
-                    <!-- <li role="separator" class="divider"></li>
-                    <li><a href="#">Separated link</a></li> -->
-                </ul>
-            </div><!-- btn-group -->
-
         </div><!-- col-lg-10 -->
         <div class="col-lg-3">
             <button style="border: none;">清除筛选</button>
@@ -250,111 +218,85 @@
 <!-- 职位工作表 -->
 <div class="container">
 
-
-
-    <div class="row" style="border: 1px darkgray solid; width: 900px; margin-left: 30px; border-radius: 10px;">
-        <div>
+    <c:forEach items="${vo.recruitInfos}" var="recruitInfo">
+        <div class="row" style="border: 1px darkgray solid; width: 900px; margin-left: 30px; border-radius: 10px;">
             <div>
-                <span style="margin-left: 60px; font-size: 17px; color: lightseagreen; cursor:pointer">Java高级开发工程师(J18867)[北京]</span>
-                <span style="margin-left:200px; color: lightseagreen; cursor:pointer;font-size: 17px">安居客</span>
-                <img style="margin-left: 200px;" width="60px" height="60px"
-                     src="https://www.lgstatic.com/thumbnail_120x120/image1/M00/00/0D/CgYXBlTUWCCAUO82AAC1G1P4rp8319.jpg"
-                     alt="安居客">
+                <div>
+                    <span style="margin-left: 60px; font-size: 17px; color: lightseagreen; cursor:pointer">${recruitInfo.jobTitle}[${recruitInfo.jobAddress}]</span>
+                    <span style="margin-left:200px; color: lightseagreen; cursor:pointer;font-size: 17px">${recruitInfo.companyName}</span>
+                    <img style="margin-left: 200px;" width="60px" height="60px"
+                         src="${path}${recruitInfo.companyLogo}">
+                </div>
+                <div>
+                    <span style=" margin-left: 60px;color: red;font-size: 17px">${recruitInfo.salary}</span>
+                    <span style="margin-left: 10px;font-size: 13px;font-weight: normal">工作经验${recruitInfo.jobExperience}/${recruitInfo.education}</span>
+                    <span style="margin-left: 302px;font-size: 14px">${recruitInfo.jobType}/${recruitInfo.department}/${recruitInfo.jobAddress}</span>
+                </div>
             </div>
-            <div>
-                <span style="margin-left: 60px;color: red;font-size: 17px">18k-35k</span>
-                <span style="margin-left: 10px;font-size: 13px;font-weight: normal">经验3-5年/本科</span>
-                <span style="margin-left: 302px;font-size: 14px">居住服务/上市公司/500-2000人</span>
+            <br/>
+            <div style="background-color: #F0EFEE;height: 30px; width: 898px;border-radius: 10px;">
+                <span style="font-size: 10px;border: 1px darkgray solid; margin-left: 60px;">${recruitInfo.jobAddress}</span>
+                <span style="margin-left: 320px;font-size: 14px;">"${recruitInfo.jobDescription}"</span>
             </div>
         </div>
-
         <br/>
-        <div style="background-color: #F0EFEE;height: 30px; width: 898px;border-radius: 10px;">
-            <span style="font-size: 10px;border: 1px darkgray solid; margin-left: 60px;">JavaScript</span>
-            <span style="font-size: 10px;border: 1px darkgray solid;">Socket</span>
-            <span style="font-size: 10px;border: 1px darkgray solid;">Spring</span>
-            <span style="margin-left: 320px;font-size: 14px;">“重点业务，扁平管理，晋升规范”</span>
-        </div>
-    </div><!-- 职位工作表container -->
-    <br/>
+    </c:forEach>
 
-    <div class="row" style="border: 1px darkgray solid; width: 900px; margin-left: 30px; border-radius: 10px;">
-        <div>
-            <div>
-                <span style="margin-left: 60px; font-size: 17px; color: lightseagreen; cursor:pointer">Java开发工程师[北京·朝阳区]</span>
-                <span style="margin-left:240px; color: lightseagreen; cursor:pointer;font-size: 17px">脉思智能</span>
-                <img style="margin-left: 200px;" width="60px" height="60px"
-                     src="https://www.lgstatic.com/thumbnail_120x120/i/image6/M00/3E/AA/Cgp9HWCaa9OALouKAAApq3pbVLs281.png"
-                     alt="脉思智能">
-            </div>
-            <div>
-                <span style="margin-left: 60px;color: red;font-size: 17px">13k-20k</span>
-                <span style="margin-left: 10px;font-size: 13px;font-weight: normal">经验3-5年/本科</span>
-                <span style="margin-left: 302px;font-size: 14px">企业服务，数据服务/不需要融资/15-50</span>
-            </div>
-        </div>
+</div><!-- 职位工作表container -->
 
-        <br/>
-        <div style="background-color: #F0EFEE;height: 30px; width: 898px;border-radius: 10px;">
-            <span style="font-size: 10px;border: 1px darkgray solid; margin-left: 60px;">IT技术服务|咨询</span>
-            <span style="font-size: 10px;border: 1px darkgray solid;">区块链</span>
-            <span style="font-size: 10px;border: 1px darkgray solid;">数据产品</span>
-            <span style="font-size: 10px;border: 1px darkgray solid;">TO B</span>
-            <span style="font-size: 10px;border: 1px darkgray solid;">TO C</span>
-            <span style="margin-left: 210px;font-size: 14px;">“周末双休 五险一金 交通方便”</span>
-        </div>
-    </div><!-- 职位工作表container -->
-    <br/>
-
-    <div class="row" style="border: 1px darkgray solid; width: 900px; margin-left: 30px; border-radius: 10px;">
-        <div>
-            <div>
-                <span style="margin-left: 60px; font-size: 17px; color: lightseagreen; cursor:pointer">广告投放设计实习生[北京·朝阳区]</span>
-                <span style="margin-left:200px; color: lightseagreen; cursor:pointer;font-size: 17px">小牛互联</span>
-                <img style="margin-left: 200px;" width="60px" height="60px"
-                     src="https://www.lgstatic.com/thumbnail_120x120/i/image2/M01/5D/8A/CgoB5lsxj36Ab-YXAAAwO4ZRW1U882.png"
-                     alt="小牛互联">
-            </div>
-            <div>
-                <span style="margin-left: 60px;color: red;font-size: 17px">4k-5.5k</span>
-                <span style="margin-left: 10px;font-size: 13px;font-weight: normal">经验在校/应届/本科</span>
-                <span style="margin-left: 274px;font-size: 14px">游戏/不需要融资/150-500人</span>
-            </div>
-        </div>
-
-        <br/>
-        <div style="background-color: #F0EFEE;height: 30px; width: 898px;border-radius: 10px;">
-            <span style="font-size: 10px;border: 1px darkgray solid; margin-left: 60px;">团队靠普</span>
-            <span style="font-size: 10px;border: 1px darkgray solid;">踏实做事</span>
-            <span style="font-size: 10px;border: 1px darkgray solid;">成长快</span>
-            <span style="margin-left: 310px;font-size: 14px;">“员工餐、零食下午茶、交通补贴、法定假日”</span>
-        </div>
-    </div><!-- 职位工作表container -->
-</div>
-
-
+<%--分页--%>
 <div class="container">
     <div class="row" style="text-align: center;">
+        <div style="width: 380px; margin: 0 auto; margin-top: 50px;">
+            <%--查询商品列表数据时，未发现符合条件的数据，则不显示翻页--%>
+            <c:if test="${vo.recruitInfos.size() eq 0}">
+                <img src="${path}/img/noneDate.JPG"/>
+            </c:if>
 
-        <nav aria-label="Page navigation">
-            <ul class="pagination">
-                <li>
-                    <a href="#" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                    </a>
-                </li>
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li>
-                    <a href="#" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+            <c:if test="${vo.recruitInfos.size() ne 0}">
+
+                <ul class="pagination" style=" text-align: center; margin-top: 10px;">
+
+                        <%--若当前页码是第一页，则上一页按钮失效--%>
+                    <c:if test="${vo.pageNow eq 1}">
+                        <li class="disabled"><a href="#" aria-label="Previous"><span
+                                aria-hidden="true">&laquo;</span></a></li>
+                    </c:if>
+
+                        <%--若当前页码不是第一页，则可以点击上一页--%>
+                    <c:if test="${vo.pageNow ne 1}">
+                        <li>
+                            <a href="${path}/job?method=findAllPositions&pageNow=${vo.pageNow-1}&queryJobTitle=${vo.queryJobTitle}&queryJobExperience=${vo.queryJobExperience}&queryEducation=${vo.queryEducation}&querySalary=${vo.querySalary}&queryJobAddress=${vo.queryJobAddress}"
+                               aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+                    </c:if>
+
+                        <%--循环展示所有页码，并且迭代到当前页码，当前页码则不可以点击--%>
+                    <c:forEach begin="1" end="${vo.myPages}" var="page">
+
+                        <c:if test="${vo.pageNow eq page}">
+                            <li class="active"><a href="#">${page}</a></li>
+                        </c:if>
+
+                        <c:if test="${vo.pageNow ne page}">
+                            <li><a href="${path}/job?method=findAllPositions&pageNow=${page}&queryJobTitle=${vo.queryJobTitle}&queryJobExperience=${vo.queryJobExperience}&queryEducation=${vo.queryEducation}&querySalary=${vo.querySalary}&queryJobAddress=${vo.queryJobAddress}">${page}</a></li>
+                        </c:if>
+                    </c:forEach>
+
+                        <%--若当前页码是最后一页，则下一页按钮失效--%>
+                    <c:if test="${vo.pageNow eq vo.myPages}">
+                        <li class="disabled"><a href="#" aria-label="Previous"><span
+                                aria-hidden="true">&raquo;</span></a></li>
+                    </c:if>
+
+                        <%--若当前页码不是最后一页，则可以点击下一页--%>
+                    <c:if test="${vo.pageNow ne vo.myPages}">
+                        <li>
+                            <a href="${path}/job?method=findAllPositions&pageNow=${vo.pageNow+1}&queryJobTitle=${vo.queryJobTitle}&queryJobExperience=${vo.queryJobExperience}&queryEducation=${vo.queryEducation}&querySalary=${vo.querySalary}&queryJobAddress=${vo.queryJobAddress}"
+                               aria-label="Previous"><span aria-hidden="true">&raquo;</span></a></li>
+                    </c:if>
+                </ul>
+            </c:if>
+        </div>
     </div>
 </div>
 
@@ -365,7 +307,7 @@
     <div class="row" style="background-color: white;height: 100px;">
         <div class="col-lg-1"></div>
         <div class="col-lg-10">
-            <img src="${pageContext.request.contextPath}/img/Logo.png" style="width: 80px;margin-top: 10px;"/>
+            <img src="${path}/img/Logo.png" style="width: 80px;margin-top: 10px;"/>
 
             <span style="font-size: 30px;color: #000000;">千寻网——大家喜欢的招聘求职平台</span>
 
